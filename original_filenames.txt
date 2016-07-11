@@ -1,0 +1,12 @@
+Old,New, Note
+Foto Siria Ilario x Wikipedia.xlsx, GAR_2016-06_no_1.xlxs
+Wiki 10° invio.xlsx, GAR_2016-06_no_10.xlxs
+Wiki 11° invio.xlsx, GAR_2016-06_no_11.xlxs
+Wiki 2°invio.xlsx, GAR_2016-06_no_2.xlxs
+Wiki 3° invio.xlsx, GAR_2016-06_no_3.xlxs
+Wiki 4° invio.xls, GAR_2016-06_no_4.xlxs
+Wiki 5° invio.xls, GAR_2016-06_no_5.xlxs
+Wiki 6° invio.xlsx, GAR_2016-06_no_6.xlxs
+Wiki 7° invio.ods, GAR_2016-06_7.xlxs, Converted .ods to .xlxs first
+Wiki 8° invio.xlsx, GAR_2016-06_no_8.xlxs
+Wiki 9° invio.xls, GAR_2016-06_no_9.xlxs
