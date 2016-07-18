@@ -3,41 +3,44 @@
 
 # In[ ]:
 
+get_ipython().system('pip install regex # A sligthly better version of RE')
 get_ipython().system('pip install html5lib # For Pandas read_html used to parse mapping wikitables ')
+get_ipython().system('pip install pandas # A great library for data wrangling (and analysis) ')
 
 
-# In[1]:
+# In[13]:
 
-import regex, os
-import pandas as pd
+import pandas as pd 
+import regex
+import os 
 
 
 # # Metadata and mappings
 # The template mapping can be found here:
 # 
-# https://docs.google.com/document/d/1c1dMTIe2CkJnWWkHt1M-pA9Nx7xEbU7zhIbWv4IZLyo/edit?usp=sharing
+# Phabricator task [T139724](https://phabricator.wikimedia.org/T139724)
 # 
 # The original metadata is a Google Spreadsheet located here:
 # 
 # https://docs.google.com/spreadsheets/d/1s6l0Ms_14_b3wZhPHGgbCYFCs0nrKlD9E-Uxk_r3Mnc/edit?ts=57737736#gid=0
 
-# In[2]:
+# In[3]:
 
 metadata_it = pd.read_excel("./data/COH_GAR_metadata.xlsx",sheetname="Italian", skiprows=[1]) # empty first row
 metadata_en = pd.read_excel("./data/COH_GAR_metadata.xlsx",sheetname="English")
 
 
-# In[3]:
+# In[4]:
 
 metadata_it.head()
 
 
-# In[4]:
+# In[5]:
 
 metadata_en.head()
 
 
-# In[5]:
+# In[6]:
 
 merged = pd.concat([metadata_it,metadata_en], axis=1) 
 merged.head()
@@ -110,8 +113,9 @@ print(place_mappings_specific.head(10))
  |other_versions     =
 }}
 # ## Code
+# Available as .py script on [my github](https://github.com/mattiasostmar/GAR_Syria_2016-06/blob/master/create_metatdata_textfiles.py)
 
-# In[21]:
+# In[20]:
 
 for row_no, row in merged.iterrows():
     template_parts = []
@@ -157,7 +161,7 @@ for row_no, row in merged.iterrows():
         depicted_place = "|depicted place = {{city|" +         place_mappings_specific.loc[row["Luogo"] + " " + row["Nome monumento"]]["wikidata"] + "}}"
         #print(depicted_place)
     elif pd.notnull(place_mappings_general.loc[row["Luogo"]]["wikidata"]):
-        depicted_place = "|depicted place = {{city|" +         place_mappings_specific.loc[row["Luogo"]]["wikidata"] + "}}"
+        depicted_place = "|depicted place = {{city|" +         place_mappings_general.loc[row["Luogo"]]["wikidata"] + "}}"
         #print(depicted_place)
     else:
         depicted_place = "|depicted place = " + row["Luogo"] + " " + row["Nome monumento"]
@@ -236,15 +240,14 @@ for row_no, row in merged.iterrows():
     else:
         maintanence_category = "[[Category:Images_from_GAR_Syria_without_categories]]"
     
+    # manage content categories
     if specific_place_category:
-        categories_list.append(specific_place_category)
-    elif general_place_category:
-        categories_list.append(general_place_category)
-    elif maintanence_category:
-        categories_list.append(maintanence_category)
+        categories_list.append(specific_place_category)   
+    elif general_place_category and not specific_place_category:
+        categories_list.append(general_place_category)          
     else:
-        pass
-    
+        categories_list.append(maintanence_category)
+
     categories_list.append(batchupload_category)
 
     #print(categories_list)
@@ -261,37 +264,21 @@ for row_no, row in merged.iterrows():
         outfile.write("\n".join(template_parts) + "\n" + "\n".join(categories_list))
 
 
-# In[199]:
+# In[21]:
 
-place_mappings_specific[place_mappings_specific["building"] == row["Nome monumento"]]["wikidata"].all()
-
-
-# In[12]:
-
-l = None
+get_ipython().system('ls -la ./photograph_template_texts/ | head -n10')
 
 
-# In[14]:
+# ## Tests
 
-print(l)
+# In[ ]:
+
+depicted_place = "|depicted place = {{city|" + place_mappings_specific.loc[row["Luogo"]]["wikidata"] + "}}"
 
 
 # In[15]:
 
-l == False
-
-
-# In[16]:
-
-l == True
-
-
-# In[18]:
-
-if l:
-    print("L!")
-else:
-    print("L?")
+place_mappings_specific
 
 
 # In[ ]:
