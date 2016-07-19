@@ -8,7 +8,7 @@ get_ipython().system('pip install html5lib # For Pandas read_html used to parse 
 get_ipython().system('pip install pandas # A great library for data wrangling (and analysis) ')
 
 
-# In[13]:
+# In[1]:
 
 import pandas as pd 
 import regex
@@ -23,6 +23,8 @@ import os
 # The original metadata is a Google Spreadsheet located here:
 # 
 # https://docs.google.com/spreadsheets/d/1s6l0Ms_14_b3wZhPHGgbCYFCs0nrKlD9E-Uxk_r3Mnc/edit?ts=57737736#gid=0
+# 
+# The doc below is downloaded locally 2016-07-19 16:55
 
 # In[3]:
 
@@ -115,7 +117,7 @@ print(place_mappings_specific.head(10))
 # ## Code
 # Available as .py script on [my github](https://github.com/mattiasostmar/GAR_Syria_2016-06/blob/master/create_metatdata_textfiles.py)
 
-# In[25]:
+# In[10]:
 
 total_images = 0
 OK_images = 0
