@@ -12312,10 +12312,17 @@ Palmyra Interno dell&#39;Ipogeo di Artaban          NaN
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">row_no</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">merged</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">total_images</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">OK_images</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">uncategorized_images</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">faulty_images</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">row_no</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">merged</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">total_images</span> <span class="o">+=</span> <span class="mi">1</span>
+    
     <span class="n">template_parts</span> <span class="o">=</span> <span class="p">[]</span>
     
     <span class="n">header</span> <span class="o">=</span> <span class="s2">&quot;{{Photograph&quot;</span>
@@ -12326,6 +12333,7 @@ Palmyra Interno dell&#39;Ipogeo di Artaban          NaN
     <span class="k">else</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Warning! Empty Author column in row no </span><span class="si">{}</span><span class="s2"> photo </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">row_no</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;Nome foto&quot;</span><span class="p">]))</span>
         <span class="n">photographer</span> <span class="o">=</span> <span class="s2">&quot;|photographer = &quot;</span>
+        <span class="n">faulty_images</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="n">template_parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">photographer</span><span class="p">)</span>
     
     <span class="n">title_it</span> <span class="o">=</span>  <span class="s2">&quot;{{it|&#39;&#39;&#39;&quot;</span> <span class="o">+</span> <span class="n">regex</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span><span class="s2">&quot; &quot;</span><span class="p">,</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;Nome foto&quot;</span><span class="p">][:</span><span class="o">-</span><span class="mi">3</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;&#39;&#39;&#39;}}&quot;</span>
@@ -12426,7 +12434,7 @@ Palmyra Interno dell&#39;Ipogeo di Artaban          NaN
     <span class="n">specific_place_category</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">general_place_category</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">maintanence_category</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="n">batchupload_category</span> <span class="o">=</span> <span class="s2">&quot;[[Category:Images_from_GAR_Syria_2016-06]]&quot;</span>
+    <span class="n">batchupload_category</span> <span class="o">=</span> <span class="s2">&quot;[[Category:Images_from_GAR_2016-06]]&quot;</span>
     
     <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">notnull</span><span class="p">(</span><span class="n">place_mappings_specific</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;Luogo&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;Nome monumento&quot;</span><span class="p">]][</span><span class="s2">&quot;category&quot;</span><span class="p">]):</span>
         <span class="n">specific_place_category</span> <span class="o">=</span> <span class="s2">&quot;[[&quot;</span> <span class="o">+</span> <span class="n">place_mappings_specific</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;Luogo&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;Nome monumento&quot;</span><span class="p">]][</span><span class="s2">&quot;category&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;]]&quot;</span>
@@ -12438,13 +12446,16 @@ Palmyra Interno dell&#39;Ipogeo di Artaban          NaN
     
     <span class="c1"># [[Category:Images_from_GAR_Syria_2016-06]]</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">maintanence_category</span> <span class="o">=</span> <span class="s2">&quot;[[Category:Images_from_GAR_Syria_without_categories]]&quot;</span>
+        <span class="n">maintanence_category</span> <span class="o">=</span> <span class="s2">&quot;[[Category:Images_from_GAR_without_categories]]&quot;</span>
+        <span class="n">uncategorized_images</span> <span class="o">+=</span> <span class="mi">1</span>
     
     <span class="c1"># manage content categories</span>
     <span class="k">if</span> <span class="n">specific_place_category</span><span class="p">:</span>
-        <span class="n">categories_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">specific_place_category</span><span class="p">)</span>   
+        <span class="n">categories_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">specific_place_category</span><span class="p">)</span>
+        <span class="n">OK_images</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="k">elif</span> <span class="n">general_place_category</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">specific_place_category</span><span class="p">:</span>
-        <span class="n">categories_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">general_place_category</span><span class="p">)</span>          
+        <span class="n">categories_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">general_place_category</span><span class="p">)</span>
+        <span class="n">OK_images</span> <span class="o">+=</span> <span class="mi">1</span> 
     <span class="k">else</span><span class="p">:</span>
         <span class="n">categories_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">maintanence_category</span><span class="p">)</span>
 
@@ -12462,6 +12473,8 @@ Palmyra Interno dell&#39;Ipogeo di Artaban          NaN
     <span class="k">else</span><span class="p">:</span>
         <span class="n">outfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">outpath</span> <span class="o">+</span> <span class="n">fname</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
         <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">template_parts</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">categories_list</span><span class="p">))</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Stats: </span><span class="se">\n</span><span class="s2">Total images </span><span class="si">{}</span><span class="se">\n</span><span class="s2">OK images </span><span class="si">{}</span><span class="se">\n</span><span class="s2">Uncategorized images </span><span class="si">{}</span><span class="se">\n</span><span class="s2">Otherwise faulty images </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">total_images</span><span class="p">,</span> <span class="n">OK_images</span> <span class="o">-</span> <span class="n">faulty_images</span><span class="p">,</span> <span class="n">uncategorized_images</span><span class="p">,</span> <span class="n">faulty_images</span> <span class="p">))</span>
 </pre></div>
 
 </div>
@@ -12478,6 +12491,11 @@ Palmyra Interno dell&#39;Ipogeo di Artaban          NaN
 Warning! Empty Author column in row no 219 photo Aleppo_suq_05
 Warning! Empty Author column in row no 220 photo Aleppo_suq_06
 Warning! Empty Author column in row no 221 photo Aleppo_suq_07
+Stats: 
+Total images 426
+OK images 358
+Uncategorized images 64
+Otherwise faulty images 4
 </pre>
 </div>
 </div>

@@ -115,9 +115,16 @@ print(place_mappings_specific.head(10))
 # ## Code
 # Available as .py script on [my github](https://github.com/mattiasostmar/GAR_Syria_2016-06/blob/master/create_metatdata_textfiles.py)
 
-# In[20]:
+# In[25]:
+
+total_images = 0
+OK_images = 0
+uncategorized_images = 0
+faulty_images = 0
 
 for row_no, row in merged.iterrows():
+    total_images += 1
+    
     template_parts = []
     
     header = "{{Photograph"
@@ -128,6 +135,7 @@ for row_no, row in merged.iterrows():
     else:
         print("Warning! Empty Author column in row no {} photo {}".format(row_no, row["Nome foto"]))
         photographer = "|photographer = "
+        faulty_images += 1
     template_parts.append(photographer)
     
     title_it =  "{{it|'''" + regex.sub("_"," ",row["Nome foto"][:-3]) + "'''}}"
@@ -226,7 +234,7 @@ for row_no, row in merged.iterrows():
     specific_place_category = None
     general_place_category = None
     maintanence_category = None
-    batchupload_category = "[[Category:Images_from_GAR_Syria_2016-06]]"
+    batchupload_category = "[[Category:Images_from_GAR_2016-06]]"
     
     if pd.notnull(place_mappings_specific.loc[row["Luogo"] + " " + row["Nome monumento"]]["category"]):
         specific_place_category = "[[" + place_mappings_specific.loc[row["Luogo"] + " " + row["Nome monumento"]]["category"] + "]]"
@@ -238,13 +246,16 @@ for row_no, row in merged.iterrows():
     
     # [[Category:Images_from_GAR_Syria_2016-06]]
     else:
-        maintanence_category = "[[Category:Images_from_GAR_Syria_without_categories]]"
+        maintanence_category = "[[Category:Images_from_GAR_without_categories]]"
+        uncategorized_images += 1
     
     # manage content categories
     if specific_place_category:
-        categories_list.append(specific_place_category)   
+        categories_list.append(specific_place_category)
+        OK_images += 1
     elif general_place_category and not specific_place_category:
-        categories_list.append(general_place_category)          
+        categories_list.append(general_place_category)
+        OK_images += 1 
     else:
         categories_list.append(maintanence_category)
 
@@ -262,6 +273,8 @@ for row_no, row in merged.iterrows():
     else:
         outfile = open(outpath + fname, "w")
         outfile.write("\n".join(template_parts) + "\n" + "\n".join(categories_list))
+    
+print("Stats: \nTotal images {}\nOK images {}\nUncategorized images {}\nOtherwise faulty images {}".format(total_images, OK_images - faulty_images, uncategorized_images, faulty_images ))
 
 
 # In[21]:
