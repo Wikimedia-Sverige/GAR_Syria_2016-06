@@ -166,16 +166,16 @@ for row_no, row in merged.iterrows():
     
     title_it =  "{{it|'''" + regex.sub("_"," ",row["Nome_foto"][:-3]) + "'''}}"
     title_en = "{{en|" + regex.sub("_"," ", row["Title"][:-3]) + "}}"
-    title = "|title = " + title_it + title_en
+    title = "|title = " + title_it + "\n" + title_en
     template_parts.append(title)
     
     if pd.notnull(row["Description"]):
         description_en = "{{en| " + row["Description"] + "}}"
     else:
-        description_en = "{{en| = " + str(row["Subject"]) + ", " + str(row["Place"]) + " in " + str(row["Year"]) + "}}"
+        description_en = "{{en| " + str(row["Subject"]) + ", " + str(row["Place"]) + " in " + str(row["Year"]) + "}}"
     
     if pd.notnull(row["Descrizione"]):
-        description_it = "{{it| = " + row["Descrizione"] + "}}"
+        description_it = "{{it| " + row["Descrizione"] + "}}"
     else:
         description_it = "{{it| " + str(row["Nome_monumento"]) + ", " + str(row["Luogo"]) + ", " + str(row["Anno"]) + "}}"
     
