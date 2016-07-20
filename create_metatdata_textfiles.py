@@ -138,7 +138,7 @@ print("Subdirs: {}\nlen(original_filenames): {}\nFiles in metadata file: 426".fo
 # ## Create wikitext for image pages
 # Available as .py script on [my github](https://github.com/mattiasostmar/GAR_Syria_2016-06/blob/master/create_metatdata_textfiles.py)
 
-# In[87]:
+# In[88]:
 
 # remove possible diuplicate files with other extension names
 get_ipython().system('rm -rf ./photograph_template_texts/*')
@@ -271,10 +271,10 @@ for row_no, row in merged.iterrows():
         uncategorized_images += 1
     
     # manage content categories
-    if specific_place_category:
+    if specific_place_category and not specific_place_category == "-":
         categories_list.append(specific_place_category)
         OK_images += 1
-    elif general_place_category and not specific_place_category:
+    elif general_place_category and not specific_place_category and not general_place_category == "-":
         categories_list.append(general_place_category)
         OK_images += 1 
     else:
