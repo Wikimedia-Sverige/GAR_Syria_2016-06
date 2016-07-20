@@ -8,11 +8,12 @@ get_ipython().system('pip install html5lib # For Pandas read_html used to parse 
 get_ipython().system('pip install pandas # A great library for data wrangling (and analysis) ')
 
 
-# In[1]:
+# In[13]:
 
 import pandas as pd 
 import regex
 import os 
+from polyglot.text import Text
 
 
 # # Metadata and mappings
@@ -88,6 +89,22 @@ print(place_mappings_specific.head(10))
 # # Population of {{Photograph}}
 # 
 # ## Template mapping
+
+# In[16]:
+
+desc = "Rovine del tempio di Giove all'ingresso del"
+text = Text(desc)
+
+
+# In[22]:
+
+lang = text.language
+
+
+# In[23]:
+
+lang.code
+
  |photographer       = <en-Author[4:]>
  |title              =  
 {{it|’’’<Nome foto[:-3]>’’’}}
@@ -117,8 +134,9 @@ print(place_mappings_specific.head(10))
 # ## Code
 # Available as .py script on [my github](https://github.com/mattiasostmar/GAR_Syria_2016-06/blob/master/create_metatdata_textfiles.py)
 
-# In[10]:
+# In[24]:
 
+get_ipython().system('rm -rf ./photograph_template_texts/*')
 total_images = 0
 OK_images = 0
 uncategorized_images = 0
@@ -146,12 +164,21 @@ for row_no, row in merged.iterrows():
     template_parts.append(title)
     
     if pd.notnull(row["Description"]):
-        if len(row["Description"].split()) >= 3:
-            description_en = "{{en| = " + row["Description"] + "}}"
+        text = Text(row["Description"])
+        lang = text.language
+        
+        if lang.code != "en":
+            print("name {} text {} lang code {} - expected 'en'".format(row["Title"], text, lang.code))
         else:
-            description_en = "{{en| = " + str(row["Subject"]) + " " + str(row["Place"]) + " in " + str(row["Year"]) + "}}"
+            if len(row["Description"].split()) >= 3:
+                description_en = "{{en| = " + row["Description"] + "}}"
+            else:
+                description_en = "{{en| = " + str(row["Subject"]) + " " + str(row["Place"]) + " in " + str(row["Year"]) + "}}"
     else:
-        description_en = "{{en| = " + str(row["Subject"]) + " " + str(row["Place"]) + " in " + str(row["Year"]) + "}}"
+        if lang.code != "en":
+            print("name {} text {} lang code {} - expected 'en'".format(row["Title"], text, lang.code))
+        else:    
+            description_en = "{{en| = " + str(row["Subject"]) + " " + str(row["Place"]) + " in " + str(row["Year"]) + "}}"
     
     if pd.notnull(row["Descrizione"]):
         if len(row["Descrizione"].split()) >= 3:
@@ -267,7 +294,7 @@ for row_no, row in merged.iterrows():
     
     # Filename: <Nome foto[:-3]>_GAR_<Nome foto[-3:]>.<ext>
     outpath = "./photograph_template_texts/"
-    fname = row["Nome foto"][:-3] + "_GAR_" + row["Nome foto"][-3:] 
+    fname = row["Nome foto"][:-3] + " - " + "GAR" + " - " + row["Nome foto"][-3:] + ".JPG" # Hack, extension ought to be dynamic
     if not os.path.exists(outpath):
         os.mkdir(outpath)
         outfile = open(outpath + fname, "w")
@@ -276,7 +303,7 @@ for row_no, row in merged.iterrows():
         outfile = open(outpath + fname, "w")
         outfile.write("\n".join(template_parts) + "\n" + "\n".join(categories_list))
     
-print("Stats: \nTotal images {}\nOK images {}\nUncategorized images {}\nOtherwise faulty images {}".format(total_images, OK_images - faulty_images, uncategorized_images, faulty_images ))
+print("Stats: \nTotal images {}\nOK images {}\nUncategorized images {}\nImages missing author {}".format(total_images, OK_images - faulty_images, uncategorized_images, faulty_images ))
 
 
 # In[21]:
