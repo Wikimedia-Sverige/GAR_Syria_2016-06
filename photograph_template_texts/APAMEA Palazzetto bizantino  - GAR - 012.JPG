@@ -1,8 +1,10 @@
 {{Photograph
 |photographer = Gianfranco Gazzetti
-|title = {{it|'''APAMEA Palazzetto bizantino '''}}{{en|'''APAMEA Palazzetto bizantino '''}}
-|description = {{it| = Scavi di Apamea - Palazzetto bizantino.}}{{en| = Sergiopolis è importante in quanto fu sede vescovile in epoca bizantina. La Basilica di San Sergio risale all'inizio del VI secolo, mentre alla fine dello stesso datano le prime trasformazioni, che consistono in una nuova pavimentazione e in lavori alla copertura.}}
+|title = {{it|'''APAMEA Palazzetto bizantino '''}}{{en|APAMEA Palazzetto bizantino }}
+|description = {{it| = Scavi di Apamea - Palazzetto bizantino.}}
+{{en| Scavi di Apamea - Palazzetto bizantino.}}
 |depicted people =
+|depicted place = {{city|-}}
 |date = 2002
 |medium =
 |dimensions =
@@ -15,8 +17,10 @@
 |inscriptions =
 |notes =
 |accession number =
-|source = {{Gruppo Archeologico Romano cooperation project|COH}}
-|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti|GAR}}{{PermissionOTRS|id=2016042410005958}}
+|source = APAMEA Palazzetto bizantino 012
+{{Gruppo Archeologico Romano cooperation project|COH}}
+|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti/ GAR}}
+{{PermissionOTRS|id=2016042410005958}}
 |other_versions =
 }}
 [[-]]

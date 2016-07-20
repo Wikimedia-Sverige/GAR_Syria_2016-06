@@ -1,8 +1,10 @@
 {{Photograph
 |photographer = Gianfranco Gazzetti
-|title = {{it|'''Palmira Via colonnata'''}}{{en|'''Palmira Via colonnata'''}}
-|description = {{it| = Grande via colonnata , in fondo tempio funerario}}{{en| = Grande via colonnata , in fondo tempio funerario}}
+|title = {{it|'''Palmira Via colonnata'''}}{{en|Palmira Via colonnata}}
+|description = {{it| = Grande via colonnata , in fondo tempio funerario}}
+{{en| Grande via colonnata , in fondo tempio funerario}}
 |depicted people =
+|depicted place = {{city|d:Q5598980}}
 |date = 2004
 |medium =
 |dimensions =
@@ -15,8 +17,10 @@
 |inscriptions =
 |notes =
 |accession number =
-|source = {{Gruppo Archeologico Romano cooperation project|COH}}
-|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti|GAR}}{{PermissionOTRS|id=2016042410005958}}
+|source = Palmira_Via colonnata_03
+{{Gruppo Archeologico Romano cooperation project|COH}}
+|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti/ GAR}}
+{{PermissionOTRS|id=2016042410005958}}
 |other_versions =
 }}
 [[Category:Great Colonnade at Palmyra]]

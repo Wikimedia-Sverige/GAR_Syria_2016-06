@@ -1,8 +1,10 @@
 {{Photograph
 |photographer = Ilario Di Nardo
-|title = {{it|'''Amrit Sepolcro'''}}{{en|'''Amrit Sepolcro'''}}
-|description = {{it| = Meghazil Sepolcro Amrit 2006}}{{en| = Qalb Lauzeh è una delle città morte della Siria nord-occidentale a circa 50 km da Aleppo, vicino al confine turco. Il villaggio è caratterizzato dall'antica basilica paleocristiana, circondata da un alto muro, risalente alla metà del V secolo. La facciata è delimitata da due torri a tre piani, collegate da un ampio arco, che dava accesso al portale interno, vi era inoltre una terrazza che congiungeva i piani superiori delle due torri. L'interno, diviso in tre navate, era illuminato da numerose finestre; nella navata centrale vi sono ampi archi su pilastri che conducono al presbiterio e all'abside rialzato. L'abside è orientato verso ovest; l'aspetto imponente è messo in evidenza dal basamento, da un doppio ordine di colonne e dal cornicione.}}
+|title = {{it|'''Amrit Sepolcro'''}}{{en|Amrit Sepolcro}}
+|description = {{it| Meghazil Sepolcro, Amrit, 2006}}
+{{en| = Meghazil tomb, Amrit in 2006}}
 |depicted people =
+|depicted place = {{city|d:Q290054}}
 |date = 2006
 |medium =
 |dimensions =
@@ -15,8 +17,10 @@
 |inscriptions =
 |notes =
 |accession number =
-|source = {{Gruppo Archeologico Romano cooperation project|COH}}
-|permission = {{CC-BY-SA-4.0|Ilario Di Nardo|GAR}}{{PermissionOTRS|id=2016042410005958}}
+|source = Amrit_Sepolcro_01
+{{Gruppo Archeologico Romano cooperation project|COH}}
+|permission = {{CC-BY-SA-4.0|Ilario Di Nardo/ GAR}}
+{{PermissionOTRS|id=2016042410005958}}
 |other_versions =
 }}
 [[Category:Amrit]]

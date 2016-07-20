@@ -1,8 +1,10 @@
 {{Photograph
 |photographer = Gianfranco Gazzetti
-|title = {{it|'''PALMYRA Ipogeo di Artaban interno '''}}{{en|'''PALMYRA Ipogeo di Artaban interno '''}}
-|description = {{it| = Palmyra, interno dell'Ipogeo di Artaban.}}{{en| = Palmyra, interno dell'Ipogeo di Artaban.}}
+|title = {{it|'''PALMYRA Ipogeo di Artaban interno '''}}{{en|PALMYRA Ipogeo di Artaban interno }}
+|description = {{it| = Palmyra, interno dell'Ipogeo di Artaban.}}
+{{en| Palmyra, interno dell'Ipogeo di Artaban.}}
 |depicted people =
+|depicted place = {{city|-}}
 |date = 2002
 |medium =
 |dimensions =
@@ -15,8 +17,10 @@
 |inscriptions =
 |notes =
 |accession number =
-|source = {{Gruppo Archeologico Romano cooperation project|COH}}
-|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti|GAR}}{{PermissionOTRS|id=2016042410005958}}
+|source = PALMYRA Ipogeo di Artaban interno 041
+{{Gruppo Archeologico Romano cooperation project|COH}}
+|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti/ GAR}}
+{{PermissionOTRS|id=2016042410005958}}
 |other_versions =
 }}
 [[Category:Tombs in Palmyra]]

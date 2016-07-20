@@ -1,8 +1,10 @@
 {{Photograph
 |photographer = Gianfranco Gazzetti
-|title = {{it|'''Burji Hadar'''}}{{en|'''Burji Hadar'''}}
-|description = {{it| = Burji Hadar, donna siriana davanti ad una abitazione privata.}}{{en| = Monastery Burj Ḩaydar in 2004}}
+|title = {{it|'''Burji Hadar'''}}{{en|Burji Hadar}}
+|description = {{it| = Burji Hadar, donna siriana davanti ad una abitazione privata.}}
+{{en| Burji Hadar, donna siriana davanti ad una abitazione privata.}}
 |depicted people =
+|depicted place = {{city|-}}
 |date = 2004
 |medium =
 |dimensions =
@@ -15,8 +17,10 @@
 |inscriptions =
 |notes =
 |accession number =
-|source = {{Gruppo Archeologico Romano cooperation project|COH}}
-|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti|GAR}}{{PermissionOTRS|id=2016042410005958}}
+|source = Burji Hadar_02
+{{Gruppo Archeologico Romano cooperation project|COH}}
+|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti/ GAR}}
+{{PermissionOTRS|id=2016042410005958}}
 |other_versions =
 }}
 [[-]]

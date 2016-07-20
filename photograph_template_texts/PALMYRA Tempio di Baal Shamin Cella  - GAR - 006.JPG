@@ -1,8 +1,10 @@
 {{Photograph
 |photographer = Gianfranco Gazzetti
-|title = {{it|'''PALMYRA Tempio di Baal Shamin Cella '''}}{{en|'''PALMYRA Tempio di Baal Shamin Cella '''}}
-|description = {{it| = Palmyra, cella del Tempio di Baal Shamin.}}{{en| = Palmyra, cella del Tempio di Baal Shamin.}}
+|title = {{it|'''PALMYRA Tempio di Baal Shamin Cella '''}}{{en|PALMYRA Tempio di Baal Shamin Cella }}
+|description = {{it| = Palmyra, cella del Tempio di Baal Shamin.}}
+{{en| Palmyra, cella del Tempio di Baal Shamin.}}
 |depicted people =
+|depicted place = {{city|d:Q20871005}}
 |date = 2002
 |medium =
 |dimensions =
@@ -15,8 +17,10 @@
 |inscriptions =
 |notes =
 |accession number =
-|source = {{Gruppo Archeologico Romano cooperation project|COH}}
-|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti|GAR}}{{PermissionOTRS|id=2016042410005958}}
+|source = PALMYRA Tempio di Baal Shamin Cella 006
+{{Gruppo Archeologico Romano cooperation project|COH}}
+|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti/ GAR}}
+{{PermissionOTRS|id=2016042410005958}}
 |other_versions =
 }}
 [[Category:Temple of Baal-Shamin in Palmyra]]

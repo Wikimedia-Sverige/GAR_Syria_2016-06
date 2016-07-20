@@ -1,8 +1,10 @@
 {{Photograph
 |photographer = Gianfranco Gazzetti
-|title = {{it|'''Deir ez Zor Cham Palace'''}}{{en|'''Deir ez Zor Cham Palace'''}}
-|description = {{it| = Deir ez Zor, Cham Palace hotel terrazza sull'Eufrate.}}{{en| = Darkita, rovine bizantine.}}
+|title = {{it|'''Deir ez Zor Cham Palace'''}}{{en|Deir ez Zor Cham Palace}}
+|description = {{it| = Deir ez Zor, Cham Palace hotel terrazza sull'Eufrate.}}
+{{en| Deir ez Zor, Cham Palace hotel terrazza sull'Eufrate.}}
 |depicted people =
+|depicted place = {{city|d:Q239097}}
 |date = 2004
 |medium =
 |dimensions =
@@ -15,8 +17,10 @@
 |inscriptions =
 |notes =
 |accession number =
-|source = {{Gruppo Archeologico Romano cooperation project|COH}}
-|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti|GAR}}{{PermissionOTRS|id=2016042410005958}}
+|source = Deir ez Zor_Cham Palace_01
+{{Gruppo Archeologico Romano cooperation project|COH}}
+|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti/ GAR}}
+{{PermissionOTRS|id=2016042410005958}}
 |other_versions =
 }}
 [[Category:Dayr az-Zawr]]

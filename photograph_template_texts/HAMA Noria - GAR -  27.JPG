@@ -1,8 +1,10 @@
 {{Photograph
 |photographer = Gianfranco Gazzetti
-|title = {{it|'''HAMA Noria'''}}{{en|'''HAMA Noria'''}}
-|description = {{it| = Noria di Hama.}}{{en| = Museo Archeologico di Hama - Battenti di camera funeraria romana.}}
+|title = {{it|'''HAMA Noria'''}}{{en|HAMA Noria}}
+|description = {{it| = Noria di Hama.}}
+{{en| Noria di Hama.}}
 |depicted people =
+|depicted place = {{city|-}}
 |date = 2002
 |medium =
 |dimensions =
@@ -15,8 +17,10 @@
 |inscriptions =
 |notes =
 |accession number =
-|source = {{Gruppo Archeologico Romano cooperation project|COH}}
-|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti|GAR}}{{PermissionOTRS|id=2016042410005958}}
+|source = HAMA Noria 27
+{{Gruppo Archeologico Romano cooperation project|COH}}
+|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti/ GAR}}
+{{PermissionOTRS|id=2016042410005958}}
 |other_versions =
 }}
 [[Category:Norias of Hama]]

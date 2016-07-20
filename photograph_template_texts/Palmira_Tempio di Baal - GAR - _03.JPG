@@ -1,8 +1,10 @@
 {{Photograph
 |photographer = Gianfranco Gazzetti
-|title = {{it|'''Palmira Tempio di Baal'''}}{{en|'''Palmira Tempio di Baal'''}}
-|description = {{it| = Recinto interno del Tempio di Baal}}{{en| = Recinto interno del Tempio di Baal}}
+|title = {{it|'''Palmira Tempio di Baal'''}}{{en|Palmira Tempio di Baal}}
+|description = {{it| = Recinto interno del Tempio di Baal}}
+{{en| Recinto interno del Tempio di Baal}}
 |depicted people =
+|depicted place = {{city|d:Q797481}}
 |date = 2004
 |medium =
 |dimensions =
@@ -15,8 +17,10 @@
 |inscriptions =
 |notes =
 |accession number =
-|source = {{Gruppo Archeologico Romano cooperation project|COH}}
-|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti|GAR}}{{PermissionOTRS|id=2016042410005958}}
+|source = Palmira_Tempio di Baal_03
+{{Gruppo Archeologico Romano cooperation project|COH}}
+|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti/ GAR}}
+{{PermissionOTRS|id=2016042410005958}}
 |other_versions =
 }}
 [[Category:Temple of Baal in Palmyra]]

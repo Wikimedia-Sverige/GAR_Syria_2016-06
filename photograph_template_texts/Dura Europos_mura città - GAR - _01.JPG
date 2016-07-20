@@ -1,8 +1,10 @@
 {{Photograph
 |photographer = Gianfranco Gazzetti
-|title = {{it|'''Dura Europos mura città'''}}{{en|'''Dura Europos mura città'''}}
-|description = {{it| = Mura città Dura Europos 2004}}{{en| = Archaeoogical Museum, a room Aleppo in 2004}}
+|title = {{it|'''Dura Europos mura città'''}}{{en|Dura Europos mura città}}
+|description = {{it| = Mura città}}
+{{en| Mura città}}
 |depicted people =
+|depicted place = {{city|d:Q464266}}
 |date = 2004
 |medium =
 |dimensions =
@@ -15,8 +17,10 @@
 |inscriptions =
 |notes =
 |accession number =
-|source = {{Gruppo Archeologico Romano cooperation project|COH}}
-|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti|GAR}}{{PermissionOTRS|id=2016042410005958}}
+|source = Dura Europos_mura città_01
+{{Gruppo Archeologico Romano cooperation project|COH}}
+|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti/ GAR}}
+{{PermissionOTRS|id=2016042410005958}}
 |other_versions =
 }}
 [[Category:Dura Europos]]

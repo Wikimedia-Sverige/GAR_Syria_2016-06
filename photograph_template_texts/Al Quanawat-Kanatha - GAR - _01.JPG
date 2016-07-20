@@ -1,8 +1,10 @@
 {{Photograph
 |photographer = Gianfranco Gazzetti
-|title = {{it|'''Al Quanawat-Kanatha'''}}{{en|'''Al Quanawat-Kanatha'''}}
-|description = {{it| = Caseggiato romano Al Quanawat 2008}}{{en| = Cttedrale bizantina navate}}
+|title = {{it|'''Al Quanawat-Kanatha'''}}{{en|Al Quanawat-Kanatha}}
+|description = {{it| = Caseggiato romano}}
+{{en| Caseggiato romano}}
 |depicted people =
+|depicted place = {{city|d:Q763167}}
 |date = 2008
 |medium =
 |dimensions =
@@ -15,8 +17,10 @@
 |inscriptions =
 |notes =
 |accession number =
-|source = {{Gruppo Archeologico Romano cooperation project|COH}}
-|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti|GAR}}{{PermissionOTRS|id=2016042410005958}}
+|source = Al Quanawat-Kanatha_01
+{{Gruppo Archeologico Romano cooperation project|COH}}
+|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti/ GAR}}
+{{PermissionOTRS|id=2016042410005958}}
 |other_versions =
 }}
 [[Category:Qanawat]]

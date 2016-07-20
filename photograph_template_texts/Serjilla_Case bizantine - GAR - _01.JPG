@@ -1,8 +1,10 @@
 {{Photograph
 |photographer = Gianfranco Gazzetti
-|title = {{it|'''Serjilla Case bizantine'''}}{{en|'''Serjilla Case bizantine'''}}
-|description = {{it| = Serjilla è la più nota delle città morte bizantine fu edificata nel IV secolo e abbandonata nel VII. Le case private di solito si aprono su un cortile interno circondato da un alto muro, mentre gli edifici pubblici hanno più ingressi che si aprono direttamente sulle strade. Tipico esempio di ricco caseggiato privato, dove le balconate e gli ingressi si aprono su un giardino interno cinto da un muro.}}{{en| = Sergiopolis è importante in quanto fu sede vescovile in epoca bizantina. La Basilica di San Sergio risale all'inizio del VI secolo, mentre alla fine dello stesso datano le prime trasformazioni, che consistono in una nuova pavimentazione e in lavori alla copertura.}}
+|title = {{it|'''Serjilla Case bizantine'''}}{{en|Serjilla Case bizantine}}
+|description = {{it| = Serjilla è la più nota delle città morte bizantine fu edificata nel IV secolo e abbandonata nel VII. Le case private di solito si aprono su un cortile interno circondato da un alto muro, mentre gli edifici pubblici hanno più ingressi che si aprono direttamente sulle strade. Tipico esempio di ricco caseggiato privato, dove le balconate e gli ingressi si aprono su un giardino interno cinto da un muro.}}
+{{en| Serjilla è la più nota delle città morte bizantine fu edificata nel IV secolo e abbandonata nel VII. Le case private di solito si aprono su un cortile interno circondato da un alto muro, mentre gli edifici pubblici hanno più ingressi che si aprono direttamente sulle strade. Tipico esempio di ricco caseggiato privato, dove le balconate e gli ingressi si aprono su un giardino interno cinto da un muro.}}
 |depicted people =
+|depicted place = {{city|-}}
 |date = 2006
 |medium =
 |dimensions =
@@ -15,8 +17,10 @@
 |inscriptions =
 |notes =
 |accession number =
-|source = {{Gruppo Archeologico Romano cooperation project|COH}}
-|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti|GAR}}{{PermissionOTRS|id=2016042410005958}}
+|source = Serjilla_Case bizantine_01
+{{Gruppo Archeologico Romano cooperation project|COH}}
+|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti/ GAR}}
+{{PermissionOTRS|id=2016042410005958}}
 |other_versions =
 }}
 [[-]]

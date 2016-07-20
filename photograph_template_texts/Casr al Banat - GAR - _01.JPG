@@ -1,8 +1,10 @@
 {{Photograph
 |photographer = Gianfranco Gazzetti
-|title = {{it|'''Casr al Banat'''}}{{en|'''Casr al Banat'''}}
-|description = {{it| = Casr al Banat, rovine bizantine.}}{{en| = Monastery Burj Ḩaydar in 2004}}
+|title = {{it|'''Casr al Banat'''}}{{en|Casr al Banat}}
+|description = {{it| = Casr al Banat, rovine bizantine.}}
+{{en| Casr al Banat, rovine bizantine.}}
 |depicted people =
+|depicted place = {{city|d:Q2121443}}
 |date = 2004
 |medium =
 |dimensions =
@@ -15,8 +17,10 @@
 |inscriptions =
 |notes =
 |accession number =
-|source = {{Gruppo Archeologico Romano cooperation project|COH}}
-|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti|GAR}}{{PermissionOTRS|id=2016042410005958}}
+|source = Casr al Banat_01
+{{Gruppo Archeologico Romano cooperation project|COH}}
+|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti/ GAR}}
+{{PermissionOTRS|id=2016042410005958}}
 |other_versions =
 }}
 [[-]]

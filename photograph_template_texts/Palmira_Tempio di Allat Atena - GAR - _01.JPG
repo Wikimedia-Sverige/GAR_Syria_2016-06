@@ -1,8 +1,10 @@
 {{Photograph
 |photographer = Gianfranco Gazzetti
-|title = {{it|'''Palmira Tempio di Allat Atena'''}}{{en|'''Palmira Tempio di Allat Atena'''}}
-|description = {{it| = Tempio di Allat (la Dea) divinità femminile di origini arabico nabatee, entrata in sincretismo con la dea Atena/Minerva in epoca romana}}{{en| = Roman theater Palmyra in 2004}}
+|title = {{it|'''Palmira Tempio di Allat Atena'''}}{{en|Palmira Tempio di Allat Atena}}
+|description = {{it| = Tempio di Allat (la Dea) divinità femminile di origini arabico nabatee, entrata in sincretismo con la dea Atena/Minerva in epoca romana}}
+{{en| Tempio di Allat (la Dea) divinità femminile di origini arabico nabatee, entrata in sincretismo con la dea Atena/Minerva in epoca romana}}
 |depicted people =
+|depicted place = {{city|-}}
 |date = 2004
 |medium =
 |dimensions =
@@ -15,8 +17,10 @@
 |inscriptions =
 |notes =
 |accession number =
-|source = {{Gruppo Archeologico Romano cooperation project|COH}}
-|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti|GAR}}{{PermissionOTRS|id=2016042410005958}}
+|source = Palmira_Tempio di Allat Atena_01
+{{Gruppo Archeologico Romano cooperation project|COH}}
+|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti/ GAR}}
+{{PermissionOTRS|id=2016042410005958}}
 |other_versions =
 }}
 [[Category:Palmyra]]

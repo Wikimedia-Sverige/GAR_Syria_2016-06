@@ -1,8 +1,10 @@
 {{Photograph
 |photographer = Gianfranco Gazzetti
-|title = {{it|'''Ebla Porta sud-Ovest'''}}{{en|'''Ebla Porta sud-Ovest'''}}
-|description = {{it| = Ebla, Porta sud ovest o Porta di Damasco, la più monumentale e la meglio conservata delle porte della città.}}{{en| = Darkita, rovine bizantine.}}
+|title = {{it|'''Ebla Porta sud-Ovest'''}}{{en|Ebla Porta sud-Ovest}}
+|description = {{it| = Ebla, Porta sud ovest o Porta di Damasco, la più monumentale e la meglio conservata delle porte della città.}}
+{{en| Ebla, Porta sud ovest o Porta di Damasco, la più monumentale e la meglio conservata delle porte della città.}}
 |depicted people =
+|depicted place = {{city|d:Q5743}}
 |date = 2004
 |medium =
 |dimensions =
@@ -15,8 +17,10 @@
 |inscriptions =
 |notes =
 |accession number =
-|source = {{Gruppo Archeologico Romano cooperation project|COH}}
-|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti|GAR}}{{PermissionOTRS|id=2016042410005958}}
+|source = Ebla_Porta sud-Ovest_01
+{{Gruppo Archeologico Romano cooperation project|COH}}
+|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti/ GAR}}
+{{PermissionOTRS|id=2016042410005958}}
 |other_versions =
 }}
 [[Category:Ebla]]

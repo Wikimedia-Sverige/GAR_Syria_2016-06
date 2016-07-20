@@ -1,8 +1,10 @@
 {{Photograph
 |photographer = Gianfranco Gazzetti
-|title = {{it|'''Burjikeh'''}}{{en|'''Burjikeh'''}}
-|description = {{it| = Burjikeh, rovine bizantine.}}{{en| = Monastery Burj Ḩaydar in 2004}}
+|title = {{it|'''Burjikeh'''}}{{en|Burjikeh}}
+|description = {{it| = Burjikeh, rovine bizantine.}}
+{{en| Burjikeh, rovine bizantine.}}
 |depicted people =
+|depicted place = {{city|-}}
 |date = 2004
 |medium =
 |dimensions =
@@ -15,8 +17,10 @@
 |inscriptions =
 |notes =
 |accession number =
-|source = {{Gruppo Archeologico Romano cooperation project|COH}}
-|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti|GAR}}{{PermissionOTRS|id=2016042410005958}}
+|source = Burjikeh_06
+{{Gruppo Archeologico Romano cooperation project|COH}}
+|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti/ GAR}}
+{{PermissionOTRS|id=2016042410005958}}
 |other_versions =
 }}
 [[-]]

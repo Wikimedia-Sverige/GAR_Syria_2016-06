@@ -1,8 +1,10 @@
 {{Photograph
 |photographer = Gianfranco Gazzetti
-|title = {{it|'''DEIR MAR MUSA Santuario di San Mosè l'Abissino - particolare della chiesa'''}}{{en|'''DEIR MAR MUSA Santuario di San Mosè l'Abissino - particolare della chiesa'''}}
-|description = {{it| = Deir Mar Musa - Particolare della chiesa del Santuario di San Mosè l'Abissino.}}{{en| = La Via Colonnata di Apamea.}}
+|title = {{it|'''DEIR MAR MUSA Santuario di San Mosè l'Abissino - particolare della chiesa'''}}{{en|DEIR MAR MUSA Santuario di San Mosè l'Abissino - particolare della chiesa}}
+|description = {{it| = Deir Mar Musa - Particolare della chiesa del Santuario di San Mosè l'Abissino.}}
+{{en| Deir Mar Musa - Particolare della chiesa del Santuario di San Mosè l'Abissino.}}
 |depicted people =
+|depicted place = {{city|-}}
 |date = 2002
 |medium =
 |dimensions =
@@ -15,8 +17,10 @@
 |inscriptions =
 |notes =
 |accession number =
-|source = {{Gruppo Archeologico Romano cooperation project|COH}}
-|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti|GAR}}{{PermissionOTRS|id=2016042410005958}}
+|source = DEIR MAR MUSA Santuario di San Mosè l'Abissino - particolare della chiesa 06
+{{Gruppo Archeologico Romano cooperation project|COH}}
+|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti/ GAR}}
+{{PermissionOTRS|id=2016042410005958}}
 |other_versions =
 }}
 [[Category:Church of Deir Mar Musa]]

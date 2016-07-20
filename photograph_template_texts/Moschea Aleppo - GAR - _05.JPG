@@ -1,8 +1,10 @@
 {{Photograph
 |photographer = Simone Moni
-|title = {{it|'''Moschea Aleppo'''}}{{en|'''Moschea Aleppo'''}}
-|description = {{it| = La moschea degli Omayyadi, detta anche Grande Moschea, è la più grande e antica moschea della città di Aleppo, nel nord della Siria. L'edificio risale al periodo mamelucco del XII secolo. La moschea è costruita intorno a una vasta musalla (corte), dietro ad un'arcata colonnata. La corte è nota per le pietre di color nero e bianco che formano complessi motivi ornamentali geometrici.}}{{en| = Darkita, rovine bizantine.}}
+|title = {{it|'''Moschea Aleppo'''}}{{en|Moschea Aleppo}}
+|description = {{it| = La moschea degli Omayyadi, detta anche Grande Moschea, è la più grande e antica moschea della città di Aleppo, nel nord della Siria. L'edificio risale al periodo mamelucco del XII secolo. La moschea è costruita intorno a una vasta musalla (corte), dietro ad un'arcata colonnata. La corte è nota per le pietre di color nero e bianco che formano complessi motivi ornamentali geometrici.}}
+{{en| La moschea degli Omayyadi, detta anche Grande Moschea, è la più grande e antica moschea della città di Aleppo, nel nord della Siria. L'edificio risale al periodo mamelucco del XII secolo. La moschea è costruita intorno a una vasta musalla (corte), dietro ad un'arcata colonnata. La corte è nota per le pietre di color nero e bianco che formano complessi motivi ornamentali geometrici.}}
 |depicted people =
+|depicted place = {{city|d:Q1481968}}
 |date = 2010
 |medium =
 |dimensions =
@@ -15,8 +17,10 @@
 |inscriptions =
 |notes =
 |accession number =
-|source = {{Gruppo Archeologico Romano cooperation project|COH}}
-|permission = {{CC-BY-SA-4.0|Simone Moni|GAR}}{{PermissionOTRS|id=2016042410005958}}
+|source = Moschea Aleppo_05
+{{Gruppo Archeologico Romano cooperation project|COH}}
+|permission = {{CC-BY-SA-4.0|Simone Moni/ GAR}}
+{{PermissionOTRS|id=2016042410005958}}
 |other_versions =
 }}
 [[Category:Great Mosque of Aleppo]]

@@ -1,8 +1,10 @@
 {{Photograph
 |photographer = Gianfranco Gazzetti
-|title = {{it|'''DEIR MAR MUSA Santuario di San Mosè l'Abissino - Incontro con Padre Dall'Oglio'''}}{{en|'''DEIR MAR MUSA Santuario di San Mosè l'Abissino - Incontro con Padre Dall'Oglio'''}}
-|description = {{it| = Deir Mar Musa - Incontro con Padre Dall'Oglio nel Santuario di San Mosè l'Abissino.}}{{en| = La Via Colonnata di Apamea.}}
+|title = {{it|'''DEIR MAR MUSA Santuario di San Mosè l'Abissino - Incontro con Padre Dall'Oglio'''}}{{en|DEIR MAR MUSA Santuario di San Mosè l'Abissino - Incontro con Padre Dall'Oglio}}
+|description = {{it| = Deir Mar Musa - Incontro con Padre Dall'Oglio nel Santuario di San Mosè l'Abissino.}}
+{{en| Deir Mar Musa - Incontro con Padre Dall'Oglio nel Santuario di San Mosè l'Abissino.}}
 |depicted people =
+|depicted place = {{city|-}}
 |date = 2002
 |medium =
 |dimensions =
@@ -15,8 +17,10 @@
 |inscriptions =
 |notes =
 |accession number =
-|source = {{Gruppo Archeologico Romano cooperation project|COH}}
-|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti|GAR}}{{PermissionOTRS|id=2016042410005958}}
+|source = DEIR MAR MUSA Santuario di San Mosè l'Abissino - Incontro con Padre Dall'Oglio 10
+{{Gruppo Archeologico Romano cooperation project|COH}}
+|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti/ GAR}}
+{{PermissionOTRS|id=2016042410005958}}
 |other_versions =
 }}
 [[Category:Church of Deir Mar Musa]]

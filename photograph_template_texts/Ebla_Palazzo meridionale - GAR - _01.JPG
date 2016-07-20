@@ -1,8 +1,10 @@
 {{Photograph
 |photographer = Gianfranco Gazzetti
-|title = {{it|'''Ebla Palazzo meridionale'''}}{{en|'''Ebla Palazzo meridionale'''}}
-|description = {{it| = Ebla, Palazzo meridionale paleosiriano (2000-1600 BC) forse residenza di un alto funzionario della città.}}{{en| = Darkita, rovine bizantine.}}
+|title = {{it|'''Ebla Palazzo meridionale'''}}{{en|Ebla Palazzo meridionale}}
+|description = {{it| = Ebla, Palazzo meridionale paleosiriano (2000-1600 BC) forse residenza di un alto funzionario della città.}}
+{{en| Ebla, Palazzo meridionale paleosiriano (2000-1600 BC) forse residenza di un alto funzionario della città.}}
 |depicted people =
+|depicted place = {{city|d:Q5743}}
 |date = 2004
 |medium =
 |dimensions =
@@ -15,8 +17,10 @@
 |inscriptions =
 |notes =
 |accession number =
-|source = {{Gruppo Archeologico Romano cooperation project|COH}}
-|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti|GAR}}{{PermissionOTRS|id=2016042410005958}}
+|source = Ebla_Palazzo meridionale_01
+{{Gruppo Archeologico Romano cooperation project|COH}}
+|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti/ GAR}}
+{{PermissionOTRS|id=2016042410005958}}
 |other_versions =
 }}
 [[Category:Ebla]]

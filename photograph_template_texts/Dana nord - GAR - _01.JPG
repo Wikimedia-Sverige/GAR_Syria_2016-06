@@ -1,8 +1,10 @@
 {{Photograph
 |photographer = Gianfranco Gazzetti
-|title = {{it|'''Dana nord'''}}{{en|'''Dana nord'''}}
-|description = {{it| = Dana nord, abitazione privata.}}{{en| = Monastery Burj Ḩaydar in 2004}}
+|title = {{it|'''Dana nord'''}}{{en|Dana nord}}
+|description = {{it| = Dana nord, abitazione privata.}}
+{{en| Dana nord, abitazione privata.}}
 |depicted people =
+|depicted place = {{city|d:Q4702330}}
 |date = 2004
 |medium =
 |dimensions =
@@ -15,8 +17,10 @@
 |inscriptions =
 |notes =
 |accession number =
-|source = {{Gruppo Archeologico Romano cooperation project|COH}}
-|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti|GAR}}{{PermissionOTRS|id=2016042410005958}}
+|source = Dana nord_01
+{{Gruppo Archeologico Romano cooperation project|COH}}
+|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti/ GAR}}
+{{PermissionOTRS|id=2016042410005958}}
 |other_versions =
 }}
 [[Category:Populated places in Harem District]]

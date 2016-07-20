@@ -1,8 +1,10 @@
 {{Photograph
 |photographer = Simone Moni
-|title = {{it|'''Kharab Shems '''}}{{en|'''Kharab Shems '''}}
-|description = {{it| = La basilica bizantina di Kharab Shems è una delle strutture più antiche meglio conservate ed è datata al IV secolo d.C.. Essa si trova 21 km a nord-ovest di Aleppo .}}{{en| = Darkita, rovine bizantine.}}
+|title = {{it|'''Kharab Shems '''}}{{en|Kharab Shems }}
+|description = {{it| = La basilica bizantina di Kharab Shems è una delle strutture più antiche meglio conservate ed è datata al IV secolo d.C.. Essa si trova 21 km a nord-ovest di Aleppo .}}
+{{en| La basilica bizantina di Kharab Shems è una delle strutture più antiche meglio conservate ed è datata al IV secolo d.C.. Essa si trova 21 km a nord-ovest di Aleppo .}}
 |depicted people =
+|depicted place = {{city|d:Q8368646}}
 |date = 2010
 |medium =
 |dimensions =
@@ -15,8 +17,10 @@
 |inscriptions =
 |notes =
 |accession number =
-|source = {{Gruppo Archeologico Romano cooperation project|COH}}
-|permission = {{CC-BY-SA-4.0|Simone Moni|GAR}}{{PermissionOTRS|id=2016042410005958}}
+|source = Kharab Shems_008
+{{Gruppo Archeologico Romano cooperation project|COH}}
+|permission = {{CC-BY-SA-4.0|Simone Moni/ GAR}}
+{{PermissionOTRS|id=2016042410005958}}
 |other_versions =
 }}
 [[Category:Churches in Aleppo]]

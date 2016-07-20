@@ -1,8 +1,10 @@
 {{Photograph
 |photographer = Gianfranco Gazzetti
-|title = {{it|'''YABROUD Necropoli'''}}{{en|'''YABROUD Necropoli'''}}
-|description = {{it| = Necropoli di Yabroud.}}{{en| = Necropoli di Yabroud.}}
+|title = {{it|'''YABROUD Necropoli'''}}{{en|YABROUD Necropoli}}
+|description = {{it| = Necropoli di Yabroud.}}
+{{en| Necropoli di Yabroud.}}
 |depicted people =
+|depicted place = {{city|-}}
 |date = 2002
 |medium =
 |dimensions =
@@ -15,8 +17,10 @@
 |inscriptions =
 |notes =
 |accession number =
-|source = {{Gruppo Archeologico Romano cooperation project|COH}}
-|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti|GAR}}{{PermissionOTRS|id=2016042410005958}}
+|source = YABROUD Necropoli 08
+{{Gruppo Archeologico Romano cooperation project|COH}}
+|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti/ GAR}}
+{{PermissionOTRS|id=2016042410005958}}
 |other_versions =
 }}
 [[-]]

@@ -1,8 +1,10 @@
 {{Photograph
 |photographer = Simone Moni
-|title = {{it|'''Jerade '''}}{{en|'''Jerade '''}}
-|description = {{it| = Le abitazioni si articolavano intorno ad una corte aperto con portici colonnati.}}{{en| = Darkita, rovine bizantine.}}
+|title = {{it|'''Jerade '''}}{{en|Jerade }}
+|description = {{it| = Le abitazioni si articolavano intorno ad una corte aperto con portici colonnati.}}
+{{en| Le abitazioni si articolavano intorno ad una corte aperto con portici colonnati.}}
 |depicted people =
+|depicted place = {{city|-}}
 |date = 2010
 |medium =
 |dimensions =
@@ -15,8 +17,10 @@
 |inscriptions =
 |notes =
 |accession number =
-|source = {{Gruppo Archeologico Romano cooperation project|COH}}
-|permission = {{CC-BY-SA-4.0|Simone Moni|GAR}}{{PermissionOTRS|id=2016042410005958}}
+|source = Jerade_010
+{{Gruppo Archeologico Romano cooperation project|COH}}
+|permission = {{CC-BY-SA-4.0|Simone Moni/ GAR}}
+{{PermissionOTRS|id=2016042410005958}}
 |other_versions =
 }}
 [[-]]

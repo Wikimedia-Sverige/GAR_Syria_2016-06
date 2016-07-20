@@ -1,8 +1,10 @@
 {{Photograph
 |photographer = Gianfranco Gazzetti
-|title = {{it|'''Mari Palazzo di Zimri-Lim'''}}{{en|'''Mari Palazzo di Zimri-Lim'''}}
-|description = {{it| = scavi Palazzo Zimri-Lin}}{{en| = Archaeoogical Museum, a room Aleppo in 2004}}
+|title = {{it|'''Mari Palazzo di Zimri-Lim'''}}{{en|Mari Palazzo di Zimri-Lim}}
+|description = {{it| = scavi Palazzo Zimri-Lin}}
+{{en| scavi Palazzo Zimri-Lin}}
 |depicted people =
+|depicted place = {{city|d:Q1887409}}
 |date = 2004
 |medium =
 |dimensions =
@@ -15,8 +17,10 @@
 |inscriptions =
 |notes =
 |accession number =
-|source = {{Gruppo Archeologico Romano cooperation project|COH}}
-|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti|GAR}}{{PermissionOTRS|id=2016042410005958}}
+|source = Mari_Palazzo di Zimri-Lim_06
+{{Gruppo Archeologico Romano cooperation project|COH}}
+|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti/ GAR}}
+{{PermissionOTRS|id=2016042410005958}}
 |other_versions =
 }}
 [[Category:Palace of Zimri-Lim]]

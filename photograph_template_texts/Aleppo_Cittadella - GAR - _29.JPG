@@ -1,8 +1,10 @@
 {{Photograph
 |photographer = Gianfranco Gazzetti
-|title = {{it|'''Aleppo Cittadella'''}}{{en|'''Aleppo Cittadella'''}}
-|description = {{it| = Cittadella fortificata di Aleppo, minareto della Moschea della cittadella.}}{{en| = Colonnato adiacente alle grandi terme}}
+|title = {{it|'''Aleppo Cittadella'''}}{{en|Aleppo Cittadella}}
+|description = {{it| = Cittadella fortificata di Aleppo, minareto della Moschea della cittadella.}}
+{{en| Cittadella fortificata di Aleppo, minareto della Moschea della cittadella.}}
 |depicted people =
+|depicted place = {{city|d:Q206231}}
 |date = 2004
 |medium =
 |dimensions =
@@ -15,8 +17,10 @@
 |inscriptions =
 |notes =
 |accession number =
-|source = {{Gruppo Archeologico Romano cooperation project|COH}}
-|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti|GAR}}{{PermissionOTRS|id=2016042410005958}}
+|source = Aleppo_Cittadella_29
+{{Gruppo Archeologico Romano cooperation project|COH}}
+|permission = {{CC-BY-SA-4.0|Gianfranco Gazzetti/ GAR}}
+{{PermissionOTRS|id=2016042410005958}}
 |other_versions =
 }}
 [[Category:Aleppo citadel]]
