@@ -8,9 +8,10 @@ get_ipython().system('pip install html5lib # For Pandas read_html used to parse 
 get_ipython().system('pip install pandas # A great library for data wrangling (and analysis) ')
 
 
-# In[13]:
+# In[1]:
 
 import pandas as pd 
+import numpy as np
 import regex
 import os 
 
@@ -26,7 +27,7 @@ import os
 # 
 # The doc below is downloaded locally 2016-07-19 16:55
 
-# In[75]:
+# In[2]:
 
 def strip(text):
     try:
@@ -41,7 +42,7 @@ en_converters = {"Title":strip, "Year":strip, "Place": strip, "Subject":strip, "
 metadata_en = pd.read_excel("./data/COH_GAR_metadata.xlsx",sheetname="English", converters=en_converters)
 
 
-# In[76]:
+# In[3]:
 
 metadata_it.head()
 
@@ -51,10 +52,15 @@ metadata_it.head()
 metadata_en.head()
 
 
-# In[78]:
+# In[4]:
 
 merged = pd.concat([metadata_it,metadata_en], axis=1) 
 merged.head()
+
+
+# In[5]:
+
+pd.isnull(merged.Description)
 
 
 # # Keyword mappings
@@ -71,7 +77,7 @@ merged.head()
 # 
 # https://commons.wikimedia.org/wiki/Commons:Gruppo_Archeologico_Romano/Batch_upload/places
 
-# In[79]:
+# In[6]:
 
 place_mappings_url = "https://commons.wikimedia.org/wiki/Commons:Gruppo_Archeologico_Romano/Batch_upload/places"
 place_mappings = pd.read_html(place_mappings_url, attrs = {"class":"wikitable"}, header=0)
@@ -80,35 +86,73 @@ place_mappings_general = place_mappings[0]
 # Strip away potential surrounding whitespace
 place_mappings_general["Luogo"] = place_mappings_general.Luogo.str.strip() 
 place_mappings_general["wikidata"] = place_mappings_general.wikidata.str.strip()
+#place_mappings_general["wikidata"] = place_mappings_general.wikidata.str.replace("\-", "")
 place_mappings_general["category"] = place_mappings_general.category.str.strip() 
+#place_mappings_general["category"] = place_mappings_general.category.str.replace("\-", "") 
 
 place_mappings_general = place_mappings_general.set_index("Luogo")
 
 place_mappings_specific = place_mappings[1]
 # Strip away potential surrounding whitespace
-place_mappings_specific["Luogo"] = place_mappings_specific.Luogo.str.strip() 
+place_mappings_specific["Luogo"] = place_mappings_specific.Luogo.str.strip()
 place_mappings_specific["Nome_monumento"] = place_mappings_specific.Nome_monumento.str.strip()
+
 place_mappings_specific["category"] = place_mappings_specific.category.str.strip()
+#place_mappings_specific["category"] = place_mappings_specific.category.str.replace("\-", "")
 place_mappings_specific["wikidata"] = place_mappings_specific.wikidata.str.strip()
+#place_mappings_specific["wikidata"] = place_mappings_specific.wikidata.str.replace("\-", "")
 
 place_mappings_specific["Specific_place"] = place_mappings_specific.Luogo + " " + place_mappings_specific.Nome_monumento
 place_mappings_specific = place_mappings_specific[["Specific_place" ,"Luogo","Nome_monumento","category","wikidata"]]
 place_mappings_specific = place_mappings_specific.set_index("Specific_place")
 
 
-# In[80]:
+# Check that all '-' are replaced with empty strings
 
-place_mappings_general.category.str.strip() 
+# In[7]:
 
-
-# In[81]:
-
-print(place_mappings_general.head(10))
+print(place_mappings_specific["wikidata"].head(10))
 
 
-# In[82]:
+# In[8]:
 
-print(place_mappings_specific.head(10))
+place_mappings_specific["wikidata"].head(10)
+
+
+# In[9]:
+
+place_mappings_specific.loc["Serjilla Andron"]["wikidata"]
+
+
+# In[10]:
+
+pd.isnull(place_mappings_specific.loc["Serjilla Andron"]["wikidata"])
+
+
+# In[11]:
+
+place_mappings_specific.loc["Serjilla Andron"]["wikidata"] == "-"
+
+
+# In[14]:
+
+pd.isnull(place_mappings_specific.wikidata)
+
+
+# In[12]:
+
+place_mappings_general.head(3)
+
+
+# In[13]:
+
+place_mappings_specific.head(3)
+
+
+# In[131]:
+
+spec = pd.Series(list(place_mappings_specific.index))
+spec[spec.str.contains("Jable")]
 
 
 # # Population of the Photograph template
@@ -138,7 +182,7 @@ print("Subdirs: {}\nlen(original_filenames): {}\nFiles in metadata file: 426".fo
 # ## Create wikitext for image pages
 # Available as .py script on [my github](https://github.com/mattiasostmar/GAR_Syria_2016-06/blob/master/create_metatdata_textfiles.py)
 
-# In[88]:
+# In[34]:
 
 # remove possible diuplicate files with other extension names
 get_ipython().system('rm -rf ./photograph_template_texts/*')
@@ -165,8 +209,8 @@ for row_no, row in merged.iterrows():
     template_parts.append(photographer)
     
     title_it =  "{{it|'''" + regex.sub("_"," ",row["Nome_foto"][:-3]) + "'''}}"
-    title_en = "{{en|" + regex.sub("_"," ", row["Title"][:-3]) + "}}"
-    title = "|title = " + title_it + "\n" + title_en
+    
+    title = "|title = " + title_it
     template_parts.append(title)
     
     if pd.notnull(row["Description"]):
@@ -184,11 +228,13 @@ for row_no, row in merged.iterrows():
     
     depicted_people = "|depicted people ="
     template_parts.append(depicted_people)
+    # Workoaround that we don't have actual specific places in mapping table
+    spec_place = row["Luogo"] + " " + row["Nome_monumento"]
     
-    if pd.notnull(place_mappings_specific.loc[row["Luogo"] + " " + row["Nome_monumento"]]["wikidata"])     or place_mappings_specific.loc[row["Luogo"] + " " + row["Nome_monumento"]]["wikidata"] == "-":
-        depicted_place = "|depicted place = {{city|" +         place_mappings_specific.loc[row["Luogo"] + " " + row["Nome_monumento"]]["wikidata"] + "}}"
+    if not place_mappings_specific.loc[spec_place]["wikidata"] == "-" and pd.notnull(place_mappings_specific.loc[spec_place]["wikidata"]): 
+        depicted_place = "|depicted place = {{city|" +         place_mappings_specific.loc[spec_place]["wikidata"] + "}}"
         #print(depicted_place)
-    elif pd.notnull(place_mappings_general.loc[row["Luogo"]]["wikidata"])     or place_mappings_general.loc[row["Luogo"]]["wikidata"] == "-":
+    elif not place_mappings_general.loc[row["Luogo"]]["wikidata"] == "-" or pd.isnull(place_mappings_general.loc[row["Luogo"]]["wikidata"]):
         depicted_place = "|depicted place = {{city|" +         place_mappings_general.loc[row["Luogo"]]["wikidata"] + "}}"
         #print(depicted_place)
     else:
@@ -239,7 +285,7 @@ for row_no, row in merged.iterrows():
     template_parts.append(source)
     
     if pd.notnull(row["Author"]):
-        permission = "|permission = {{CC-BY-SA-4.0|" + row["Author"][4:] + "/ GAR}}\n{{PermissionOTRS|id=2016042410005958}}"
+        permission = "|permission = {{CC-BY-SA-4.0|" + row["Author"][4:] + " / GAR}}\n{{PermissionOTRS|id=2016042410005958}}"
     else:
         permission = "|permission = {{CC-BY-SA-4.0|Gruppo Archeologico Romano}}\n{{PermissionOTRS|id=2016042410005958}}"
     template_parts.append(permission)
@@ -256,12 +302,14 @@ for row_no, row in merged.iterrows():
     general_place_category = None
     maintanence_category = None
     batchupload_category = "[[Category:Images_from_GAR_2016-06]]"
+    translation_needed_category = "[[Category:Images_from_GAR_Syria_needing_english_translation]]"
     
-    if pd.notnull(place_mappings_specific.loc[row["Luogo"] + " " + row["Nome_monumento"]]["category"]):
-        specific_place_category = "[[" + place_mappings_specific.loc[row["Luogo"] + " " + row["Nome_monumento"]]["category"] + "]]"
-        #print(specific_place_category)
-    
-    elif pd.notnull(place_mappings_general.loc[row["Luogo"]]["category"]):
+    if place_mappings_specific.loc[spec_place]["category"] != "-" and pd.notnull(place_mappings_specific.loc[spec_place]["category"]): 
+        
+        specific_place_category = "[[" + place_mappings_specific.loc[spec_place]["category"] + "]]"
+        print("{} {}".format(row["Title"], specific_place_category)) 
+     
+    elif place_mappings_general.loc[row["Luogo"]]["category"] != "-" and pd.notnull(place_mappings_general.loc[row["Luogo"]]["category"]):
         general_place_category = "[[" + place_mappings_general.loc[row["Luogo"]]["category"] + "]]"
         #print(general_place_category)
     
@@ -271,22 +319,23 @@ for row_no, row in merged.iterrows():
         uncategorized_images += 1
     
     # manage content categories
-    if specific_place_category and not specific_place_category == "-":
+    if specific_place_category :
         categories_list.append(specific_place_category)
         OK_images += 1
-    elif general_place_category and not specific_place_category and not general_place_category == "-":
+    elif general_place_category and not specific_place_category:
         categories_list.append(general_place_category)
         OK_images += 1 
     else:
         categories_list.append(maintanence_category)
 
     categories_list.append(batchupload_category)
+    categories_list.append(translation_needed_category)
         
     #print(categories_list)
     
     # Filename: <Nome_foto[:-3]>_GAR_<Nome_foto[-3:]>.<ext>
     outpath = "./photograph_template_texts/"
-    fname = row["Nome_foto"][:-3] + " - " + "GAR" + " - " + row["Nome_foto"][-3:] + ".JPG" # Hack, extension ought to be dynamic
+    fname = row["Nome_foto"][:-3] + " - " + "GAR" + " - " + row["Nome_foto"][-3:] # + ".JPG" Hack, extension ought to be dynamic
     
     
     if not os.path.exists(outpath):
@@ -298,6 +347,12 @@ for row_no, row in merged.iterrows():
         outfile.write("\n".join(template_parts) + "\n" + "\n".join(categories_list))
     
 print("Stats: \nTotal images {}\nOK images {}\nUncategorized images {}\nImages missing author {}".format(total_images, OK_images - faulty_images, uncategorized_images, faulty_images ))
+
+
+# In[142]:
+
+for row_no, row in merged.iterrows():
+    print(pd.notnull(place_mappings_specific.loc[row["Luogo"] + " " + row["Nome_monumento"]]["category"]))
 
 
 # In[21]:
