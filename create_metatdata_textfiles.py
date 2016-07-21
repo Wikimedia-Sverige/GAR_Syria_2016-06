@@ -92,12 +92,10 @@ pd.isnull(merged.Description)
 
 place_mappings_url = "https://commons.wikimedia.org/wiki/Commons:Gruppo_Archeologico_Romano/Batch_upload/places"
 place_mappings = pd.read_html(place_mappings_url, attrs = {"class":"wikitable"}, header=0)
-# print(len(place_mappings))
 place_mappings_general = place_mappings[0]
 # Strip away potential surrounding whitespace
 place_mappings_general["Luogo"] = place_mappings_general.Luogo.str.strip() 
 place_mappings_general["wikidata"] = place_mappings_general.wikidata.str.strip()
-#place_mappings_general["wikidata"] = place_mappings_general.wikidata.str.replace("\-", "")
 place_mappings_general["category"] = place_mappings_general.category.str.strip() 
 place_mappings_general["category"] = place_mappings_general.category.str.replace("_", " ") 
 
@@ -111,7 +109,7 @@ place_mappings_specific["Nome_monumento"] = place_mappings_specific.Nome_monumen
 place_mappings_specific["category"] = place_mappings_specific.category.str.strip()
 place_mappings_specific["category"] = place_mappings_specific.category.str.replace("_", " ")
 place_mappings_specific["wikidata"] = place_mappings_specific.wikidata.str.strip()
-#place_mappings_specific["wikidata"] = place_mappings_specific.wikidata.str.replace("\-", "")
+
 
 place_mappings_specific["Specific_place"] = place_mappings_specific.Luogo + " " + place_mappings_specific.Nome_monumento
 place_mappings_specific = place_mappings_specific[["Specific_place" ,"Luogo","Nome_monumento","category","wikidata"]]
@@ -187,7 +185,7 @@ print("Subdirs: {}\nlen(original_filenames): {}\nFiles in metadata file: 426".fo
 # ## Create wikitext for image pages
 # Available as .py script on [my github](https://github.com/mattiasostmar/GAR_Syria_2016-06/blob/master/create_metatdata_textfiles.py)
 
-# In[103]:
+# In[105]:
 
 # remove possible diuplicate files with other extension names
 get_ipython().system('rm -rf ./photograph_template_texts/*')
@@ -200,7 +198,7 @@ faulty_images = 0
 for row_no, row in merged.iterrows():
     # Filename: <Nome_foto[:-3]>_GAR_<Nome_foto[-3:]>.<ext>
     outpath = "./photograph_template_texts/"
-    fname = row["Nome_foto"][:-3] + " - " + "GAR" + " - " + row["Nome_foto"][-3:] # + ".JPG" Hack, extension ought to be dynamic
+    fname = row["Nome_foto"][:-3] + " - " + "GAR" + " - " + row["Nome_foto"][-2:] # + ".JPG" Hack, extension ought to be dynamic
     print("{}".format(fname))
      
     total_images += 1
@@ -243,10 +241,10 @@ for row_no, row in merged.iterrows():
     spec_place = row["Luogo"] + " " + row["Nome_monumento"]
     
     if not place_mappings_specific.loc[spec_place]["wikidata"] == "-" and pd.notnull(place_mappings_specific.loc[spec_place]["wikidata"]): 
-        depicted_place = "|depicted place = {{city|" +         place_mappings_specific.loc[spec_place]["wikidata"] + "}}"
+        depicted_place = "|depicted place = {{city|" +         place_mappings_specific.loc[spec_place]["wikidata"][2:] + "}}" #[2:] since "d:" begins wikidata string
         #print(depicted_place)
     elif not place_mappings_general.loc[row["Luogo"]]["wikidata"] == "-" or pd.isnull(place_mappings_general.loc[row["Luogo"]]["wikidata"]):
-        depicted_place = "|depicted place = {{city|" +         place_mappings_general.loc[row["Luogo"]]["wikidata"] + "}}"
+        depicted_place = "|depicted place = {{city|" +         place_mappings_general.loc[row["Luogo"]]["wikidata"][2:] + "}}" #[2:] since "d:" begins wikidata string
         #print(depicted_place)
     else:
         depicted_place = "|depicted place = " + row["Nome_monumento"] + ", " + row["Luogo"]
