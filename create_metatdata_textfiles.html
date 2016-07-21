@@ -11793,7 +11793,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">strip</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
@@ -11802,11 +11802,13 @@ div#notebook {
     <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">text</span>
     
-<span class="n">it_converters</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Nome_foto&quot;</span><span class="p">:</span><span class="n">strip</span><span class="p">,</span> <span class="s2">&quot;Anno&quot;</span><span class="p">:</span><span class="n">strip</span><span class="p">,</span> <span class="s2">&quot;Luogo&quot;</span><span class="p">:</span><span class="n">strip</span><span class="p">,</span> <span class="s2">&quot;Nome_monumento&quot;</span><span class="p">:</span><span class="n">strip</span><span class="p">,</span> <span class="s2">&quot;Descrizione&quot;</span><span class="p">:</span><span class="n">strip</span><span class="p">,</span> <span class="s2">&quot;Nome_autore&quot;</span><span class="p">:</span><span class="n">strip</span><span class="p">}</span>
+<span class="n">it_converters</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Nome foto&quot;</span><span class="p">:</span><span class="n">strip</span><span class="p">,</span> <span class="s2">&quot;Anno&quot;</span><span class="p">:</span><span class="n">strip</span><span class="p">,</span> <span class="s2">&quot;Luogo&quot;</span><span class="p">:</span><span class="n">strip</span><span class="p">,</span> <span class="s2">&quot;Nome monumento&quot;</span><span class="p">:</span><span class="n">strip</span><span class="p">,</span> <span class="s2">&quot;Descrizione&quot;</span><span class="p">:</span><span class="n">strip</span><span class="p">,</span> <span class="s2">&quot;Nome autore&quot;</span><span class="p">:</span><span class="n">strip</span><span class="p">}</span>
 <span class="n">metadata_it</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;./data/COH_GAR_metadata.xlsx&quot;</span><span class="p">,</span><span class="n">sheetname</span><span class="o">=</span><span class="s2">&quot;Italian&quot;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">converters</span><span class="o">=</span><span class="n">it_converters</span><span class="p">)</span> <span class="c1"># empty first row</span>
+<span class="n">metadata_it</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Nome_foto&quot;</span><span class="p">,</span><span class="s2">&quot;Anno&quot;</span><span class="p">,</span><span class="s2">&quot;Luogo&quot;</span><span class="p">,</span><span class="s2">&quot;Nome_monumento&quot;</span><span class="p">,</span><span class="s2">&quot;Descrizione&quot;</span><span class="p">,</span><span class="s2">&quot;Nome_autore&quot;</span><span class="p">]</span>
 
 <span class="n">en_converters</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Title&quot;</span><span class="p">:</span><span class="n">strip</span><span class="p">,</span> <span class="s2">&quot;Year&quot;</span><span class="p">:</span><span class="n">strip</span><span class="p">,</span> <span class="s2">&quot;Place&quot;</span><span class="p">:</span> <span class="n">strip</span><span class="p">,</span> <span class="s2">&quot;Subject&quot;</span><span class="p">:</span><span class="n">strip</span><span class="p">,</span> <span class="s2">&quot;Description&quot;</span><span class="p">:</span><span class="n">strip</span><span class="p">,</span> <span class="s2">&quot;Author&quot;</span><span class="p">:</span><span class="n">strip</span><span class="p">,</span> <span class="s2">&quot;Commons_category&quot;</span><span class="p">:</span><span class="n">strip</span><span class="p">}</span>
 <span class="n">metadata_en</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;./data/COH_GAR_metadata.xlsx&quot;</span><span class="p">,</span><span class="n">sheetname</span><span class="o">=</span><span class="s2">&quot;English&quot;</span><span class="p">,</span> <span class="n">converters</span><span class="o">=</span><span class="n">en_converters</span><span class="p">)</span>
+<span class="n">metadata_en</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Title&quot;</span><span class="p">,</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span><span class="s2">&quot;Place&quot;</span><span class="p">,</span><span class="s2">&quot;Subject&quot;</span><span class="p">,</span><span class="s2">&quot;Description&quot;</span><span class="p">,</span><span class="s2">&quot;Author&quot;</span><span class="p">,</span><span class="s2">&quot;Commons_category&quot;</span><span class="p">,</span><span class="s2">&quot;Comment&quot;</span><span class="p">]</span>
 </pre></div>
 
 </div>
@@ -11816,7 +11818,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">metadata_it</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -11830,7 +11832,7 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[3]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[49]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -11905,7 +11907,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[77]:</div>
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">metadata_en</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -11919,7 +11921,7 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[77]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[46]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -11934,6 +11936,7 @@ div#notebook {
       <th>Description</th>
       <th>Author</th>
       <th>Commons_category</th>
+      <th>Comment</th>
     </tr>
   </thead>
   <tbody>
@@ -11943,9 +11946,10 @@ div#notebook {
       <td>2006</td>
       <td>Aleppo</td>
       <td>Citadel</td>
-      <td>Porta di ingresso</td>
+      <td>NaN</td>
       <td>GAR_Ilario Di Nardo</td>
       <td>Exterior views of Aleppo citadel</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>1</th>
@@ -11956,6 +11960,7 @@ div#notebook {
       <td>NaN</td>
       <td>GAR_Ilario Di Nardo</td>
       <td>Amrit</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>2</th>
@@ -11963,9 +11968,10 @@ div#notebook {
       <td>2006</td>
       <td>Bosra</td>
       <td>Roman theater</td>
-      <td>Bosra è un'antica città nel sud della Siria, p...</td>
+      <td>NaN</td>
       <td>GAR_Ilario Di Nardo</td>
       <td>Ancient Roman theatre (Bosra)</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>3</th>
@@ -11973,9 +11979,10 @@ div#notebook {
       <td>2006</td>
       <td>Damascus</td>
       <td>Ruins of Jupiter Temple at the entrance of Suq...</td>
-      <td>Rovine del tempio di Giove all'ingresso del Su...</td>
+      <td>NaN</td>
       <td>GAR_Ilario Di Nardo</td>
       <td>Temple of Jupiter (Damascus)</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>4</th>
@@ -11986,6 +11993,7 @@ div#notebook {
       <td>NaN</td>
       <td>GAR_Ilario Di Nardo</td>
       <td>Dura Europos</td>
+      <td>NaN</td>
     </tr>
   </tbody>
 </table>
@@ -12000,7 +12008,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">metadata_it</span><span class="p">,</span><span class="n">metadata_en</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
@@ -12015,7 +12023,7 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[4]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[50]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -12036,6 +12044,7 @@ div#notebook {
       <th>Description</th>
       <th>Author</th>
       <th>Commons_category</th>
+      <th>Comment</th>
     </tr>
   </thead>
   <tbody>
@@ -12051,9 +12060,10 @@ div#notebook {
       <td>2006</td>
       <td>Aleppo</td>
       <td>Citadel</td>
-      <td>Porta di ingresso</td>
+      <td>NaN</td>
       <td>GAR_Ilario Di Nardo</td>
       <td>Exterior views of Aleppo citadel</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>1</th>
@@ -12070,6 +12080,7 @@ div#notebook {
       <td>NaN</td>
       <td>GAR_Ilario Di Nardo</td>
       <td>Amrit</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>2</th>
@@ -12083,9 +12094,10 @@ div#notebook {
       <td>2006</td>
       <td>Bosra</td>
       <td>Roman theater</td>
-      <td>Bosra è un'antica città nel sud della Siria, p...</td>
+      <td>NaN</td>
       <td>GAR_Ilario Di Nardo</td>
       <td>Ancient Roman theatre (Bosra)</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>3</th>
@@ -12099,9 +12111,10 @@ div#notebook {
       <td>2006</td>
       <td>Damascus</td>
       <td>Ruins of Jupiter Temple at the entrance of Suq...</td>
-      <td>Rovine del tempio di Giove all'ingresso del Su...</td>
+      <td>NaN</td>
       <td>GAR_Ilario Di Nardo</td>
       <td>Temple of Jupiter (Damascus)</td>
+      <td>NaN</td>
     </tr>
     <tr>
       <th>4</th>
@@ -12118,6 +12131,7 @@ div#notebook {
       <td>NaN</td>
       <td>GAR_Ilario Di Nardo</td>
       <td>Dura Europos</td>
+      <td>NaN</td>
     </tr>
   </tbody>
 </table>
@@ -12130,9 +12144,81 @@ div#notebook {
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Check that every row in the English metadata sheet contains (at least) one Commons category</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">merged</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">merged</span><span class="o">.</span><span class="n">Commons_category</span><span class="p">)]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[56]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Nome_foto</th>
+      <th>Anno</th>
+      <th>Luogo</th>
+      <th>Nome_monumento</th>
+      <th>Descrizione</th>
+      <th>Nome_autore</th>
+      <th>Title</th>
+      <th>Year</th>
+      <th>Place</th>
+      <th>Subject</th>
+      <th>Description</th>
+      <th>Author</th>
+      <th>Commons_category</th>
+      <th>Comment</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note that the description field is not translated, all rows should be True below!</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[57]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">merged</span><span class="o">.</span><span class="n">Description</span><span class="p">)</span>
@@ -12146,71 +12232,71 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[5]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[57]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0      False
-1       True
-2      False
-3      False
-4       True
-5      False
-6       True
-7       True
-8       True
-9      False
-10      True
-11     False
-12      True
-13      True
-14     False
-15     False
-16     False
-17      True
-18      True
-19     False
-20     False
-21     False
-22     False
-23     False
-24     False
-25     False
-26     False
-27     False
-28     False
-29     False
-       ...  
-396    False
-397    False
-398    False
-399    False
-400    False
-401    False
-402    False
-403    False
-404    False
-405    False
-406    False
-407    False
-408    False
-409    False
-410    False
-411    False
-412    False
-413    False
-414    False
-415    False
-416    False
-417    False
-418    False
-419    False
-420    False
-421    False
-422    False
-423    False
-424    False
-425    False
+<pre>0      True
+1      True
+2      True
+3      True
+4      True
+5      True
+6      True
+7      True
+8      True
+9      True
+10     True
+11     True
+12     True
+13     True
+14     True
+15     True
+16     True
+17     True
+18     True
+19     True
+20     True
+21     True
+22     True
+23     True
+24     True
+25     True
+26     True
+27     True
+28     True
+29     True
+       ... 
+396    True
+397    True
+398    True
+399    True
+400    True
+401    True
+402    True
+403    True
+404    True
+405    True
+406    True
+407    True
+408    True
+409    True
+410    True
+411    True
+412    True
+413    True
+414    True
+415    True
+416    True
+417    True
+418    True
+419    True
+420    True
+421    True
+422    True
+423    True
+424    True
+425    True
 Name: Description, dtype: bool</pre>
 </div>
 
@@ -12245,7 +12331,7 @@ Name: Description, dtype: bool</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[71]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">place_mappings_url</span> <span class="o">=</span> <span class="s2">&quot;https://commons.wikimedia.org/wiki/Commons:Gruppo_Archeologico_Romano/Batch_upload/places&quot;</span>
@@ -12257,7 +12343,7 @@ Name: Description, dtype: bool</pre>
 <span class="n">place_mappings_general</span><span class="p">[</span><span class="s2">&quot;wikidata&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">place_mappings_general</span><span class="o">.</span><span class="n">wikidata</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
 <span class="c1">#place_mappings_general[&quot;wikidata&quot;] = place_mappings_general.wikidata.str.replace(&quot;\-&quot;, &quot;&quot;)</span>
 <span class="n">place_mappings_general</span><span class="p">[</span><span class="s2">&quot;category&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">place_mappings_general</span><span class="o">.</span><span class="n">category</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> 
-<span class="c1">#place_mappings_general[&quot;category&quot;] = place_mappings_general.category.str.replace(&quot;\-&quot;, &quot;&quot;) </span>
+<span class="n">place_mappings_general</span><span class="p">[</span><span class="s2">&quot;category&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">place_mappings_general</span><span class="o">.</span><span class="n">category</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span> 
 
 <span class="n">place_mappings_general</span> <span class="o">=</span> <span class="n">place_mappings_general</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;Luogo&quot;</span><span class="p">)</span>
 
@@ -12267,7 +12353,7 @@ Name: Description, dtype: bool</pre>
 <span class="n">place_mappings_specific</span><span class="p">[</span><span class="s2">&quot;Nome_monumento&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">place_mappings_specific</span><span class="o">.</span><span class="n">Nome_monumento</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
 
 <span class="n">place_mappings_specific</span><span class="p">[</span><span class="s2">&quot;category&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">place_mappings_specific</span><span class="o">.</span><span class="n">category</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-<span class="c1">#place_mappings_specific[&quot;category&quot;] = place_mappings_specific.category.str.replace(&quot;\-&quot;, &quot;&quot;)</span>
+<span class="n">place_mappings_specific</span><span class="p">[</span><span class="s2">&quot;category&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">place_mappings_specific</span><span class="o">.</span><span class="n">category</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span>
 <span class="n">place_mappings_specific</span><span class="p">[</span><span class="s2">&quot;wikidata&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">place_mappings_specific</span><span class="o">.</span><span class="n">wikidata</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
 <span class="c1">#place_mappings_specific[&quot;wikidata&quot;] = place_mappings_specific.wikidata.str.replace(&quot;\-&quot;, &quot;&quot;)</span>
 
@@ -12293,7 +12379,7 @@ Name: Description, dtype: bool</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[72]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">place_mappings_specific</span><span class="p">[</span><span class="s2">&quot;wikidata&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
@@ -12331,7 +12417,7 @@ Name: wikidata, dtype: object
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[73]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">place_mappings_specific</span><span class="p">[</span><span class="s2">&quot;wikidata&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -12345,7 +12431,7 @@ Name: wikidata, dtype: object
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[8]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[73]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -12371,7 +12457,7 @@ Name: wikidata, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[74]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">place_mappings_specific</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;Serjilla Andron&quot;</span><span class="p">][</span><span class="s2">&quot;wikidata&quot;</span><span class="p">]</span>
@@ -12385,7 +12471,7 @@ Name: wikidata, dtype: object</pre>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[9]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[74]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -12400,7 +12486,7 @@ Name: wikidata, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[75]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">place_mappings_specific</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;Serjilla Andron&quot;</span><span class="p">][</span><span class="s2">&quot;wikidata&quot;</span><span class="p">])</span>
@@ -12414,7 +12500,7 @@ Name: wikidata, dtype: object</pre>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[10]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[75]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -12429,7 +12515,7 @@ Name: wikidata, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[76]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">place_mappings_specific</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;Serjilla Andron&quot;</span><span class="p">][</span><span class="s2">&quot;wikidata&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;-&quot;</span>
@@ -12443,7 +12529,7 @@ Name: wikidata, dtype: object</pre>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[11]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[76]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -12458,7 +12544,7 @@ Name: wikidata, dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[77]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">place_mappings_specific</span><span class="o">.</span><span class="n">wikidata</span><span class="p">)</span>
@@ -12472,7 +12558,7 @@ Name: wikidata, dtype: object</pre>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[14]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[77]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -12549,7 +12635,7 @@ Name: wikidata, dtype: bool</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[78]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">place_mappings_general</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
@@ -12563,7 +12649,7 @@ Name: wikidata, dtype: bool</pre>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[12]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[78]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -12614,7 +12700,7 @@ Name: wikidata, dtype: bool</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[79]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">place_mappings_specific</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
@@ -12628,7 +12714,7 @@ Name: wikidata, dtype: bool</pre>
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[13]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[79]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -12674,39 +12760,6 @@ Name: wikidata, dtype: bool</pre>
   </tbody>
 </table>
 </div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[131]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">spec</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">place_mappings_specific</span><span class="o">.</span><span class="n">index</span><span class="p">))</span>
-<span class="n">spec</span><span class="p">[</span><span class="n">spec</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;Jable&quot;</span><span class="p">)]</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[131]:</div>
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>66                            Jable Mercato
-67               Jable Teatro Romano  Cavea
-233    Jable Teatro Romano  Portico esterno
-dtype: object</pre>
 </div>
 
 </div>
@@ -12795,7 +12848,7 @@ Files in metadata file: 426
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[103]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># remove possible diuplicate files with other extension names</span>
@@ -12807,6 +12860,11 @@ Files in metadata file: 426
 <span class="n">faulty_images</span> <span class="o">=</span> <span class="mi">0</span>
 
 <span class="k">for</span> <span class="n">row_no</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">merged</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="c1"># Filename: &lt;Nome_foto[:-3]&gt;_GAR_&lt;Nome_foto[-3:]&gt;.&lt;ext&gt;</span>
+    <span class="n">outpath</span> <span class="o">=</span> <span class="s2">&quot;./photograph_template_texts/&quot;</span>
+    <span class="n">fname</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;Nome_foto&quot;</span><span class="p">][:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot; - &quot;</span> <span class="o">+</span> <span class="s2">&quot;GAR&quot;</span> <span class="o">+</span> <span class="s2">&quot; - &quot;</span> <span class="o">+</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;Nome_foto&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span> <span class="c1"># + &quot;.JPG&quot; Hack, extension ought to be dynamic</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fname</span><span class="p">))</span>
+     
     <span class="n">total_images</span> <span class="o">+=</span> <span class="mi">1</span>
     
     <span class="n">template_parts</span> <span class="o">=</span> <span class="p">[]</span>
@@ -12822,20 +12880,21 @@ Files in metadata file: 426
         <span class="n">faulty_images</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="n">template_parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">photographer</span><span class="p">)</span>
     
-    <span class="n">title_it</span> <span class="o">=</span>  <span class="s2">&quot;{{it|&#39;&#39;&#39;&quot;</span> <span class="o">+</span> <span class="n">regex</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span><span class="s2">&quot; &quot;</span><span class="p">,</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;Nome_foto&quot;</span><span class="p">][:</span><span class="o">-</span><span class="mi">3</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;&#39;&#39;&#39;}}&quot;</span>
+    <span class="n">title_it</span> <span class="o">=</span> <span class="s2">&quot;{{it|&#39;&#39;&#39;&quot;</span> <span class="o">+</span> <span class="n">regex</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span><span class="s2">&quot; &quot;</span><span class="p">,</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;Nome_foto&quot;</span><span class="p">][:</span><span class="o">-</span><span class="mi">3</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;&#39;&#39;&#39;}}&quot;</span>
+    <span class="c1">#title_en = &quot;{{en|&quot; + regex.sub(&quot;_&quot;,&quot; &quot;,row[&quot;Title&quot;][:-3]) + &quot;}}&quot;</span>
     
-    <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;|title = &quot;</span> <span class="o">+</span> <span class="n">title_it</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;|title = &quot;</span> <span class="o">+</span> <span class="n">title_it</span> <span class="c1">#+ &quot;\n&quot; + title_en</span>
     <span class="n">template_parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
     
     <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">notnull</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;Description&quot;</span><span class="p">]):</span>
-        <span class="n">description_en</span> <span class="o">=</span> <span class="s2">&quot;{{en| &quot;</span> <span class="o">+</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;Description&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;}}&quot;</span>
+        <span class="n">description_en</span> <span class="o">=</span> <span class="s2">&quot;{{en|&quot;</span> <span class="o">+</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;Description&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;}}&quot;</span> <span class="c1"># &lt;Description&gt; is empty though, not translated</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">description_en</span> <span class="o">=</span> <span class="s2">&quot;{{en| &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;Subject&quot;</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;Place&quot;</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot; in &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;Year&quot;</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;}}&quot;</span>
+        <span class="n">description_en</span> <span class="o">=</span> <span class="s2">&quot;{{en|&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;Subject&quot;</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;Place&quot;</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot; in &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;Year&quot;</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;}}&quot;</span>
     
     <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">notnull</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;Descrizione&quot;</span><span class="p">]):</span>
-        <span class="n">description_it</span> <span class="o">=</span> <span class="s2">&quot;{{it| &quot;</span> <span class="o">+</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;Descrizione&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;}}&quot;</span>
+        <span class="n">description_it</span> <span class="o">=</span> <span class="s2">&quot;{{it|&quot;</span> <span class="o">+</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;Descrizione&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;}}&quot;</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">description_it</span> <span class="o">=</span> <span class="s2">&quot;{{it| &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;Nome_monumento&quot;</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;Luogo&quot;</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;Anno&quot;</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;}}&quot;</span>
+        <span class="n">description_it</span> <span class="o">=</span> <span class="s2">&quot;{{it|&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;Nome_monumento&quot;</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;Luogo&quot;</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;Anno&quot;</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot;}}&quot;</span>
     
     <span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;|description = &quot;</span> <span class="o">+</span> <span class="n">description_it</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">description_en</span>
     <span class="n">template_parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">description</span><span class="p">)</span>
@@ -12854,7 +12913,7 @@ Files in metadata file: 426
         <span class="n">place_mappings_general</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;Luogo&quot;</span><span class="p">]][</span><span class="s2">&quot;wikidata&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;}}&quot;</span>
         <span class="c1">#print(depicted_place)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">depicted_place</span> <span class="o">=</span> <span class="s2">&quot;|depicted place = &quot;</span> <span class="o">+</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;Luogo&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;Nome_monumento&quot;</span><span class="p">]</span>
+        <span class="n">depicted_place</span> <span class="o">=</span> <span class="s2">&quot;|depicted place = &quot;</span> <span class="o">+</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;Nome_monumento&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span> <span class="o">+</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;Luogo&quot;</span><span class="p">]</span>
         <span class="c1">#print(depicted_place)</span>
     <span class="n">template_parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">depicted_place</span><span class="p">)</span>
     
@@ -12918,41 +12977,62 @@ Files in metadata file: 426
     <span class="n">general_place_category</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">maintanence_category</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">batchupload_category</span> <span class="o">=</span> <span class="s2">&quot;[[Category:Images_from_GAR_2016-06]]&quot;</span>
-    <span class="n">translation_needed_category</span> <span class="o">=</span> <span class="s2">&quot;[[Category:Images_from_GAR_Syria_needing_english_translation]]&quot;</span>
+    <span class="n">translation_needed_category</span> <span class="o">=</span> <span class="s2">&quot;[[Category:Images_from_GAR_needing_English_description]]&quot;</span>
     
     <span class="k">if</span> <span class="n">place_mappings_specific</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">spec_place</span><span class="p">][</span><span class="s2">&quot;category&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;-&quot;</span> <span class="ow">and</span> <span class="n">pd</span><span class="o">.</span><span class="n">notnull</span><span class="p">(</span><span class="n">place_mappings_specific</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">spec_place</span><span class="p">][</span><span class="s2">&quot;category&quot;</span><span class="p">]):</span> 
         
         <span class="n">specific_place_category</span> <span class="o">=</span> <span class="s2">&quot;[[&quot;</span> <span class="o">+</span> <span class="n">place_mappings_specific</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">spec_place</span><span class="p">][</span><span class="s2">&quot;category&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;]]&quot;</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;Title&quot;</span><span class="p">],</span> <span class="n">specific_place_category</span><span class="p">))</span> 
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;specific_place_category</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">specific_place_category</span><span class="p">))</span> 
      
     <span class="k">elif</span> <span class="n">place_mappings_general</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;Luogo&quot;</span><span class="p">]][</span><span class="s2">&quot;category&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;-&quot;</span> <span class="ow">and</span> <span class="n">pd</span><span class="o">.</span><span class="n">notnull</span><span class="p">(</span><span class="n">place_mappings_general</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;Luogo&quot;</span><span class="p">]][</span><span class="s2">&quot;category&quot;</span><span class="p">]):</span>
         <span class="n">general_place_category</span> <span class="o">=</span> <span class="s2">&quot;[[&quot;</span> <span class="o">+</span> <span class="n">place_mappings_general</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;Luogo&quot;</span><span class="p">]][</span><span class="s2">&quot;category&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;]]&quot;</span>
-        <span class="c1">#print(general_place_category)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;general_place_category: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">general_place_category</span><span class="p">))</span>
     
     <span class="c1"># [[Category:Images_from_GAR_Syria_2016-06]]</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">maintanence_category</span> <span class="o">=</span> <span class="s2">&quot;[[Category:Images_from_GAR_without_categories]]&quot;</span>
-        <span class="n">uncategorized_images</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;maintanence_category: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">maintanence_category</span><span class="p">))</span>
     
     <span class="c1"># manage content categories</span>
     <span class="k">if</span> <span class="n">specific_place_category</span> <span class="p">:</span>
         <span class="n">categories_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">specific_place_category</span><span class="p">)</span>
-        <span class="n">OK_images</span> <span class="o">+=</span> <span class="mi">1</span>
+        
     <span class="k">elif</span> <span class="n">general_place_category</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">specific_place_category</span><span class="p">:</span>
-        <span class="n">categories_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">general_place_category</span><span class="p">)</span>
-        <span class="n">OK_images</span> <span class="o">+=</span> <span class="mi">1</span> 
+        <span class="n">categories_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">general_place_category</span><span class="p">)</span> 
+    
+    <span class="k">if</span> <span class="n">regex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">r&quot; \+ &quot;</span><span class="p">,</span><span class="n">Commons_category</span><span class="p">):</span>
+        <span class="n">cats</span> <span class="o">=</span> <span class="n">regex</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">r&quot; \+ &quot;</span><span class="p">,</span><span class="n">Commons_category</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> is really </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">Commons_category</span><span class="p">,</span> <span class="n">cats</span><span class="p">))</span>
+        
+        <span class="k">for</span> <span class="n">cat_no</span><span class="p">,</span> <span class="n">cat</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">cats</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">cat_no</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">Commons_category</span> <span class="o">=</span> <span class="n">cat</span> <span class="o">+</span> <span class="s2">&quot;]]&quot;</span> 
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">Commons_category</span> <span class="o">=</span> <span class="s2">&quot;[[Category:&quot;</span> <span class="o">+</span> <span class="n">cat</span>
+            
+            <span class="k">if</span> <span class="n">Commons_category</span> <span class="o">!=</span> <span class="n">specific_place_category</span> <span class="ow">and</span> <span class="n">Commons_category</span> <span class="o">!=</span> <span class="n">general_place_category</span><span class="p">:</span>
+                <span class="n">categories_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Commons_category</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Commons_category: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Commons_category</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">pass</span>
     <span class="k">else</span><span class="p">:</span>
+        <span class="n">Commons_category</span> <span class="o">=</span> <span class="s2">&quot;[[Category:&quot;</span> <span class="o">+</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;Commons_category&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;]]&quot;</span>
+        <span class="k">if</span> <span class="n">Commons_category</span> <span class="o">!=</span> <span class="n">specific_place_category</span> <span class="ow">and</span> <span class="n">Commons_category</span> <span class="o">!=</span> <span class="n">general_place_category</span><span class="p">:</span>
+                <span class="n">categories_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Commons_category</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Commons_category: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Commons_category</span><span class="p">))</span>
+                
+    <span class="k">if</span> <span class="n">categories_list</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;categories_list is None&quot;</span><span class="p">)</span>
         <span class="n">categories_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">maintanence_category</span><span class="p">)</span>
+        <span class="n">faulty_images</span> <span class="o">+=</span> <span class="mi">1</span>
 
     <span class="n">categories_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">batchupload_category</span><span class="p">)</span>
     <span class="n">categories_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">translation_needed_category</span><span class="p">)</span>
-        
-    <span class="c1">#print(categories_list)</span>
     
-    <span class="c1"># Filename: &lt;Nome_foto[:-3]&gt;_GAR_&lt;Nome_foto[-3:]&gt;.&lt;ext&gt;</span>
-    <span class="n">outpath</span> <span class="o">=</span> <span class="s2">&quot;./photograph_template_texts/&quot;</span>
-    <span class="n">fname</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;Nome_foto&quot;</span><span class="p">][:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot; - &quot;</span> <span class="o">+</span> <span class="s2">&quot;GAR&quot;</span> <span class="o">+</span> <span class="s2">&quot; - &quot;</span> <span class="o">+</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;Nome_foto&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span> <span class="c1"># + &quot;.JPG&quot; Hack, extension ought to be dynamic</span>
-    
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">categories_list</span><span class="p">)</span> <span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
+        <span class="n">OK_images</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">categories_list</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
     
     <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">outpath</span><span class="p">):</span>
         <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">outpath</span><span class="p">)</span>
@@ -12975,212 +13055,1897 @@ Files in metadata file: 426
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Aleppo_Cittadella_01 [[Category:Aleppo citadel]]
-Hama_Noria_01 [[Category:Norias of Hama]]
-Palmira_Teatro Romano_01 [[Category:Ancient Roman theater (Palmyra)]]
-Palmira_Tomba a Torre_01 [[Category:Tombs in Palmyra]]
-Palmira_Panorama_01 [[Category:Great Colonnade at Palmyra]]
-Palmira_Teatro Romano_02 [[Category:Ancient Roman theater (Palmyra)]]
-Palmira_Tempio di Baal_01 [[Category:Temple of Baal in Palmyra]]
-Palmira_Via Colonnata_01 [[Category:Great Colonnade at Palmyra]]
-Tartus_Chiesa gotica diruta_01 [[Category:Citadel of Tartus]]
-Tartus_Chiesa gotica diruta_02 [[Category:Citadel of Tartus]]
-Tartus_Fortezza dei Templari_01 [[Category:Citadel of Tartus]]
-Tartus_Scorcio della città crociata_01 [[Category:Citadel of Tartus]]
-Aleppo_moschea degli Omayyadi_01 [[Category:Great Mosque of Aleppo]]
-Aleppo_strada vicino moschea Omayyadi_01 [[Category:Old Aleppo streets]]
-Aleppo_strada vicino moschea Omayyadi_02 [[Category:Old Aleppo streets]]
-Bosra_Teatro Romano_02 [[Category:Ancient Roman theatre (Bosra)]]
-Palmira_Panorama Via Colonnata_01 [[Category:Great Colonnade at Palmyra]]
-Palmira_Tempio di Baal_02 [[Category:Temple of Baal in Palmyra]]
-Palmira_Tombe a Torre_02 [[Category:Tombs in Palmyra]]
-Palmira_Tombe a Torre_03 [[Category:Tombs in Palmyra]]
-DEIR MAR MUSA Santuario di San Mosè l&#39;Abissino - Incontro con Padre Dall&#39;Oglio 10 [[Category:Church of Deir Mar Musa]]
-DEIR MAR MUSA Santuario di San Mosè l&#39;Abissino - Interno della chiesa 05 [[Category:Church of Deir Mar Musa]]
-DEIR MAR MUSA Santuario di San Mosè l&#39;Abissino - particolare della chiesa 06 [[Category:Church of Deir Mar Musa]]
-DEIR MAR MUSA Santuario di San Mosè l&#39;Abissino 03 [[Category:Church of Deir Mar Musa]]
-HAMA Centro Storico - particolare 12 [[Category:Buildings and structures in Hama]]
-HAMA Centro Storico - particolare 13 [[Category:Buildings and structures in Hama]]
-HAMA Centro Storico - particolare 14 [[Category:Buildings and structures in Hama]]
-HAMA Centro Storico - particolare 15 [[Category:Buildings and structures in Hama]]
-HAMA Centro Storico - particolare 22 [[Category:Buildings and structures in Hama]]
-HAMA Cortile della Moschea 18 [[Category:Mosques in Hama]]
-HAMA Ingresso della Moschea con materiali bizantini di reimpiego 19 [[Category:Mosques in Hama]]
-HAMA Interno della Moschea 17 [[Category:Mosques in Hama]]
-HAMA Moschea 09 [[Category:Mosques in Hama]]
-HAMA Museo Archeologico 03 [[Category:Culture of Hama]]
-HAMA Museo Archeologico Battenti di camera funeraria romana 08 [[Category:Culture of Hama]]
-HAMA Museo Archeologico Sarcofagi romani in piombo 06 [[Category:Culture of Hama]]
-HAMA Museo Archeologico Sarcofago tardoantico 04 [[Category:Culture of Hama]]
-HAMA Museo Archeologico Statua funeraria dipinta 05 [[Category:Culture of Hama]]
-HAMA Museo Archeologico Stele funeraria 07 [[Category:Culture of Hama]]
-HAMA Noria - particolare 23 [[Category:Norias of Hama]]
-HAMA Noria 24 [[Category:Norias of Hama]]
-HAMA Noria 25 [[Category:Norias of Hama]]
-HAMA Noria 26 [[Category:Norias of Hama]]
-HAMA Noria 27 [[Category:Norias of Hama]]
-HAMA Piazza principale 11 [[Category:Buildings and structures in Hama]]
-HAMA Tuffo nel fiume Oronte 28 [[Category:Orontes River]]
-PALMYRA Agorà 011 [[Category:Agora of Palmyra]]
-PALMYRA Arco di Trionfo 091 [[Category:Monumental Arch of Palmyra]]
-PALMYRA Arco di Trionfo 095 [[Category:Monumental Arch of Palmyra]]
-PALMYRA Arco di Trionfo 096 [[Category:Monumental Arch of Palmyra]]
-PALMYRA Castello 016 [[Category:Buildings in Palmyra]]
-PALMYRA Ipogeo di Artaban - Il custode 033 [[Category:Tombs in Palmyra]]
-PALMYRA Ipogeo di Artaban ingresso 030 [[Category:Tombs in Palmyra]]
-PALMYRA Ipogeo di Artaban ingresso 032 [[Category:Tombs in Palmyra]]
-PALMYRA Ipogeo di Artaban interno 031 [[Category:Tombs in Palmyra]]
-PALMYRA Ipogeo di Artaban interno 036 [[Category:Tombs in Palmyra]]
-PALMYRA Ipogeo di Artaban interno 037 [[Category:Tombs in Palmyra]]
-PALMYRA Ipogeo di Artaban interno 038 [[Category:Tombs in Palmyra]]
-PALMYRA Ipogeo di Artaban interno 041 [[Category:Tombs in Palmyra]]
-PALMYRA Monumento a Tempio 010 [[Category:Archaeological site of Palmyra]]
-PALMYRA Panorama della necropoli 073 [[Category:Valley of the Tombs of Palmyra]]
-PALMYRA Tempio di Baal 055 [[Category:Temple of Baal in Palmyra]]
-PALMYRA Tempio di Baal interno della cella - particolare 063 [[Category:Temple of Baal in Palmyra]]
-PALMYRA Tempio di Baal interno della cella - particolare 064 [[Category:Temple of Baal in Palmyra]]
-PALMYRA Tempio di Baal interno della cella 061 [[Category:Temple of Baal in Palmyra]]
-PALMYRA Tempio di Baal interno della cella 062 [[Category:Temple of Baal in Palmyra]]
-PALMYRA Tempio di Baal particolare del fregio con divinità e sacrifici 058 [[Category:Temple of Baal in Palmyra]]
-PALMYRA Tempio di Baal particolare del fregio con offerenti 059 [[Category:Temple of Baal in Palmyra]]
-PALMYRA Tempio di Baal particolare del fregio con processione sacra 060 [[Category:Temple of Baal in Palmyra]]
-PALMYRA Tempio di Baal particolare del fregio con sfilata degli dei 057 [[Category:Temple of Baal in Palmyra]]
-PALMYRA Tempio di Baal Shamin 005 [[Category:Temple of Baal-Shamin in Palmyra]]
-PALMYRA Tempio di Baal Shamin 009 [[Category:Temple of Baal-Shamin in Palmyra]]
-PALMYRA Tempio di Baal Shamin Cella 006 [[Category:Temple of Baal-Shamin in Palmyra]]
-PALMYRA Tempio di Baal Shamin Particolare 007 [[Category:Temple of Baal-Shamin in Palmyra]]
-PALMYRA Tempio funerario 092 [[Category:Tombs in Palmyra]]
-PALMYRA Tetrapilo 084 [[Category:Tetrapylon in Palmyra]]
-PALMYRA Tetrapilo 085 [[Category:Tetrapylon in Palmyra]]
-PALMYRA Tetrapilo particolare 086 [[Category:Tetrapylon in Palmyra]]
-PALMYRA Tomba a ipogeo interno 039 [[Category:Tombs in Palmyra]]
-PALMYRA Tomba a ipogeo interno 040 [[Category:Tombs in Palmyra]]
-PALMYRA Tomba a torre 021 [[Category:Tombs in Palmyra]]
-PALMYRA Tomba a torre interno 023 [[Category:Tombs in Palmyra]]
-PALMYRA Tomba a torre interno 024 [[Category:Tombs in Palmyra]]
-PALMYRA tomba a torre interno 025 [[Category:Tombs in Palmyra]]
-PALMYRA Tomba a torre interno 026 [[Category:Tombs in Palmyra]]
-Aleppo_Grande moschea Omayyadi_01 [[Category:Great Mosque of Aleppo]]
-Aleppo_Grande moschea Omayyadi_02 [[Category:Great Mosque of Aleppo]]
-Aleppo_Grande moschea Omayyadi_03 [[Category:Great Mosque of Aleppo]]
-Aleppo_Quartiere Armeno_01 [[Category:Districts of Aleppo Governorate]]
-Aleppo_suq_01 [[Category:Suqs and Khans in Aleppo]]
-Aleppo_suq_02 [[Category:Suqs and Khans in Aleppo]]
-Aleppo_suq_03 [[Category:Suqs and Khans in Aleppo]]
+<pre>Aleppo_Cittadella - GAR - _01
+specific_place_category[[Category:Aleppo citadel]]
+Commons_category: [[Category:Exterior views of Aleppo citadel]]
+[&#39;[[Category:Aleppo citadel]]&#39;, &#39;[[Category:Exterior views of Aleppo citadel]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Amrit_Sepolcro - GAR - _01
+general_place_category: [[Category:Amrit]]
+[&#39;[[Category:Amrit]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Bosra_Teatro Romano - GAR - _01
+general_place_category: [[Category:Bosra]]
+Commons_category: [[Category:Ancient Roman theatre (Bosra)]]
+[&#39;[[Category:Bosra]]&#39;, &#39;[[Category:Ancient Roman theatre (Bosra)]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Damasco_Tempio di Giove - GAR - _01
+general_place_category: [[Category:Damascus]]
+Commons_category: [[Category:Temple of Jupiter (Damascus)]]
+[&#39;[[Category:Damascus]]&#39;, &#39;[[Category:Temple of Jupiter (Damascus)]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Dura Europos_Panorama - GAR - _01
+general_place_category: [[Category:Dura Europos]]
+[&#39;[[Category:Dura Europos]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Ebla_Palazzo Occidentale - GAR - _01
+general_place_category: [[Category:Ebla]]
+[&#39;[[Category:Ebla]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Ebla_Palazzo Reale G - GAR - _01
+general_place_category: [[Category:Ebla]]
+[&#39;[[Category:Ebla]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Hama_Noria - GAR - _01
+specific_place_category[[Category:Norias of Hama]]
+[&#39;[[Category:Norias of Hama]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Krak dei Cavalieri_Castello - GAR - _01
+general_place_category: [[Category:Krak des Chevaliers]]
+Commons_category: [[Category:Hall of the Knights (Krak des Chevaliers)]]
+[&#39;[[Category:Krak des Chevaliers]]&#39;, &#39;[[Category:Hall of the Knights (Krak des Chevaliers)]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Krak dei Cavalieri_Castello - GAR - _02
+general_place_category: [[Category:Krak des Chevaliers]]
+Commons_category: [[Category:Chapel of the Krak des Chevaliers]]
+[&#39;[[Category:Krak des Chevaliers]]&#39;, &#39;[[Category:Chapel of the Krak des Chevaliers]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Krak dei Cavalieri_Castello - GAR - _03
+general_place_category: [[Category:Krak des Chevaliers]]
+[&#39;[[Category:Krak des Chevaliers]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Maaloula_Panorama - GAR - _01
+general_place_category: [[Category:Maaloula]]
+[&#39;[[Category:Maaloula]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_Teatro Romano - GAR - _01
+specific_place_category[[Category:Ancient Roman theater (Palmyra)]]
+[&#39;[[Category:Ancient Roman theater (Palmyra)]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_Tomba a Torre - GAR - _01
+specific_place_category[[Category:Tombs in Palmyra]]
+[&#39;[[Category:Tombs in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+San Simeone_Basilica - GAR - _01
+general_place_category: [[Category:Aleppo countryside]]
+Commons_category: [[Category:Church of Saint Simeon Stylites]]
+[&#39;[[Category:Aleppo countryside]]&#39;, &#39;[[Category:Church of Saint Simeon Stylites]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Sergiopolis_Basilica - GAR - _01
+general_place_category: [[Category:Resafa]]
+[&#39;[[Category:Resafa]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Serjilla_Andron - GAR - _01
+general_place_category: [[Category:Serjilla]]
+[&#39;[[Category:Serjilla]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Serjilla_Casa del Frantoio - GAR - _01
+general_place_category: [[Category:Serjilla]]
+[&#39;[[Category:Serjilla]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Ugarit_Palazzo Reale - GAR - _01
+general_place_category: [[Category:Ugarit]]
+Commons_category: [[Category:Royal Palace of Ugarit]]
+[&#39;[[Category:Ugarit]]&#39;, &#39;[[Category:Royal Palace of Ugarit]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Amrit_Santuario Fenicio - GAR - _01
+general_place_category: [[Category:Amrit]]
+Commons_category: [[Category:Amrit Maabed]]
+[&#39;[[Category:Amrit]]&#39;, &#39;[[Category:Amrit Maabed]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Amrit_Stadio Ellenistico - GAR - _01
+general_place_category: [[Category:Amrit]]
+[&#39;[[Category:Amrit]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Banyas_Castello di Al Marqb - GAR - _01
+general_place_category: [[Category:Baniyas]]
+Commons_category: [[Category:Margat]]
+[&#39;[[Category:Baniyas]]&#39;, &#39;[[Category:Margat]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Castello del Saladino - GAR - _01
+general_place_category: [[Category:Qal&#39;at Salah ed-Din]]
+[&#34;[[Category:Qal&#39;at Salah ed-Din]]&#34;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Castello del Saladino - GAR - _02
+general_place_category: [[Category:Qal&#39;at Salah ed-Din]]
+[&#34;[[Category:Qal&#39;at Salah ed-Din]]&#34;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Castello del Saladino - GAR - _03
+general_place_category: [[Category:Qal&#39;at Salah ed-Din]]
+[&#34;[[Category:Qal&#39;at Salah ed-Din]]&#34;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Castello del Saladino - GAR - _04
+general_place_category: [[Category:Qal&#39;at Salah ed-Din]]
+[&#34;[[Category:Qal&#39;at Salah ed-Din]]&#34;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Castello del Saladino - GAR - _05
+general_place_category: [[Category:Qal&#39;at Salah ed-Din]]
+[&#34;[[Category:Qal&#39;at Salah ed-Din]]&#34;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Castello del Saladino - GAR - _06
+general_place_category: [[Category:Qal&#39;at Salah ed-Din]]
+[&#34;[[Category:Qal&#39;at Salah ed-Din]]&#34;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Castello del Saladino - GAR - _07
+general_place_category: [[Category:Qal&#39;at Salah ed-Din]]
+[&#34;[[Category:Qal&#39;at Salah ed-Din]]&#34;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Castello del Saladino - GAR - _08
+general_place_category: [[Category:Qal&#39;at Salah ed-Din]]
+[&#34;[[Category:Qal&#39;at Salah ed-Din]]&#34;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Castello del Saladino - GAR - _09
+general_place_category: [[Category:Qal&#39;at Salah ed-Din]]
+[&#34;[[Category:Qal&#39;at Salah ed-Din]]&#34;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Damasco_La Grande Moschea degli Omayyadi - GAR - _01
+general_place_category: [[Category:Damascus]]
+Commons_category: [[Category:Umayyad Mosque (Damascus) - Facade]]
+[&#39;[[Category:Damascus]]&#39;, &#39;[[Category:Umayyad Mosque (Damascus) - Facade]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Damasco_Resti della Chiesa Bizantina - GAR - _01
+general_place_category: [[Category:Damascus]]
+Commons_category: [[Category:Umayyad Mosque]]
+[&#39;[[Category:Damascus]]&#39;, &#39;[[Category:Umayyad Mosque]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Jable_Mercato - GAR - _01
+general_place_category: [[Category:Jableh]]
+[&#39;[[Category:Jableh]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Jable_Teatro Romano - GAR - _01
+general_place_category: [[Category:Jableh]]
+Commons_category: [[Category:Ancient Roman theater at Jableh]]
+[&#39;[[Category:Jableh]]&#39;, &#39;[[Category:Ancient Roman theater at Jableh]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Jable_Teatro Romano - GAR - _02
+general_place_category: [[Category:Jableh]]
+Commons_category: [[Category:Ancient Roman theater at Jableh]]
+[&#39;[[Category:Jableh]]&#39;, &#39;[[Category:Ancient Roman theater at Jableh]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Krak dei Cavalieri_Castello - GAR - _04
+general_place_category: [[Category:Krak des Chevaliers]]
+[&#39;[[Category:Krak des Chevaliers]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Latakia_Museo - GAR - _01
+general_place_category: [[Category:Latakia]]
+[&#39;[[Category:Latakia]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Latakia_Museo - GAR - _02
+general_place_category: [[Category:Latakia]]
+[&#39;[[Category:Latakia]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Qalaat Siman_Palazzetto della Città - GAR - _01
+general_place_category: [[Category:Aleppo]]
+Commons_category: [[Category:Church of Saint Simeon Stylites]]
+[&#39;[[Category:Aleppo]]&#39;, &#39;[[Category:Church of Saint Simeon Stylites]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Sergiopolis_Città - GAR - _01
+general_place_category: [[Category:Resafa]]
+[&#39;[[Category:Resafa]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_Panorama - GAR - _01
+specific_place_category[[Category:Great Colonnade at Palmyra]]
+[&#39;[[Category:Great Colonnade at Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_Teatro Romano - GAR - _02
+specific_place_category[[Category:Ancient Roman theater (Palmyra)]]
+[&#39;[[Category:Ancient Roman theater (Palmyra)]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_Tempio di Baal - GAR - _01
+specific_place_category[[Category:Temple of Baal in Palmyra]]
+Commons_category: [[Category:Reliefs in Temple of Baal in Palmyra]]
+[&#39;[[Category:Temple of Baal in Palmyra]]&#39;, &#39;[[Category:Reliefs in Temple of Baal in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_Via Colonnata - GAR - _01
+specific_place_category[[Category:Great Colonnade at Palmyra]]
+[&#39;[[Category:Great Colonnade at Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Tartus_Chiesa di Notre Dame - GAR - _01
+general_place_category: [[Category:Tartus]]
+Commons_category: [[Category:Notre Dame church (Tartus)]]
+[&#39;[[Category:Tartus]]&#39;, &#39;[[Category:Notre Dame church (Tartus)]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Tartus_Chiesa gotica diruta - GAR - _01
+specific_place_category[[Category:Citadel of Tartus]]
+Commons_category: [[Category:Tartus]]
+[&#39;[[Category:Citadel of Tartus]]&#39;, &#39;[[Category:Tartus]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Tartus_Chiesa gotica diruta - GAR - _02
+specific_place_category[[Category:Citadel of Tartus]]
+Commons_category: [[Category:Tartus]]
+[&#39;[[Category:Citadel of Tartus]]&#39;, &#39;[[Category:Tartus]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Tartus_Fortezza dei Templari - GAR - _01
+specific_place_category[[Category:Citadel of Tartus]]
+Commons_category: [[Category:Tartus]]
+[&#39;[[Category:Citadel of Tartus]]&#39;, &#39;[[Category:Tartus]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Tartus_Museo archeologico - GAR - _01
+general_place_category: [[Category:Tartus]]
+Commons_category: [[Category:Ancient art in Tartus]]
+[&#39;[[Category:Tartus]]&#39;, &#39;[[Category:Ancient art in Tartus]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Tartus_Scorcio della città crociata - GAR - _01
+specific_place_category[[Category:Citadel of Tartus]]
+Commons_category: [[Category:Tartus]]
+[&#39;[[Category:Citadel of Tartus]]&#39;, &#39;[[Category:Tartus]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Ugarit_Panorama della città - GAR - _01
+general_place_category: [[Category:Ugarit]]
+[&#39;[[Category:Ugarit]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Ugarit_Porta - GAR - _01
+general_place_category: [[Category:Ugarit]]
+[&#39;[[Category:Ugarit]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Ugarit_Porta - GAR - _02
+general_place_category: [[Category:Ugarit]]
+[&#39;[[Category:Ugarit]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Ugarit_Tomba - GAR - _01
+general_place_category: [[Category:Ugarit]]
+[&#39;[[Category:Ugarit]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_moschea degli Omayyadi - GAR - _01
+specific_place_category[[Category:Great Mosque of Aleppo]]
+[&#39;[[Category:Great Mosque of Aleppo]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Apamea_via colonnata - GAR - _03
+general_place_category: [[Category:Apamea]]
+[&#39;[[Category:Apamea]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Bosra_Artigiano - GAR - _01
+general_place_category: [[Category:Bosra]]
+[&#39;[[Category:Bosra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Halabiya_fortezza - GAR - _01
+general_place_category: [[Category:Halabiyeh]]
+[&#39;[[Category:Halabiyeh]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Kanatha Al Qanawat_Case Romano bizantine - GAR - _01
+general_place_category: [[Category:Qanawat]]
+[&#39;[[Category:Qanawat]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Kanatha Al Qanawat_particolare finestra - GAR - _01
+general_place_category: [[Category:Qanawat]]
+[&#39;[[Category:Qanawat]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Kanatha Al Qanawat_tempio - GAR - _01
+general_place_category: [[Category:Qanawat]]
+[&#39;[[Category:Qanawat]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Krak dei Cavalieri_Castello - GAR - _05
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:Krak des Chevaliers]]
+[&#39;[[Category:Krak des Chevaliers]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Krak dei Cavalieri_Castello - GAR - _06
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:Krak des Chevaliers]]
+[&#39;[[Category:Krak des Chevaliers]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Philippopolis_piccolo museo mosaico - GAR - _01
+general_place_category: [[Category:Shahba]]
+[&#39;[[Category:Shahba]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Philippopolis_piccolo museo mosaico - GAR - _02
+general_place_category: [[Category:Shahba]]
+[&#39;[[Category:Shahba]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Philippopolis_Teatro romano - GAR - _01
+general_place_category: [[Category:Shahba]]
+Commons_category: [[Category:Roman theater at Shahba]]
+[&#39;[[Category:Shahba]]&#39;, &#39;[[Category:Roman theater at Shahba]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+San Simeone_caseggiato bizantino - GAR - _01
+general_place_category: [[Category:Aleppo countryside]]
+Commons_category: [[Category:Church of Saint Simeon Stylites]]
+[&#39;[[Category:Aleppo countryside]]&#39;, &#39;[[Category:Church of Saint Simeon Stylites]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Seidnaya_Grotte eremiti - GAR - _01
+general_place_category: [[Category:Cities in Syria]]
+Commons_category: [[Category:Saidnaya]]
+[&#39;[[Category:Cities in Syria]]&#39;, &#39;[[Category:Saidnaya]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Serjilla_piccola siriana - GAR - _01
+general_place_category: [[Category:Serjilla]]
+[&#39;[[Category:Serjilla]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_strada vicino moschea Omayyadi - GAR - _01
+specific_place_category[[Category:Old Aleppo streets]]
+Commons_category: [[Category:Aleppo]]
+[&#39;[[Category:Old Aleppo streets]]&#39;, &#39;[[Category:Aleppo]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_strada vicino moschea Omayyadi - GAR - _02
+specific_place_category[[Category:Old Aleppo streets]]
+Commons_category: [[Category:Aleppo]]
+[&#39;[[Category:Old Aleppo streets]]&#39;, &#39;[[Category:Aleppo]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Apamea_Via Colonnata - GAR - _01
+general_place_category: [[Category:Apamea]]
+[&#39;[[Category:Apamea]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Apamea_Via Colonnata - GAR - _02
+general_place_category: [[Category:Apamea]]
+[&#39;[[Category:Apamea]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Bosra_Chiesa Bizantina - GAR - _01
+general_place_category: [[Category:Bosra]]
+[&#39;[[Category:Bosra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Bosra_Grandi Terme - GAR - _01
+general_place_category: [[Category:Bosra]]
+[&#39;[[Category:Bosra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Bosra_Moschea - GAR - _01
+general_place_category: [[Category:Bosra]]
+Commons_category: [[Category:Mabrak an-Naqah Mosque (Bosra)]]
+[&#39;[[Category:Bosra]]&#39;, &#39;[[Category:Mabrak an-Naqah Mosque (Bosra)]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Bosra_Porta del Vento - GAR - _01
+general_place_category: [[Category:Bosra]]
+[&#39;[[Category:Bosra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Bosra_Teatro Romano - GAR - _02
+specific_place_category[[Category:Ancient Roman theatre (Bosra)]]
+[&#39;[[Category:Ancient Roman theatre (Bosra)]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Damasco_Moschea degli Omayyadi - GAR - _01
+general_place_category: [[Category:Damascus]]
+Commons_category: [[Category:Qubbat al-Khazna]]
+[&#39;[[Category:Damascus]]&#39;, &#39;[[Category:Qubbat al-Khazna]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Damasco_Moschea degli Omayyadi - GAR - _02
+general_place_category: [[Category:Damascus]]
+Commons_category: [[Category:Umayyad Mosque]]
+[&#39;[[Category:Damascus]]&#39;, &#39;[[Category:Umayyad Mosque]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Dura Europos_Caseggiati Ellenistici - GAR - _01
+general_place_category: [[Category:Dura Europos]]
+[&#39;[[Category:Dura Europos]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Dura Europos_Cittadella - GAR - _01
+general_place_category: [[Category:Dura Europos]]
+[&#39;[[Category:Dura Europos]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Dura Europos_Fortificazione Cittadella - GAR - _01
+general_place_category: [[Category:Dura Europos]]
+[&#39;[[Category:Dura Europos]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Dura Europos_Porta della città - GAR - _01
+general_place_category: [[Category:Dura Europos]]
+[&#39;[[Category:Dura Europos]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Dura Europos_Tempio di Baal - GAR - _01
+general_place_category: [[Category:Dura Europos]]
+[&#39;[[Category:Dura Europos]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Ebla_Tempio di Ishtar - GAR - _01
+general_place_category: [[Category:Ebla]]
+[&#39;[[Category:Ebla]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Latakia_Arco Settimio Severo - GAR - _01
+general_place_category: [[Category:Latakia]]
+Commons_category: [[Category:Latakia Tetraporticus]]
+[&#39;[[Category:Latakia]]&#39;, &#39;[[Category:Latakia Tetraporticus]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Latakia_Colonnato - GAR - _01
+general_place_category: [[Category:Latakia]]
+[&#39;[[Category:Latakia]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Latakia_Mosaico - GAR - _01
+general_place_category: [[Category:Latakia]]
+[&#39;[[Category:Latakia]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_Panorama Via Colonnata - GAR - _01
+specific_place_category[[Category:Great Colonnade at Palmyra]]
+[&#39;[[Category:Great Colonnade at Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_Tempio di Baal - GAR - _02
+specific_place_category[[Category:Temple of Baal in Palmyra]]
+[&#39;[[Category:Temple of Baal in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_Tombe a Torre - GAR - _02
+specific_place_category[[Category:Tombs in Palmyra]]
+[&#39;[[Category:Tombs in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_Tombe a Torre - GAR - _03
+specific_place_category[[Category:Tombs in Palmyra]]
+[&#39;[[Category:Tombs in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Seidnaya_Acropoli - GAR - _01
+general_place_category: [[Category:Cities in Syria]]
+Commons_category: [[Category:Saidnaya]]
+[&#39;[[Category:Cities in Syria]]&#39;, &#39;[[Category:Saidnaya]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Sergiopolis_Basilica di San Sergio - GAR - _01
+general_place_category: [[Category:Resafa]]
+[&#39;[[Category:Resafa]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Serjilla_Andron e Terme - GAR - _01
+general_place_category: [[Category:Serjilla]]
+[&#39;[[Category:Serjilla]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Serjilla_Andron e Terme - GAR - _02
+general_place_category: [[Category:Serjilla]]
+[&#39;[[Category:Serjilla]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Serjilla_Case bizantine - GAR - _01
+general_place_category: [[Category:Serjilla]]
+[&#39;[[Category:Serjilla]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Serjilla_Panorama - GAR - _01
+general_place_category: [[Category:Serjilla]]
+[&#39;[[Category:Serjilla]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+APAMEA Acropoli con villaggio arabo  - GAR - 014
+general_place_category: [[Category:Apamea]]
+[&#39;[[Category:Apamea]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+APAMEA Case e botteghe lungo la Via colonnata  - GAR - 052
+general_place_category: [[Category:Apamea]]
+[&#39;[[Category:Apamea]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+APAMEA Case e botteghe lungo la Via colonnata  - GAR - 053
+general_place_category: [[Category:Apamea]]
+[&#39;[[Category:Apamea]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+APAMEA Il Tetraconco  - GAR - 009
+general_place_category: [[Category:Apamea]]
+[&#39;[[Category:Apamea]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+APAMEA Ingresso di un&#39;abitazione  - GAR - 013
+general_place_category: [[Category:Apamea]]
+[&#39;[[Category:Apamea]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+APAMEA Museo - Capitello a cestello bizantino  - GAR - 041
+general_place_category: [[Category:Apamea]]
+[&#39;[[Category:Apamea]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+APAMEA Museo - Cortile  - GAR - 031
+general_place_category: [[Category:Apamea]]
+[&#39;[[Category:Apamea]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+APAMEA Museo - Ingresso  - GAR - 027
+general_place_category: [[Category:Apamea]]
+[&#39;[[Category:Apamea]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+APAMEA Museo - Mosaico con emblema di amazzone  - GAR - 042
+general_place_category: [[Category:Apamea]]
+[&#39;[[Category:Apamea]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+APAMEA Museo - Panoramica  - GAR - 026
+general_place_category: [[Category:Apamea]]
+[&#39;[[Category:Apamea]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+APAMEA Museo - Particolare del cortile  - GAR - 029
+general_place_category: [[Category:Apamea]]
+[&#39;[[Category:Apamea]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+APAMEA Museo - Particolare delle sale espositive  - GAR - 035
+general_place_category: [[Category:Apamea]]
+[&#39;[[Category:Apamea]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+APAMEA Museo - Particolare delle sale espositive  - GAR - 032
+general_place_category: [[Category:Apamea]]
+[&#39;[[Category:Apamea]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+APAMEA Museo - Particolare delle sale espositive  - GAR - 033
+general_place_category: [[Category:Apamea]]
+[&#39;[[Category:Apamea]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+APAMEA Museo - Sarcofago romano a ghirlande  - GAR - 039
+general_place_category: [[Category:Apamea]]
+[&#39;[[Category:Apamea]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+APAMEA Museo - Tavola offertoria  - GAR - 040
+general_place_category: [[Category:Apamea]]
+[&#39;[[Category:Apamea]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+APAMEA Palazzetto bizantino  - GAR - 011
+general_place_category: [[Category:Apamea]]
+[&#39;[[Category:Apamea]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+APAMEA Palazzetto bizantino  - GAR - 012
+general_place_category: [[Category:Apamea]]
+[&#39;[[Category:Apamea]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+APAMEA Tra i bambini del villaggio arabo  - GAR - 016
+general_place_category: [[Category:Apamea]]
+[&#39;[[Category:Apamea]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+APAMEA Tra i bambini del villaggio arabo  - GAR - 017
+general_place_category: [[Category:Apamea]]
+[&#39;[[Category:Apamea]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+APAMEA Tra i bambini del villaggio arabo  - GAR - 022
+general_place_category: [[Category:Apamea]]
+[&#39;[[Category:Apamea]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+APAMEA Tra i bambini del villaggio arabo  - GAR - 023
+general_place_category: [[Category:Apamea]]
+[&#39;[[Category:Apamea]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+APAMEA Tra i bambini del villaggio arabo  - GAR - 024
+general_place_category: [[Category:Apamea]]
+[&#39;[[Category:Apamea]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+APAMEA Via colonnata - panorama  - GAR - 084
+general_place_category: [[Category:Apamea]]
+[&#39;[[Category:Apamea]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+APAMEA Via colonnata - particolare  - GAR - 068
+general_place_category: [[Category:Apamea]]
+[&#39;[[Category:Apamea]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+APAMEA Via colonnata - particolare di una trabeazione  - GAR - 069
+general_place_category: [[Category:Apamea]]
+[&#39;[[Category:Apamea]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+APAMEA Via colonnata  - GAR - 057
+general_place_category: [[Category:Apamea]]
+[&#39;[[Category:Apamea]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+APAMEA Via colonnata  - GAR - 058
+general_place_category: [[Category:Apamea]]
+[&#39;[[Category:Apamea]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+DEIR MAR MUSA Santuario di San Mosè l&#39;Abissino - Incontro con Padre Dall&#39;Oglio - GAR -  10
+specific_place_category[[Category:Church of Deir Mar Musa]]
+Commons_category: [[Category:Church of Deir Mar Musa + Paolo Dall&#39;Oglio]]
+[&#39;[[Category:Church of Deir Mar Musa]]&#39;, &#34;[[Category:Church of Deir Mar Musa + Paolo Dall&#39;Oglio]]&#34;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+DEIR MAR MUSA Santuario di San Mosè l&#39;Abissino - Interno della chiesa - GAR -  05
+specific_place_category[[Category:Church of Deir Mar Musa]]
+Church of Deir Mar Musa is really [&#39;[[Category:Church of Deir Mar Musa&#39;, &#34;Paolo Dall&#39;Oglio]]&#34;]
+Commons_category: [[Category:Paolo Dall&#39;Oglio]]
+[&#39;[[Category:Church of Deir Mar Musa]]&#39;, &#34;[[Category:Paolo Dall&#39;Oglio]]&#34;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+DEIR MAR MUSA Santuario di San Mosè l&#39;Abissino - particolare della chiesa - GAR -  06
+specific_place_category[[Category:Church of Deir Mar Musa]]
+[&#39;[[Category:Church of Deir Mar Musa]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+DEIR MAR MUSA Santuario di San Mosè l&#39;Abissino - GAR -  03
+specific_place_category[[Category:Church of Deir Mar Musa]]
+[&#39;[[Category:Church of Deir Mar Musa]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+HAMA Centro Storico - particolare - GAR -  12
+specific_place_category[[Category:Buildings and structures in Hama]]
+Commons_category: [[Category:Hama]]
+[&#39;[[Category:Buildings and structures in Hama]]&#39;, &#39;[[Category:Hama]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+HAMA Centro Storico - particolare - GAR -  13
+specific_place_category[[Category:Buildings and structures in Hama]]
+Commons_category: [[Category:Hama]]
+[&#39;[[Category:Buildings and structures in Hama]]&#39;, &#39;[[Category:Hama]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+HAMA Centro Storico - particolare - GAR -  14
+specific_place_category[[Category:Buildings and structures in Hama]]
+Commons_category: [[Category:Hama]]
+[&#39;[[Category:Buildings and structures in Hama]]&#39;, &#39;[[Category:Hama]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+HAMA Centro Storico - particolare - GAR -  15
+specific_place_category[[Category:Buildings and structures in Hama]]
+Commons_category: [[Category:Hama]]
+[&#39;[[Category:Buildings and structures in Hama]]&#39;, &#39;[[Category:Hama]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+HAMA Centro Storico - particolare - GAR -  22
+specific_place_category[[Category:Buildings and structures in Hama]]
+Commons_category: [[Category:Hama]]
+[&#39;[[Category:Buildings and structures in Hama]]&#39;, &#39;[[Category:Hama]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+HAMA Cortile della Moschea - GAR -  18
+specific_place_category[[Category:Mosques in Hama]]
+[&#39;[[Category:Mosques in Hama]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+HAMA Ingresso della Moschea con materiali bizantini di reimpiego - GAR -  19
+specific_place_category[[Category:Mosques in Hama]]
+[&#39;[[Category:Mosques in Hama]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+HAMA Interno della Moschea - GAR -  17
+specific_place_category[[Category:Mosques in Hama]]
+[&#39;[[Category:Mosques in Hama]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+HAMA Moschea - GAR -  09
+specific_place_category[[Category:Mosques in Hama]]
+[&#39;[[Category:Mosques in Hama]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+HAMA Museo Archeologico - GAR -  03
+specific_place_category[[Category:Culture of Hama]]
+Commons_category: [[Category:Hama]]
+[&#39;[[Category:Culture of Hama]]&#39;, &#39;[[Category:Hama]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+HAMA Museo Archeologico Battenti di camera funeraria romana - GAR -  08
+specific_place_category[[Category:Culture of Hama]]
+Commons_category: [[Category:Hama]]
+[&#39;[[Category:Culture of Hama]]&#39;, &#39;[[Category:Hama]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+HAMA Museo Archeologico Sarcofagi romani in piombo - GAR -  06
+specific_place_category[[Category:Culture of Hama]]
+Commons_category: [[Category:Hama]]
+[&#39;[[Category:Culture of Hama]]&#39;, &#39;[[Category:Hama]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+HAMA Museo Archeologico Sarcofago tardoantico - GAR -  04
+specific_place_category[[Category:Culture of Hama]]
+Commons_category: [[Category:Hama]]
+[&#39;[[Category:Culture of Hama]]&#39;, &#39;[[Category:Hama]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+HAMA Museo Archeologico Statua funeraria dipinta - GAR -  05
+specific_place_category[[Category:Culture of Hama]]
+Commons_category: [[Category:Hama]]
+[&#39;[[Category:Culture of Hama]]&#39;, &#39;[[Category:Hama]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+HAMA Museo Archeologico Stele funeraria - GAR -  07
+specific_place_category[[Category:Culture of Hama]]
+Commons_category: [[Category:Hama]]
+[&#39;[[Category:Culture of Hama]]&#39;, &#39;[[Category:Hama]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+HAMA Noria - particolare - GAR -  23
+specific_place_category[[Category:Norias of Hama]]
+[&#39;[[Category:Norias of Hama]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+HAMA Noria - GAR -  24
+specific_place_category[[Category:Norias of Hama]]
+[&#39;[[Category:Norias of Hama]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+HAMA Noria - GAR -  25
+specific_place_category[[Category:Norias of Hama]]
+[&#39;[[Category:Norias of Hama]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+HAMA Noria - GAR -  26
+specific_place_category[[Category:Norias of Hama]]
+[&#39;[[Category:Norias of Hama]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+HAMA Noria - GAR -  27
+specific_place_category[[Category:Norias of Hama]]
+[&#39;[[Category:Norias of Hama]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+HAMA Piazza principale - GAR -  11
+specific_place_category[[Category:Buildings and structures in Hama]]
+Commons_category: [[Category:Hama]]
+[&#39;[[Category:Buildings and structures in Hama]]&#39;, &#39;[[Category:Hama]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+HAMA Tuffo nel fiume Oronte - GAR -  28
+specific_place_category[[Category:Orontes River]]
+Commons_category: [[Category:Hama]]
+[&#39;[[Category:Orontes River]]&#39;, &#39;[[Category:Hama]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+KRAK DES CHEVALIERS - GAR -  00
+general_place_category: [[Category:Krak des Chevaliers]]
+[&#39;[[Category:Krak des Chevaliers]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+KRAK DES CHEVALIERS Chiesa - Interno - GAR -  02
+general_place_category: [[Category:Krak des Chevaliers]]
+Commons_category: [[Category:Chapel of the Krak des Chevaliers]]
+[&#39;[[Category:Krak des Chevaliers]]&#39;, &#39;[[Category:Chapel of the Krak des Chevaliers]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+MAALULA Panorama - GAR -  07
+general_place_category: [[Category:Maaloula]]
+[&#39;[[Category:Maaloula]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+MAALULA Panorama delle grotte verso la tagliata di S. Tecla - GAR -  03
+general_place_category: [[Category:Maaloula]]
+[&#39;[[Category:Maaloula]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+MAALULA Tagliata di S. Tecla - GAR -  04
+general_place_category: [[Category:Maaloula]]
+[&#39;[[Category:Maaloula]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+PALMYRA Agorà  - GAR - 011
+specific_place_category[[Category:Agora of Palmyra]]
+[&#39;[[Category:Agora of Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+PALMYRA Arco di Trionfo  - GAR - 091
+specific_place_category[[Category:Monumental Arch of Palmyra]]
+[&#39;[[Category:Monumental Arch of Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+PALMYRA Arco di Trionfo  - GAR - 095
+specific_place_category[[Category:Monumental Arch of Palmyra]]
+[&#39;[[Category:Monumental Arch of Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+PALMYRA Arco di Trionfo  - GAR - 096
+specific_place_category[[Category:Monumental Arch of Palmyra]]
+[&#39;[[Category:Monumental Arch of Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+PALMYRA Castello  - GAR - 016
+specific_place_category[[Category:Buildings in Palmyra]]
+Commons_category: [[Category:Qasr Ibn Maʿan]]
+[&#39;[[Category:Buildings in Palmyra]]&#39;, &#39;[[Category:Qasr Ibn Maʿan]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+PALMYRA Ipogeo di Artaban - Il custode  - GAR - 033
+specific_place_category[[Category:Tombs in Palmyra]]
+Commons_category: [[Category:People of Palmyra]]
+[&#39;[[Category:Tombs in Palmyra]]&#39;, &#39;[[Category:People of Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+PALMYRA Ipogeo di Artaban ingresso  - GAR - 030
+specific_place_category[[Category:Tombs in Palmyra]]
+[&#39;[[Category:Tombs in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+PALMYRA Ipogeo di Artaban ingresso  - GAR - 032
+specific_place_category[[Category:Tombs in Palmyra]]
+[&#39;[[Category:Tombs in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+PALMYRA Ipogeo di Artaban interno  - GAR - 031
+specific_place_category[[Category:Tombs in Palmyra]]
+[&#39;[[Category:Tombs in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+PALMYRA Ipogeo di Artaban interno  - GAR - 036
+specific_place_category[[Category:Tombs in Palmyra]]
+[&#39;[[Category:Tombs in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+PALMYRA Ipogeo di Artaban interno  - GAR - 037
+specific_place_category[[Category:Tombs in Palmyra]]
+[&#39;[[Category:Tombs in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+PALMYRA Ipogeo di Artaban interno  - GAR - 038
+specific_place_category[[Category:Tombs in Palmyra]]
+[&#39;[[Category:Tombs in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+PALMYRA Ipogeo di Artaban interno  - GAR - 041
+specific_place_category[[Category:Tombs in Palmyra]]
+[&#39;[[Category:Tombs in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+PALMYRA Monumento a Tempio  - GAR - 010
+specific_place_category[[Category:Archaeological site of Palmyra]]
+Commons_category: [[Category:Tombs in Palmyra]]
+[&#39;[[Category:Archaeological site of Palmyra]]&#39;, &#39;[[Category:Tombs in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+PALMYRA Necropoli delle tombe a torre  - GAR - 017
+general_place_category: [[Category:Palmyra]]
+Commons_category: [[Category:Tombs in Palmyra]]
+[&#39;[[Category:Palmyra]]&#39;, &#39;[[Category:Tombs in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+PALMYRA Panorama della necropoli  - GAR - 073
+specific_place_category[[Category:Valley of the Tombs of Palmyra]]
+Commons_category: [[Category:Tombs in Palmyra]]
+[&#39;[[Category:Valley of the Tombs of Palmyra]]&#39;, &#39;[[Category:Tombs in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+PALMYRA Tempio di Baal  - GAR - 055
+specific_place_category[[Category:Temple of Baal in Palmyra]]
+[&#39;[[Category:Temple of Baal in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+PALMYRA Tempio di Baal interno della cella - particolare  - GAR - 063
+specific_place_category[[Category:Temple of Baal in Palmyra]]
+Commons_category: [[Category:Interior of the Temple of Baal in Palmyra]]
+[&#39;[[Category:Temple of Baal in Palmyra]]&#39;, &#39;[[Category:Interior of the Temple of Baal in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+PALMYRA Tempio di Baal interno della cella - particolare  - GAR - 064
+specific_place_category[[Category:Temple of Baal in Palmyra]]
+Commons_category: [[Category:Interior of the Temple of Baal in Palmyra]]
+[&#39;[[Category:Temple of Baal in Palmyra]]&#39;, &#39;[[Category:Interior of the Temple of Baal in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+PALMYRA Tempio di Baal interno della cella  - GAR - 061
+specific_place_category[[Category:Temple of Baal in Palmyra]]
+Commons_category: [[Category:Interior of the Temple of Baal in Palmyra]]
+[&#39;[[Category:Temple of Baal in Palmyra]]&#39;, &#39;[[Category:Interior of the Temple of Baal in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+PALMYRA Tempio di Baal interno della cella  - GAR - 062
+specific_place_category[[Category:Temple of Baal in Palmyra]]
+Commons_category: [[Category:Interior of the Temple of Baal in Palmyra]]
+[&#39;[[Category:Temple of Baal in Palmyra]]&#39;, &#39;[[Category:Interior of the Temple of Baal in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+PALMYRA Tempio di Baal particolare del fregio con divinità e sacrifici  - GAR - 058
+specific_place_category[[Category:Temple of Baal in Palmyra]]
+Commons_category: [[Category:Reliefs in Temple of Baal in Palmyra]]
+[&#39;[[Category:Temple of Baal in Palmyra]]&#39;, &#39;[[Category:Reliefs in Temple of Baal in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+PALMYRA Tempio di Baal particolare del fregio con offerenti  - GAR - 059
+specific_place_category[[Category:Temple of Baal in Palmyra]]
+Commons_category: [[Category:Reliefs in Temple of Baal in Palmyra]]
+[&#39;[[Category:Temple of Baal in Palmyra]]&#39;, &#39;[[Category:Reliefs in Temple of Baal in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+PALMYRA Tempio di Baal particolare del fregio con processione sacra  - GAR - 060
+specific_place_category[[Category:Temple of Baal in Palmyra]]
+Commons_category: [[Category:Reliefs in Temple of Baal in Palmyra]]
+[&#39;[[Category:Temple of Baal in Palmyra]]&#39;, &#39;[[Category:Reliefs in Temple of Baal in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+PALMYRA Tempio di Baal particolare del fregio con sfilata degli dei  - GAR - 057
+specific_place_category[[Category:Temple of Baal in Palmyra]]
+Commons_category: [[Category:Reliefs in Temple of Baal in Palmyra]]
+[&#39;[[Category:Temple of Baal in Palmyra]]&#39;, &#39;[[Category:Reliefs in Temple of Baal in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+PALMYRA Tempio di Baal Shamin  - GAR - 005
+specific_place_category[[Category:Temple of Baal-Shamin in Palmyra]]
+[&#39;[[Category:Temple of Baal-Shamin in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+PALMYRA Tempio di Baal Shamin  - GAR - 009
+specific_place_category[[Category:Temple of Baal-Shamin in Palmyra]]
+[&#39;[[Category:Temple of Baal-Shamin in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+PALMYRA Tempio di Baal Shamin Cella  - GAR - 006
+specific_place_category[[Category:Temple of Baal-Shamin in Palmyra]]
+[&#39;[[Category:Temple of Baal-Shamin in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+PALMYRA Tempio di Baal Shamin Particolare  - GAR - 007
+specific_place_category[[Category:Temple of Baal-Shamin in Palmyra]]
+[&#39;[[Category:Temple of Baal-Shamin in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+PALMYRA Tempio funerario  - GAR - 092
+specific_place_category[[Category:Tombs in Palmyra]]
+[&#39;[[Category:Tombs in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+PALMYRA Tetrapilo  - GAR - 084
+specific_place_category[[Category:Tetrapylon in Palmyra]]
+[&#39;[[Category:Tetrapylon in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+PALMYRA Tetrapilo  - GAR - 085
+specific_place_category[[Category:Tetrapylon in Palmyra]]
+[&#39;[[Category:Tetrapylon in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+PALMYRA Tetrapilo particolare  - GAR - 086
+specific_place_category[[Category:Tetrapylon in Palmyra]]
+[&#39;[[Category:Tetrapylon in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+PALMYRA Tomba a ipogeo interno  - GAR - 039
+specific_place_category[[Category:Tombs in Palmyra]]
+[&#39;[[Category:Tombs in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+PALMYRA Tomba a ipogeo interno  - GAR - 040
+specific_place_category[[Category:Tombs in Palmyra]]
+[&#39;[[Category:Tombs in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+PALMYRA Tomba a torre  - GAR - 021
+specific_place_category[[Category:Tombs in Palmyra]]
+[&#39;[[Category:Tombs in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+PALMYRA Tomba a torre interno  - GAR - 023
+specific_place_category[[Category:Tombs in Palmyra]]
+[&#39;[[Category:Tombs in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+PALMYRA Tomba a torre interno  - GAR - 024
+specific_place_category[[Category:Tombs in Palmyra]]
+[&#39;[[Category:Tombs in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+PALMYRA tomba a torre interno  - GAR - 025
+specific_place_category[[Category:Tombs in Palmyra]]
+[&#39;[[Category:Tombs in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+PALMYRA Tomba a torre interno  - GAR - 026
+specific_place_category[[Category:Tombs in Palmyra]]
+[&#39;[[Category:Tombs in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+YABROUD Chiesa di Sant&#39;Agostino già tempio di Zeus Yabrudis - GAR -  01
+general_place_category: [[Category:Cities in Syria]]
+Commons_category: [[Category:Yabrud]]
+[&#39;[[Category:Cities in Syria]]&#39;, &#39;[[Category:Yabrud]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+YABROUD Chiesa di Sant&#39;Agostino già tempio di Zeus Yabrudis - GAR -  02
+general_place_category: [[Category:Cities in Syria]]
+Commons_category: [[Category:Yabrud]]
+[&#39;[[Category:Cities in Syria]]&#39;, &#39;[[Category:Yabrud]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+YABROUD Necropoli - GAR -  05
+general_place_category: [[Category:Cities in Syria]]
+Commons_category: [[Category:Yabrud]]
+[&#39;[[Category:Cities in Syria]]&#39;, &#39;[[Category:Yabrud]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+YABROUD Necropoli - GAR -  06
+general_place_category: [[Category:Cities in Syria]]
+Commons_category: [[Category:Yabrud]]
+[&#39;[[Category:Cities in Syria]]&#39;, &#39;[[Category:Yabrud]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+YABROUD Necropoli - GAR -  07
+general_place_category: [[Category:Cities in Syria]]
+Commons_category: [[Category:Yabrud]]
+[&#39;[[Category:Cities in Syria]]&#39;, &#39;[[Category:Yabrud]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+YABROUD Necropoli - GAR -  08
+general_place_category: [[Category:Cities in Syria]]
+Commons_category: [[Category:Yabrud]]
+[&#39;[[Category:Cities in Syria]]&#39;, &#39;[[Category:Yabrud]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+YABROUD Necropoli - GAR -  09
+general_place_category: [[Category:Cities in Syria]]
+Commons_category: [[Category:Yabrud]]
+[&#39;[[Category:Cities in Syria]]&#39;, &#39;[[Category:Yabrud]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+YABROUD Necropoli - GAR -  10
+general_place_category: [[Category:Cities in Syria]]
+Commons_category: [[Category:Yabrud]]
+[&#39;[[Category:Cities in Syria]]&#39;, &#39;[[Category:Yabrud]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_cittadella - GAR - _01
+general_place_category: [[Category:Aleppo]]
+Commons_category: [[Category:Aleppo citadel]]
+[&#39;[[Category:Aleppo]]&#39;, &#39;[[Category:Aleppo citadel]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_cittadella - GAR - _02
+general_place_category: [[Category:Aleppo]]
+Commons_category: [[Category:Aleppo citadel]]
+[&#39;[[Category:Aleppo]]&#39;, &#39;[[Category:Aleppo citadel]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Grande moschea Omayyadi - GAR - _01
+specific_place_category[[Category:Great Mosque of Aleppo]]
+[&#39;[[Category:Great Mosque of Aleppo]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Grande moschea Omayyadi - GAR - _02
+specific_place_category[[Category:Great Mosque of Aleppo]]
+[&#39;[[Category:Great Mosque of Aleppo]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Grande moschea Omayyadi - GAR - _03
+specific_place_category[[Category:Great Mosque of Aleppo]]
+[&#39;[[Category:Great Mosque of Aleppo]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Museo archeologico - GAR - _01
+general_place_category: [[Category:Aleppo]]
+Commons_category: [[Category:Aleppo Museum]]
+[&#39;[[Category:Aleppo]]&#39;, &#39;[[Category:Aleppo Museum]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Museo archeologico - GAR - _02
+general_place_category: [[Category:Aleppo]]
+Commons_category: [[Category:Aleppo Museum]]
+[&#39;[[Category:Aleppo]]&#39;, &#39;[[Category:Aleppo Museum]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Quartiere Armeno - GAR - _01
+specific_place_category[[Category:Districts of Aleppo Governorate]]
+Commons_category: [[Category:Exterior views of Aleppo citadel]]
+[&#39;[[Category:Districts of Aleppo Governorate]]&#39;, &#39;[[Category:Exterior views of Aleppo citadel]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_suq - GAR - _01
+specific_place_category[[Category:Suqs and Khans in Aleppo]]
+[&#39;[[Category:Suqs and Khans in Aleppo]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_suq - GAR - _02
+specific_place_category[[Category:Suqs and Khans in Aleppo]]
+[&#39;[[Category:Suqs and Khans in Aleppo]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_suq - GAR - _03
+specific_place_category[[Category:Suqs and Khans in Aleppo]]
+[&#39;[[Category:Suqs and Khans in Aleppo]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_suq - GAR - _04
 Warning! Empty Author column in row no 218 photo Aleppo_suq_04
-Aleppo_suq_04 [[Category:Suqs and Khans in Aleppo]]
+specific_place_category[[Category:Suqs and Khans in Aleppo]]
+[&#39;[[Category:Suqs and Khans in Aleppo]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_suq - GAR - _05
 Warning! Empty Author column in row no 219 photo Aleppo_suq_05
-Aleppo_suq_05 [[Category:Suqs and Khans in Aleppo]]
+specific_place_category[[Category:Suqs and Khans in Aleppo]]
+[&#39;[[Category:Suqs and Khans in Aleppo]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_suq - GAR - _06
 Warning! Empty Author column in row no 220 photo Aleppo_suq_06
-Aleppo_suq_06 [[Category:Suqs and Khans in Aleppo]]
+specific_place_category[[Category:Suqs and Khans in Aleppo]]
+[&#39;[[Category:Suqs and Khans in Aleppo]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_suq - GAR - _07
 Warning! Empty Author column in row no 221 photo Aleppo_suq_07
-Aleppo_suq_07 [[Category:Suqs and Khans in Aleppo]]
-Mari_Palazzo di Zimri-Lim_02 [[Category:Palace of Zimri-Lim]]
-Mari_Palazzo di Zimri-Lim_03 [[Category:Palace of Zimri-Lim]]
-Mari_Palazzo di Zimri-Lim_04 [[Category:Palace of Zimri-Lim]]
-Mari_Palazzo di Zimri-Lim_05 [[Category:Palace of Zimri-Lim]]
-Mari_Palazzo di Zimri-Lim_06 [[Category:Palace of Zimri-Lim]]
-Palmira_Fakhr-al-Din al-Maani_01 [[Category:Archaeological site of Palmyra]]
-Palmira_Fakhr-al-Din al-Maani_02 [[Category:Archaeological site of Palmyra]]
-Palmira_Fakhr-al-Din al-Maani_03 [[Category:Archaeological site of Palmyra]]
-Palmira_Fortezza di Qualah ibn Maan_01 [[Category:Qasr Ibn Maʿan]]
-Palmira_Museo_01 [[Category:Sculptures in Palmyra]]
-Palmira_Museo_02 [[Category:Temple of Baal in Palmyra]]
-Palmira_Museo_03 [[Category:Tombs in Palmyra]]
-Palmira_Museo_04 [[Category:Tombs in Palmyra]]
-Palmira_Panorama_01 [[Category:Views of Palmyra]]
-Palmira_Panorama_02 [[Category:Views of Palmyra]]
-Palmira_panorama_03 [[Category:Tombs in Palmyra]]
-Palmira_panorama_04 [[Category:Views of Palmyra]]
-Palmira_Teatro romano_01 [[Category:Ancient Roman theater (Palmyra)]]
-Palmira_Tempio di Baal_01 [[Category:Temple of Baal in Palmyra]]
-Palmira_Tempio di Baal_02 [[Category:Temple of Baal in Palmyra]]
-Palmira_Tempio di Baal_03 [[Category:Temple of Baal in Palmyra]]
-Palmira_Tempio di Baal_04 [[Category:Temple of Baal in Palmyra]]
-Palmira_Tempio di Baal_05 [[Category:Temple of Baal in Palmyra]]
-Palmira_Tempio di Baal_06 [[Category:Temple of Baal in Palmyra]]
-Palmira_Tempio di Baal_07 [[Category:Temple of Baal in Palmyra]]
-Palmira_Tempio di Baal_08 [[Category:Temple of Baal in Palmyra]]
-Palmira_Tempio di Baal_09 [[Category:Temple of Baal in Palmyra]]
-Palmira_Tempio funerario_01 [[Category:Tombs in Palmyra]]
-Palmira_Tetrapylon_01 [[Category:Tetrapylon in Palmyra]]
-Palmira_Tetrapylon_02 [[Category:Tetrapylon in Palmyra]]
-Palmira_Tombe ipogee_01 [[Category:Tombs in Palmyra]]
-Palmira_Tombe ipogee_02 [[Category:Tombs in Palmyra]]
-Palmira_Via colonnata_01 [[Category:Doors in Palmyra]]
-Palmira_Via colonnata_02 [[Category:Great Colonnade at Palmyra]]
-Palmira_Via colonnata_03 [[Category:Great Colonnade at Palmyra]]
-Palmira_Via colonnata_04 [[Category:Monumental Arch of Palmyra]]
-Bosra_Teatro romano_01 [[Category:Ancient Roman theatre (Bosra)]]
-Bosra_Tetaro romano_02 [[Category:Ancient Roman theatre (Bosra)]]
-Aleppo_Cittadella_01 [[Category:Aleppo citadel]]
-Aleppo_Cittadella_02 [[Category:Aleppo citadel]]
-Aleppo_Cittadella_03 [[Category:Aleppo citadel]]
-Aleppo_Cittadella_04 [[Category:Aleppo citadel]]
-Aleppo_Cittadella_05 [[Category:Aleppo citadel]]
-Aleppo_Cittadella_07 [[Category:Aleppo citadel]]
-Aleppo_Cittadella_08 [[Category:Aleppo citadel]]
-Aleppo_Cittadella_09 [[Category:Aleppo citadel]]
-Aleppo_Cittadella_10 [[Category:Aleppo citadel]]
-Aleppo_Cittadella_11 [[Category:Aleppo citadel]]
-Aleppo_Cittadella_12 [[Category:Aleppo citadel]]
-Aleppo_Cittadella_13 [[Category:Aleppo citadel]]
-Aleppo_Cittadella_14 [[Category:Aleppo citadel]]
-Aleppo_Cittadella_15 [[Category:Aleppo citadel]]
-Aleppo_Cittadella_16 [[Category:Aleppo citadel]]
-Aleppo_Cittadella_17 [[Category:Aleppo citadel]]
-Aleppo_Cittadella_18 [[Category:Aleppo citadel]]
-Aleppo_Cittadella_19 [[Category:Aleppo citadel]]
-Aleppo_Cittadella_20 [[Category:Aleppo citadel]]
-Aleppo_Cittadella_21 [[Category:Aleppo citadel]]
-Aleppo_Cittadella_22 [[Category:Aleppo citadel]]
-Aleppo_Cittadella_23 [[Category:Aleppo citadel]]
-Aleppo_Cittadella_24 [[Category:Aleppo citadel]]
-Aleppo_Cittadella_25 [[Category:Aleppo citadel]]
-Aleppo_Cittadella_26 [[Category:Aleppo citadel]]
-Aleppo_Cittadella_27 [[Category:Aleppo citadel]]
-Aleppo_Cittadella_28 [[Category:Aleppo citadel]]
-Aleppo_Cittadella_29 [[Category:Aleppo citadel]]
-Aleppo_Cittadella_30 [[Category:Aleppo citadel]]
-Aleppo_Cittadella_31 [[Category:Aleppo citadel]]
-Aleppo_Cittadella_32 [[Category:Aleppo citadel]]
-Aleppo_Cittadella_33 [[Category:Aleppo citadel]]
-Aleppo_Cittadella_34 [[Category:Aleppo citadel]]
-Aleppo_Palazzo governativo_01 [[Category:Aleppo city hall]]
-Aleppo_panorama_01 [[Category:Panoramic views of Aleppo]]
-Aleppo_panorama_02 [[Category:Ancient City of Aleppo]]
-Aleppo_panorama_03 [[Category:Ancient City of Aleppo]]
-Aleppo_panorama_04 [[Category:Ancient City of Aleppo]]
-Aleppo_Moschea_01 [[Category:Great Mosque of Aleppo]]
-Aleppo_Museo_01 [[Category:Aleppo Museum]]
-Aleppo_Museo_02 [[Category:Aleppo Museum]]
-Aleppo_Museo_03 [[Category:Aleppo Museum]]
-Palmira_Persone_01 [[Category:People of Palmyra]]
-Palmira_Persone_02 [[Category:People of Palmyra]]
-Qasr al-Hayr al-Sharqi_01 [[Category:Qasr al-Heir al-Sharqi]]
-Qasr al-Hayr al-Sharqi_02 [[Category:Qasr al-Heir al-Sharqi]]
-Qasr al-Hayr al-Sharqi_03 [[Category:Qasr al-Heir al-Sharqi]]
-Qasr al-Hayr al-Sharqi_04 [[Category:Qasr al-Heir al-Sharqi]]
-Qasr al-Hayr al-Sharqi_05 [[Category:Qasr al-Heir al-Sharqi]]
-Qasr al-Hayr al-Sharqi_06 [[Category:Qasr al-Heir al-Sharqi]]
-Qasr al-Hayr al-Sharqi_07 [[Category:Qasr al-Heir al-Sharqi]]
-Kharab Shems_001 [[Category:Churches in Aleppo]]
-Kharab Shems_002 [[Category:Churches in Aleppo]]
-Kharab Shems_003 [[Category:Churches in Aleppo]]
-Kharab Shems_004 [[Category:Churches in Aleppo]]
-Kharab Shems_005 [[Category:Churches in Aleppo]]
-Kharab Shems_006 [[Category:Churches in Aleppo]]
-Kharab Shems_007 [[Category:Churches in Aleppo]]
-Kharab Shems_008 [[Category:Churches in Aleppo]]
-Kharab Shems_009 [[Category:Churches in Aleppo]]
-Moschea Aleppo_01 [[Category:Great Mosque of Aleppo]]
-Moschea Aleppo_02 [[Category:Great Mosque of Aleppo]]
-Moschea Aleppo_04 [[Category:Great Mosque of Aleppo]]
-Moschea Aleppo_05 [[Category:Great Mosque of Aleppo]]
+specific_place_category[[Category:Suqs and Khans in Aleppo]]
+[&#39;[[Category:Suqs and Khans in Aleppo]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Dura Europos_cittadella - GAR - _01
+general_place_category: [[Category:Dura Europos]]
+[&#39;[[Category:Dura Europos]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Dura Europos_cittadella - GAR - _02
+general_place_category: [[Category:Dura Europos]]
+[&#39;[[Category:Dura Europos]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Dura Europos_cittadella - GAR - _03
+general_place_category: [[Category:Dura Europos]]
+[&#39;[[Category:Dura Europos]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Dura Europos_cittadella - GAR - _04
+general_place_category: [[Category:Dura Europos]]
+[&#39;[[Category:Dura Europos]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Dura Europos_cittadella - GAR - _05
+general_place_category: [[Category:Dura Europos]]
+[&#39;[[Category:Dura Europos]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Dura Europos_mura città - GAR - _01
+general_place_category: [[Category:Dura Europos]]
+[&#39;[[Category:Dura Europos]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Dura Europos_Mura - GAR - _01
+general_place_category: [[Category:Dura Europos]]
+[&#39;[[Category:Dura Europos]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Dura Europos_Porta della città - GAR - _01
+general_place_category: [[Category:Dura Europos]]
+[&#39;[[Category:Dura Europos]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Dura Europos_scavi quartiere ellenistico - GAR - _01
+general_place_category: [[Category:Dura Europos]]
+[&#39;[[Category:Dura Europos]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Dura Europos_Tempio divinità orientali - GAR - _01
+general_place_category: [[Category:Dura Europos]]
+[&#39;[[Category:Dura Europos]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Halabiyah - GAR - _01
+general_place_category: [[Category:Halabiyeh]]
+[&#39;[[Category:Halabiyeh]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Halabiyah - GAR - _02
+general_place_category: [[Category:Halabiyeh]]
+[&#39;[[Category:Halabiyeh]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Halabiyah - GAR - _03
+general_place_category: [[Category:Halabiyeh]]
+[&#39;[[Category:Halabiyeh]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Halabiyah - GAR - _04
+general_place_category: [[Category:Halabiyeh]]
+[&#39;[[Category:Halabiyeh]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Halabiyah - GAR - _05
+general_place_category: [[Category:Halabiyeh]]
+[&#39;[[Category:Halabiyeh]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Mari_Palazzo di Zimri-Lim - GAR - _01
+general_place_category: [[Category:Mari]]
+Commons_category: [[Category:Palace of Zimri-Lin]]
+[&#39;[[Category:Mari]]&#39;, &#39;[[Category:Palace of Zimri-Lin]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Mari_Palazzo di Zimri-Lim - GAR - _02
+specific_place_category[[Category:Palace of Zimri-Lim]]
+Commons_category: [[Category:Palace of Zimri-Lin]]
+[&#39;[[Category:Palace of Zimri-Lim]]&#39;, &#39;[[Category:Palace of Zimri-Lin]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Mari_Palazzo di Zimri-Lim - GAR - _03
+specific_place_category[[Category:Palace of Zimri-Lim]]
+Commons_category: [[Category:Palace of Zimri-Lin]]
+[&#39;[[Category:Palace of Zimri-Lim]]&#39;, &#39;[[Category:Palace of Zimri-Lin]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Mari_Palazzo di Zimri-Lim - GAR - _04
+specific_place_category[[Category:Palace of Zimri-Lim]]
+Commons_category: [[Category:Palace of Zimri-Lin]]
+[&#39;[[Category:Palace of Zimri-Lim]]&#39;, &#39;[[Category:Palace of Zimri-Lin]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Mari_Palazzo di Zimri-Lim - GAR - _05
+specific_place_category[[Category:Palace of Zimri-Lim]]
+Commons_category: [[Category:Palace of Zimri-Lin]]
+[&#39;[[Category:Palace of Zimri-Lim]]&#39;, &#39;[[Category:Palace of Zimri-Lin]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Mari_Palazzo di Zimri-Lim - GAR - _06
+specific_place_category[[Category:Palace of Zimri-Lim]]
+Commons_category: [[Category:Palace of Zimri-Lin]]
+[&#39;[[Category:Palace of Zimri-Lim]]&#39;, &#39;[[Category:Palace of Zimri-Lin]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_Fakhr-al-Din al-Maani - GAR - _01
+specific_place_category[[Category:Archaeological site of Palmyra]]
+Commons_category: [[Category:Qasr Ibn Maʿan]]
+[&#39;[[Category:Archaeological site of Palmyra]]&#39;, &#39;[[Category:Qasr Ibn Maʿan]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_Fakhr-al-Din al-Maani - GAR - _02
+specific_place_category[[Category:Archaeological site of Palmyra]]
+Commons_category: [[Category:Qasr Ibn Maʿan]]
+[&#39;[[Category:Archaeological site of Palmyra]]&#39;, &#39;[[Category:Qasr Ibn Maʿan]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_Fakhr-al-Din al-Maani - GAR - _03
+specific_place_category[[Category:Archaeological site of Palmyra]]
+Commons_category: [[Category:Views of the Temple of Baal in Palmyra]]
+[&#39;[[Category:Archaeological site of Palmyra]]&#39;, &#39;[[Category:Views of the Temple of Baal in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_Fortezza di Qualah ibn Maan - GAR - _01
+specific_place_category[[Category:Qasr Ibn Maʿan]]
+[&#39;[[Category:Qasr Ibn Maʿan]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_Museo - GAR - _01
+specific_place_category[[Category:Sculptures in Palmyra]]
+Commons_category: [[Category:Palmyra Archeological Museum]]
+[&#39;[[Category:Sculptures in Palmyra]]&#39;, &#39;[[Category:Palmyra Archeological Museum]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_Museo - GAR - _02
+specific_place_category[[Category:Temple of Baal in Palmyra]]
+Commons_category: [[Category:Palmyra Archeological Museum]]
+[&#39;[[Category:Temple of Baal in Palmyra]]&#39;, &#39;[[Category:Palmyra Archeological Museum]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_Museo - GAR - _03
+specific_place_category[[Category:Tombs in Palmyra]]
+Commons_category: [[Category:Palmyra Archeological Museum]]
+[&#39;[[Category:Tombs in Palmyra]]&#39;, &#39;[[Category:Palmyra Archeological Museum]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_Museo - GAR - _04
+specific_place_category[[Category:Tombs in Palmyra]]
+Commons_category: [[Category:Palmyra Archeological Museum]]
+[&#39;[[Category:Tombs in Palmyra]]&#39;, &#39;[[Category:Palmyra Archeological Museum]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_Panorama - GAR - _01
+specific_place_category[[Category:Views of Palmyra]]
+[&#39;[[Category:Views of Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_Panorama - GAR - _02
+specific_place_category[[Category:Views of Palmyra]]
+[&#39;[[Category:Views of Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_panorama - GAR - _03
+specific_place_category[[Category:Tombs in Palmyra]]
+[&#39;[[Category:Tombs in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_panorama - GAR - _04
+specific_place_category[[Category:Views of Palmyra]]
+[&#39;[[Category:Views of Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_Teatro romano - GAR - _01
+specific_place_category[[Category:Ancient Roman theater (Palmyra)]]
+Commons_category: [[Category:Ancient Roman theater (Palmyra)‎]]
+[&#39;[[Category:Ancient Roman theater (Palmyra)]]&#39;, &#39;[[Category:Ancient Roman theater (Palmyra)\u200e]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_Tempio di Allat Atena - GAR - _01
+general_place_category: [[Category:Palmyra]]
+Commons_category: [[Category:Temple of Allat in Palmyra]]
+[&#39;[[Category:Palmyra]]&#39;, &#39;[[Category:Temple of Allat in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_Tempio di Baal - GAR - _01
+specific_place_category[[Category:Temple of Baal in Palmyra]]
+[&#39;[[Category:Temple of Baal in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_Tempio di Baal - GAR - _02
+specific_place_category[[Category:Temple of Baal in Palmyra]]
+Commons_category: [[Category:Views of the Temple of Baal in Palmyra]]
+[&#39;[[Category:Temple of Baal in Palmyra]]&#39;, &#39;[[Category:Views of the Temple of Baal in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_Tempio di Baal - GAR - _03
+specific_place_category[[Category:Temple of Baal in Palmyra]]
+Commons_category: [[Category:Inner court of the Temple of Baal in Palmyra]]
+[&#39;[[Category:Temple of Baal in Palmyra]]&#39;, &#39;[[Category:Inner court of the Temple of Baal in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_Tempio di Baal - GAR - _04
+specific_place_category[[Category:Temple of Baal in Palmyra]]
+[&#39;[[Category:Temple of Baal in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_Tempio di Baal - GAR - _05
+specific_place_category[[Category:Temple of Baal in Palmyra]]
+Commons_category: [[Category:Interior of the Temple of Baal in Palmyra]]
+[&#39;[[Category:Temple of Baal in Palmyra]]&#39;, &#39;[[Category:Interior of the Temple of Baal in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_Tempio di Baal - GAR - _06
+specific_place_category[[Category:Temple of Baal in Palmyra]]
+Commons_category: [[Category:Interior of the Temple of Baal in Palmyra]]
+[&#39;[[Category:Temple of Baal in Palmyra]]&#39;, &#39;[[Category:Interior of the Temple of Baal in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_Tempio di Baal - GAR - _07
+specific_place_category[[Category:Temple of Baal in Palmyra]]
+Commons_category: [[Category:Interior of the Temple of Baal in Palmyra]]
+[&#39;[[Category:Temple of Baal in Palmyra]]&#39;, &#39;[[Category:Interior of the Temple of Baal in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_Tempio di Baal - GAR - _08
+specific_place_category[[Category:Temple of Baal in Palmyra]]
+Commons_category: [[Category:Reliefs in Temple of Baal in Palmyra]]
+[&#39;[[Category:Temple of Baal in Palmyra]]&#39;, &#39;[[Category:Reliefs in Temple of Baal in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_Tempio di Baal - GAR - _09
+specific_place_category[[Category:Temple of Baal in Palmyra]]
+Commons_category: [[Category:Inner court of the Temple of Baal in Palmyra]]
+[&#39;[[Category:Temple of Baal in Palmyra]]&#39;, &#39;[[Category:Inner court of the Temple of Baal in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_Tempio funerario - GAR - _01
+specific_place_category[[Category:Tombs in Palmyra]]
+Commons_category: [[Category:Great Colonnade at Palmyra]]
+[&#39;[[Category:Tombs in Palmyra]]&#39;, &#39;[[Category:Great Colonnade at Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_Tetrapylon - GAR - _01
+specific_place_category[[Category:Tetrapylon in Palmyra]]
+[&#39;[[Category:Tetrapylon in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_Tetrapylon - GAR - _02
+specific_place_category[[Category:Tetrapylon in Palmyra]]
+[&#39;[[Category:Tetrapylon in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_Tombe ipogee - GAR - _01
+specific_place_category[[Category:Tombs in Palmyra]]
+[&#39;[[Category:Tombs in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_Tombe ipogee - GAR - _02
+specific_place_category[[Category:Tombs in Palmyra]]
+[&#39;[[Category:Tombs in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_Via colonnata - GAR - _01
+specific_place_category[[Category:Doors in Palmyra]]
+Commons_category: [[Category:Monumental Arch of Palmyra]]
+[&#39;[[Category:Doors in Palmyra]]&#39;, &#39;[[Category:Monumental Arch of Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_Via colonnata - GAR - _02
+specific_place_category[[Category:Great Colonnade at Palmyra]]
+[&#39;[[Category:Great Colonnade at Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_Via colonnata - GAR - _03
+specific_place_category[[Category:Great Colonnade at Palmyra]]
+[&#39;[[Category:Great Colonnade at Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_Via colonnata - GAR - _04
+specific_place_category[[Category:Monumental Arch of Palmyra]]
+Commons_category: [[Category:Views of Palmyra]]
+[&#39;[[Category:Monumental Arch of Palmyra]]&#39;, &#39;[[Category:Views of Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Sergiopolis_cattedrale - GAR - _01
+general_place_category: [[Category:Resafa]]
+Commons_category: [[Category:Byzantine cathedral in Palmyra]]
+[&#39;[[Category:Resafa]]&#39;, &#39;[[Category:Byzantine cathedral in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Sergiopolis_cattedrale - GAR - _02
+general_place_category: [[Category:Resafa]]
+Commons_category: [[Category:Byzantine cathedral in Palmyra]]
+[&#39;[[Category:Resafa]]&#39;, &#39;[[Category:Byzantine cathedral in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Sergiopolis_cattedrale - GAR - _03
+general_place_category: [[Category:Resafa]]
+Commons_category: [[Category:Byzantine cathedral in Palmyra]]
+[&#39;[[Category:Resafa]]&#39;, &#39;[[Category:Byzantine cathedral in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Sergiopolis_cattedrale - GAR - _04
+general_place_category: [[Category:Resafa]]
+Commons_category: [[Category:Byzantine cathedral in Palmyra]]
+[&#39;[[Category:Resafa]]&#39;, &#39;[[Category:Byzantine cathedral in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Sergiopolis_cattedrale - GAR - _05
+general_place_category: [[Category:Resafa]]
+Commons_category: [[Category:Byzantine cathedral in Palmyra]]
+[&#39;[[Category:Resafa]]&#39;, &#39;[[Category:Byzantine cathedral in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Sergiopolis_cattedrale - GAR - _06
+general_place_category: [[Category:Resafa]]
+Commons_category: [[Category:Byzantine cathedral in Palmyra]]
+[&#39;[[Category:Resafa]]&#39;, &#39;[[Category:Byzantine cathedral in Palmyra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Tell Barry - GAR - _01
+general_place_category: [[Category:Tell Barri]]
+[&#39;[[Category:Tell Barri]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Tell Barry - GAR - _02
+general_place_category: [[Category:Tell Barri]]
+[&#39;[[Category:Tell Barri]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Tell Barry - GAR - _03
+general_place_category: [[Category:Tell Barri]]
+[&#39;[[Category:Tell Barri]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Tell Barry - GAR - _04
+general_place_category: [[Category:Tell Barri]]
+[&#39;[[Category:Tell Barri]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Tell Barry - GAR - _05
+general_place_category: [[Category:Tell Barri]]
+[&#39;[[Category:Tell Barri]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Al Quanawat-Kanatha - GAR - _01
+general_place_category: [[Category:Qanawat]]
+[&#39;[[Category:Qanawat]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Al Quanawat-Kanatha - GAR - _02
+general_place_category: [[Category:Qanawat]]
+[&#39;[[Category:Qanawat]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Al Quanawat-Kanatha - GAR - _03
+general_place_category: [[Category:Qanawat]]
+[&#39;[[Category:Qanawat]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Al Quanawat-Kanatha - GAR - _04
+general_place_category: [[Category:Qanawat]]
+[&#39;[[Category:Qanawat]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Al Quanawat-Kanatha - GAR - _05
+general_place_category: [[Category:Qanawat]]
+[&#39;[[Category:Qanawat]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Al Quanawat-Kanatha - GAR - _06
+general_place_category: [[Category:Qanawat]]
+[&#39;[[Category:Qanawat]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Atil - GAR - _01
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:As-Suwayda]]
+[&#39;[[Category:As-Suwayda]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Atil - GAR - _02
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:As-Suwayda]]
+[&#39;[[Category:As-Suwayda]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Bosra_Caseggiato bizantino - GAR - _01
+general_place_category: [[Category:Bosra]]
+[&#39;[[Category:Bosra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Bosra_Grandi terme - GAR - _01
+general_place_category: [[Category:Bosra]]
+[&#39;[[Category:Bosra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Bosra_Teatro romano - GAR - _01
+specific_place_category[[Category:Ancient Roman theatre (Bosra)]]
+[&#39;[[Category:Ancient Roman theatre (Bosra)]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Bosra_Tetaro romano - GAR - _02
+specific_place_category[[Category:Ancient Roman theatre (Bosra)]]
+[&#39;[[Category:Ancient Roman theatre (Bosra)]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Es Sanamein - GAR - _01
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:Populated places in Al-Sanamayn District]]
+[&#39;[[Category:Populated places in Al-Sanamayn District]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Ezraa - GAR - _01
+general_place_category: [[Category:Izra]]
+[&#39;[[Category:Izra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Ezraa - GAR - _02
+general_place_category: [[Category:Izra]]
+[&#39;[[Category:Izra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Ezraa - GAR - _03
+general_place_category: [[Category:Izra]]
+[&#39;[[Category:Izra]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Ezraa_Chiesa di San Giorgio - GAR - _01
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:As-Suwayda]]
+[&#39;[[Category:As-Suwayda]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Mushennef - GAR - _01
+general_place_category: [[Category:Populated places in as-Suwayda District]]
+[&#39;[[Category:Populated places in as-Suwayda District]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Cittadella - GAR - _01
+specific_place_category[[Category:Aleppo citadel]]
+[&#39;[[Category:Aleppo citadel]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Cittadella - GAR - _02
+specific_place_category[[Category:Aleppo citadel]]
+[&#39;[[Category:Aleppo citadel]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Cittadella - GAR - _03
+specific_place_category[[Category:Aleppo citadel]]
+[&#39;[[Category:Aleppo citadel]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Cittadella - GAR - _04
+specific_place_category[[Category:Aleppo citadel]]
+[&#39;[[Category:Aleppo citadel]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Cittadella - GAR - _05
+specific_place_category[[Category:Aleppo citadel]]
+[&#39;[[Category:Aleppo citadel]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Cittadella - GAR - _07
+specific_place_category[[Category:Aleppo citadel]]
+[&#39;[[Category:Aleppo citadel]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Cittadella - GAR - _08
+specific_place_category[[Category:Aleppo citadel]]
+[&#39;[[Category:Aleppo citadel]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Cittadella - GAR - _09
+specific_place_category[[Category:Aleppo citadel]]
+[&#39;[[Category:Aleppo citadel]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Cittadella - GAR - _10
+specific_place_category[[Category:Aleppo citadel]]
+[&#39;[[Category:Aleppo citadel]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Cittadella - GAR - _11
+specific_place_category[[Category:Aleppo citadel]]
+Commons_category: [[Category:Hammam of Aleppo citadel]]
+[&#39;[[Category:Aleppo citadel]]&#39;, &#39;[[Category:Hammam of Aleppo citadel]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Cittadella - GAR - _12
+specific_place_category[[Category:Aleppo citadel]]
+[&#39;[[Category:Aleppo citadel]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Cittadella - GAR - _13
+specific_place_category[[Category:Aleppo citadel]]
+[&#39;[[Category:Aleppo citadel]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Cittadella - GAR - _14
+specific_place_category[[Category:Aleppo citadel]]
+Commons_category: [[Category:Hammam of Aleppo citadel]]
+[&#39;[[Category:Aleppo citadel]]&#39;, &#39;[[Category:Hammam of Aleppo citadel]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Cittadella - GAR - _15
+specific_place_category[[Category:Aleppo citadel]]
+[&#39;[[Category:Aleppo citadel]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Cittadella - GAR - _16
+specific_place_category[[Category:Aleppo citadel]]
+[&#39;[[Category:Aleppo citadel]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Cittadella - GAR - _17
+specific_place_category[[Category:Aleppo citadel]]
+[&#39;[[Category:Aleppo citadel]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Cittadella - GAR - _18
+specific_place_category[[Category:Aleppo citadel]]
+[&#39;[[Category:Aleppo citadel]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Cittadella - GAR - _19
+specific_place_category[[Category:Aleppo citadel]]
+[&#39;[[Category:Aleppo citadel]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Cittadella - GAR - _20
+specific_place_category[[Category:Aleppo citadel]]
+[&#39;[[Category:Aleppo citadel]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Cittadella - GAR - _21
+specific_place_category[[Category:Aleppo citadel]]
+[&#39;[[Category:Aleppo citadel]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Cittadella - GAR - _22
+specific_place_category[[Category:Aleppo citadel]]
+Commons_category: [[Category:Hammam of Aleppo citadel]]
+[&#39;[[Category:Aleppo citadel]]&#39;, &#39;[[Category:Hammam of Aleppo citadel]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Cittadella - GAR - _23
+specific_place_category[[Category:Aleppo citadel]]
+[&#39;[[Category:Aleppo citadel]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Cittadella - GAR - _24
+specific_place_category[[Category:Aleppo citadel]]
+[&#39;[[Category:Aleppo citadel]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Cittadella - GAR - _25
+specific_place_category[[Category:Aleppo citadel]]
+[&#39;[[Category:Aleppo citadel]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Cittadella - GAR - _26
+specific_place_category[[Category:Aleppo citadel]]
+Commons_category: [[Category:Great Mosque of Aleppo Citadel‎]]
+[&#39;[[Category:Aleppo citadel]]&#39;, &#39;[[Category:Great Mosque of Aleppo Citadel\u200e]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Cittadella - GAR - _27
+specific_place_category[[Category:Aleppo citadel]]
+Commons_category: [[Category:Great Mosque of Aleppo Citadel‎]]
+[&#39;[[Category:Aleppo citadel]]&#39;, &#39;[[Category:Great Mosque of Aleppo Citadel\u200e]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Cittadella - GAR - _28
+specific_place_category[[Category:Aleppo citadel]]
+Commons_category: [[Category:Great Mosque of Aleppo Citadel‎]]
+[&#39;[[Category:Aleppo citadel]]&#39;, &#39;[[Category:Great Mosque of Aleppo Citadel\u200e]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Cittadella - GAR - _29
+specific_place_category[[Category:Aleppo citadel]]
+Commons_category: [[Category:Great Mosque of Aleppo Citadel‎]]
+[&#39;[[Category:Aleppo citadel]]&#39;, &#39;[[Category:Great Mosque of Aleppo Citadel\u200e]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Cittadella - GAR - _30
+specific_place_category[[Category:Aleppo citadel]]
+[&#39;[[Category:Aleppo citadel]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Cittadella - GAR - _31
+specific_place_category[[Category:Aleppo citadel]]
+Commons_category: [[Category:Throne Hall of Aleppo citadel]]
+[&#39;[[Category:Aleppo citadel]]&#39;, &#39;[[Category:Throne Hall of Aleppo citadel]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Cittadella - GAR - _32
+specific_place_category[[Category:Aleppo citadel]]
+[&#39;[[Category:Aleppo citadel]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Cittadella - GAR - _33
+specific_place_category[[Category:Aleppo citadel]]
+Commons_category: [[Category:Throne Hall of Aleppo citadel]]
+[&#39;[[Category:Aleppo citadel]]&#39;, &#39;[[Category:Throne Hall of Aleppo citadel]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Cittadella - GAR - _34
+specific_place_category[[Category:Aleppo citadel]]
+[&#39;[[Category:Aleppo citadel]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Palazzo governativo - GAR - _01
+specific_place_category[[Category:Aleppo city hall]]
+Commons_category: [[Category:Buildings in Aleppo]]
+[&#39;[[Category:Aleppo city hall]]&#39;, &#39;[[Category:Buildings in Aleppo]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_panorama - GAR - _01
+specific_place_category[[Category:Panoramic views of Aleppo]]
+Commons_category: [[Category:Buildings in Aleppo]]
+[&#39;[[Category:Panoramic views of Aleppo]]&#39;, &#39;[[Category:Buildings in Aleppo]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_panorama - GAR - _02
+specific_place_category[[Category:Ancient City of Aleppo]]
+Commons_category: [[Category:Panoramic views of Aleppo]]
+[&#39;[[Category:Ancient City of Aleppo]]&#39;, &#39;[[Category:Panoramic views of Aleppo]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_panorama - GAR - _03
+specific_place_category[[Category:Ancient City of Aleppo]]
+Commons_category: [[Category:Panoramic views of Aleppo]]
+[&#39;[[Category:Ancient City of Aleppo]]&#39;, &#39;[[Category:Panoramic views of Aleppo]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_panorama - GAR - _04
+specific_place_category[[Category:Ancient City of Aleppo]]
+Commons_category: [[Category:Panoramic views of Aleppo]]
+[&#39;[[Category:Ancient City of Aleppo]]&#39;, &#39;[[Category:Panoramic views of Aleppo]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Burji Hadar - GAR - _01
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:Dead cities]]
+[&#39;[[Category:Dead cities]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Burji Hadar - GAR - _02
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:Dead cities]]
+[&#39;[[Category:Dead cities]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Burji Hadar - GAR - _03
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:Dead cities]]
+[&#39;[[Category:Dead cities]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Burji Hadar - GAR - _04
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:Dead cities]]
+[&#39;[[Category:Dead cities]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Burji Hadar - GAR - _05
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:Dead cities]]
+[&#39;[[Category:Dead cities]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Burji Hadar - GAR - _06
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:Dead cities]]
+[&#39;[[Category:Dead cities]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Burji Hadar - GAR - _07
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:Dead cities]]
+[&#39;[[Category:Dead cities]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Burjikeh - GAR - _01
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:Burj Qa&#39;i]]
+[&#34;[[Category:Burj Qa&#39;i]]&#34;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Burjikeh - GAR - _02
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:Burj Qa&#39;i]]
+[&#34;[[Category:Burj Qa&#39;i]]&#34;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Burjikeh - GAR - _03
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:Burj Qa&#39;i]]
+[&#34;[[Category:Burj Qa&#39;i]]&#34;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Burjikeh - GAR - _04
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:Burj Qa&#39;i]]
+[&#34;[[Category:Burj Qa&#39;i]]&#34;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Burjikeh - GAR - _05
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:Burj Qa&#39;i]]
+[&#34;[[Category:Burj Qa&#39;i]]&#34;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Burjikeh - GAR - _06
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:Burj Qa&#39;i]]
+[&#34;[[Category:Burj Qa&#39;i]]&#34;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Casr al Banat - GAR - _01
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:Ar-Raqqah]]
+[&#39;[[Category:Ar-Raqqah]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Chalcis ad Belum - GAR - _01
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:Populated places in Mount Simeon District]]
+[&#39;[[Category:Populated places in Mount Simeon District]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Cyrrus - GAR - _01
+general_place_category: [[Category:Cyrrhus]]
+[&#39;[[Category:Cyrrhus]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Cyrrus - GAR - _02
+general_place_category: [[Category:Cyrrhus]]
+[&#39;[[Category:Cyrrhus]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Cyrrus - GAR - _03
+general_place_category: [[Category:Cyrrhus]]
+[&#39;[[Category:Cyrrhus]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Dana nord - GAR - _01
+general_place_category: [[Category:Populated places in Harem District]]
+[&#39;[[Category:Populated places in Harem District]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Dana nord - GAR - _02
+general_place_category: [[Category:Populated places in Harem District]]
+[&#39;[[Category:Populated places in Harem District]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Dana sud - GAR - _01
+general_place_category: [[Category:Populated places in Harem District]]
+[&#39;[[Category:Populated places in Harem District]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Darkita Monaster - GAR - _01
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:Dead cities]]
+[&#39;[[Category:Dead cities]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Darkita Monaster - GAR - _02
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:Dead cities]]
+[&#39;[[Category:Dead cities]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Darkita - GAR - _01
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:Dead cities]]
+[&#39;[[Category:Dead cities]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Darkita - GAR - _02
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:Dead cities]]
+[&#39;[[Category:Dead cities]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Darkita - GAR - _03
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:Dead cities]]
+[&#39;[[Category:Dead cities]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Darkita - GAR - _04
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:Dead cities]]
+[&#39;[[Category:Dead cities]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Darkita - GAR - _06
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:Dead cities]]
+[&#39;[[Category:Dead cities]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Ebla_Palazzo G - GAR - _01
+general_place_category: [[Category:Ebla]]
+[&#39;[[Category:Ebla]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Ebla_Palazzo G - GAR - _02
+general_place_category: [[Category:Ebla]]
+[&#39;[[Category:Ebla]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Ebla_Palazzo G - GAR - _03
+general_place_category: [[Category:Ebla]]
+[&#39;[[Category:Ebla]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Ebla_Palazzo meridionale - GAR - _01
+general_place_category: [[Category:Ebla]]
+[&#39;[[Category:Ebla]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Ebla_Porta sud-Ovest - GAR - _01
+general_place_category: [[Category:Ebla]]
+[&#39;[[Category:Ebla]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Ebla_Porta sud-Ovest - GAR - _02
+general_place_category: [[Category:Ebla]]
+[&#39;[[Category:Ebla]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Fafirtin - GAR - _01
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:Dead cities]]
+[&#39;[[Category:Dead cities]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Moschea - GAR - _01
+specific_place_category[[Category:Great Mosque of Aleppo]]
+[&#39;[[Category:Great Mosque of Aleppo]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Museo - GAR - _01
+specific_place_category[[Category:Aleppo Museum]]
+[&#39;[[Category:Aleppo Museum]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Museo - GAR - _02
+specific_place_category[[Category:Aleppo Museum]]
+[&#39;[[Category:Aleppo Museum]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Aleppo_Museo - GAR - _03
+specific_place_category[[Category:Aleppo Museum]]
+[&#39;[[Category:Aleppo Museum]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Bambine siriane - GAR - _01
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:People of Syria]]
+[&#39;[[Category:People of Syria]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Deir ez Zor_Cham Palace - GAR - _01
+general_place_category: [[Category:Dayr az-Zawr]]
+[&#39;[[Category:Dayr az-Zawr]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Dura Europos - GAR - _01
+general_place_category: [[Category:Dura Europos]]
+[&#39;[[Category:Dura Europos]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_Persone - GAR - _01
+specific_place_category[[Category:People of Palmyra]]
+Commons_category: [[Category:People of Syria]]
+[&#39;[[Category:People of Palmyra]]&#39;, &#39;[[Category:People of Syria]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Palmira_Persone - GAR - _02
+specific_place_category[[Category:People of Palmyra]]
+Commons_category: [[Category:People of Syria]]
+[&#39;[[Category:People of Palmyra]]&#39;, &#39;[[Category:People of Syria]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Qasr al-Hayr al-Sharqi - GAR - _01
+specific_place_category[[Category:Qasr al-Heir al-Sharqi]]
+[&#39;[[Category:Qasr al-Heir al-Sharqi]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Qasr al-Hayr al-Sharqi - GAR - _02
+specific_place_category[[Category:Qasr al-Heir al-Sharqi]]
+[&#39;[[Category:Qasr al-Heir al-Sharqi]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Qasr al-Hayr al-Sharqi - GAR - _03
+specific_place_category[[Category:Qasr al-Heir al-Sharqi]]
+[&#39;[[Category:Qasr al-Heir al-Sharqi]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Qasr al-Hayr al-Sharqi - GAR - _04
+specific_place_category[[Category:Qasr al-Heir al-Sharqi]]
+[&#39;[[Category:Qasr al-Heir al-Sharqi]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Qasr al-Hayr al-Sharqi - GAR - _05
+specific_place_category[[Category:Qasr al-Heir al-Sharqi]]
+[&#39;[[Category:Qasr al-Heir al-Sharqi]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Qasr al-Hayr al-Sharqi - GAR - _06
+specific_place_category[[Category:Qasr al-Heir al-Sharqi]]
+[&#39;[[Category:Qasr al-Heir al-Sharqi]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Qasr al-Hayr al-Sharqi - GAR - _07
+specific_place_category[[Category:Qasr al-Heir al-Sharqi]]
+[&#39;[[Category:Qasr al-Heir al-Sharqi]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Tell Barri - GAR - _01
+general_place_category: [[Category:Tell Barri]]
+[&#39;[[Category:Tell Barri]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Jerade_ - GAR - 001
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:Dead cities]]
+[&#39;[[Category:Dead cities]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Jerade_ - GAR - 002
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:Dead cities]]
+[&#39;[[Category:Dead cities]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Jerade_ - GAR - 003
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:Dead cities]]
+[&#39;[[Category:Dead cities]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Jerade_ - GAR - 004
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:Dead cities]]
+[&#39;[[Category:Dead cities]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Jerade_ - GAR - 005
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:Dead cities]]
+[&#39;[[Category:Dead cities]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Jerade_ - GAR - 006
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:Dead cities]]
+[&#39;[[Category:Dead cities]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Jerade_ - GAR - 007
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:Dead cities]]
+[&#39;[[Category:Dead cities]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Jerade_ - GAR - 008
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:Dead cities]]
+[&#39;[[Category:Dead cities]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Jerade_ - GAR - 009
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:Dead cities]]
+[&#39;[[Category:Dead cities]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Jerade_ - GAR - 010
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:Dead cities]]
+[&#39;[[Category:Dead cities]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Jerade_ - GAR - 011
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:Dead cities]]
+[&#39;[[Category:Dead cities]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Kharab Shems_ - GAR - 001
+specific_place_category[[Category:Churches in Aleppo]]
+Commons_category: [[Category:Dead cities]]
+[&#39;[[Category:Churches in Aleppo]]&#39;, &#39;[[Category:Dead cities]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Kharab Shems_ - GAR - 002
+specific_place_category[[Category:Churches in Aleppo]]
+Commons_category: [[Category:Dead cities]]
+[&#39;[[Category:Churches in Aleppo]]&#39;, &#39;[[Category:Dead cities]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Kharab Shems_ - GAR - 003
+specific_place_category[[Category:Churches in Aleppo]]
+Commons_category: [[Category:Dead cities]]
+[&#39;[[Category:Churches in Aleppo]]&#39;, &#39;[[Category:Dead cities]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Kharab Shems_ - GAR - 004
+specific_place_category[[Category:Churches in Aleppo]]
+Commons_category: [[Category:Dead cities]]
+[&#39;[[Category:Churches in Aleppo]]&#39;, &#39;[[Category:Dead cities]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Kharab Shems_ - GAR - 005
+specific_place_category[[Category:Churches in Aleppo]]
+Commons_category: [[Category:Dead cities]]
+[&#39;[[Category:Churches in Aleppo]]&#39;, &#39;[[Category:Dead cities]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Kharab Shems_ - GAR - 006
+specific_place_category[[Category:Churches in Aleppo]]
+Commons_category: [[Category:Dead cities]]
+[&#39;[[Category:Churches in Aleppo]]&#39;, &#39;[[Category:Dead cities]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Kharab Shems_ - GAR - 007
+specific_place_category[[Category:Churches in Aleppo]]
+Commons_category: [[Category:Dead cities]]
+[&#39;[[Category:Churches in Aleppo]]&#39;, &#39;[[Category:Dead cities]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Kharab Shems_ - GAR - 008
+specific_place_category[[Category:Churches in Aleppo]]
+Commons_category: [[Category:Dead cities]]
+[&#39;[[Category:Churches in Aleppo]]&#39;, &#39;[[Category:Dead cities]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Kharab Shems_ - GAR - 009
+specific_place_category[[Category:Churches in Aleppo]]
+Commons_category: [[Category:Dead cities]]
+[&#39;[[Category:Churches in Aleppo]]&#39;, &#39;[[Category:Dead cities]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Maarat An Numan_ - GAR - 006
+general_place_category: [[Category:Populated places in Maarrat al-Nu&#39;man District]]
+Commons_category: [[Category:Ma&#39;arrat al-Numan]]
+[&#34;[[Category:Populated places in Maarrat al-Nu&#39;man District]]&#34;, &#34;[[Category:Ma&#39;arrat al-Numan]]&#34;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Maarat An Numan_ - GAR - 009
+general_place_category: [[Category:Populated places in Maarrat al-Nu&#39;man District]]
+Commons_category: [[Category:Ma&#39;arrat al-Numan]]
+[&#34;[[Category:Populated places in Maarrat al-Nu&#39;man District]]&#34;, &#34;[[Category:Ma&#39;arrat al-Numan]]&#34;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Moschea Aleppo - GAR - _01
+specific_place_category[[Category:Great Mosque of Aleppo]]
+[&#39;[[Category:Great Mosque of Aleppo]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Moschea Aleppo - GAR - _02
+specific_place_category[[Category:Great Mosque of Aleppo]]
+[&#39;[[Category:Great Mosque of Aleppo]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Moschea Aleppo - GAR - _03
+general_place_category: [[Category:Aleppo]]
+Commons_category: [[Category:Great Mosque of Aleppo]]
+[&#39;[[Category:Aleppo]]&#39;, &#39;[[Category:Great Mosque of Aleppo]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Moschea Aleppo - GAR - _04
+specific_place_category[[Category:Great Mosque of Aleppo]]
+[&#39;[[Category:Great Mosque of Aleppo]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Moschea Aleppo - GAR - _05
+specific_place_category[[Category:Great Mosque of Aleppo]]
+[&#39;[[Category:Great Mosque of Aleppo]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Qalb Lauzeh_ - GAR - 001
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:Kalb Lose]]
+[&#39;[[Category:Kalb Lose]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Qalb Lauzeh_ - GAR - 002
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:Kalb Lose]]
+[&#39;[[Category:Kalb Lose]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Qalb Lauzeh_ - GAR - 003
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:Kalb Lose]]
+[&#39;[[Category:Kalb Lose]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Qalb Lauzeh_ - GAR - 004
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:Kalb Lose]]
+[&#39;[[Category:Kalb Lose]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
+Qalb Lauzeh_ - GAR - 005
+maintanence_category: [[Category:Images_from_GAR_without_categories]]
+Commons_category: [[Category:Kalb Lose]]
+[&#39;[[Category:Kalb Lose]]&#39;, &#39;[[Category:Images_from_GAR_2016-06]]&#39;, &#39;[[Category:Images_from_GAR_needing_English_description]]&#39;]
+
 Stats: 
 Total images 426
-OK images 376
-Uncategorized images 46
+OK images 422
+Uncategorized images 0
 Images missing author 4
 </pre>
 </div>

@@ -27,7 +27,7 @@ import os
 # 
 # The doc below is downloaded locally 2016-07-19 16:55
 
-# In[2]:
+# In[48]:
 
 def strip(text):
     try:
@@ -35,30 +35,41 @@ def strip(text):
     except AttributeError:
         return text
     
-it_converters = {"Nome_foto":strip, "Anno":strip, "Luogo":strip, "Nome_monumento":strip, "Descrizione":strip, "Nome_autore":strip}
+it_converters = {"Nome foto":strip, "Anno":strip, "Luogo":strip, "Nome monumento":strip, "Descrizione":strip, "Nome autore":strip}
 metadata_it = pd.read_excel("./data/COH_GAR_metadata.xlsx",sheetname="Italian", skiprows=[1], converters=it_converters) # empty first row
+metadata_it.columns = ["Nome_foto","Anno","Luogo","Nome_monumento","Descrizione","Nome_autore"]
 
 en_converters = {"Title":strip, "Year":strip, "Place": strip, "Subject":strip, "Description":strip, "Author":strip, "Commons_category":strip}
 metadata_en = pd.read_excel("./data/COH_GAR_metadata.xlsx",sheetname="English", converters=en_converters)
+metadata_en.columns = ["Title","Year","Place","Subject","Description","Author","Commons_category","Comment"]
 
 
-# In[3]:
+# In[49]:
 
 metadata_it.head()
 
 
-# In[77]:
+# In[46]:
 
 metadata_en.head()
 
 
-# In[4]:
+# In[50]:
 
 merged = pd.concat([metadata_it,metadata_en], axis=1) 
 merged.head()
 
 
-# In[5]:
+# Check that every row in the English metadata sheet contains (at least) one Commons category
+
+# In[56]:
+
+merged[pd.isnull(merged.Commons_category)]
+
+
+# Note that the description field is not translated, all rows should be True below!
+
+# In[57]:
 
 pd.isnull(merged.Description)
 
@@ -77,7 +88,7 @@ pd.isnull(merged.Description)
 # 
 # https://commons.wikimedia.org/wiki/Commons:Gruppo_Archeologico_Romano/Batch_upload/places
 
-# In[6]:
+# In[71]:
 
 place_mappings_url = "https://commons.wikimedia.org/wiki/Commons:Gruppo_Archeologico_Romano/Batch_upload/places"
 place_mappings = pd.read_html(place_mappings_url, attrs = {"class":"wikitable"}, header=0)
@@ -88,7 +99,7 @@ place_mappings_general["Luogo"] = place_mappings_general.Luogo.str.strip()
 place_mappings_general["wikidata"] = place_mappings_general.wikidata.str.strip()
 #place_mappings_general["wikidata"] = place_mappings_general.wikidata.str.replace("\-", "")
 place_mappings_general["category"] = place_mappings_general.category.str.strip() 
-#place_mappings_general["category"] = place_mappings_general.category.str.replace("\-", "") 
+place_mappings_general["category"] = place_mappings_general.category.str.replace("_", " ") 
 
 place_mappings_general = place_mappings_general.set_index("Luogo")
 
@@ -98,7 +109,7 @@ place_mappings_specific["Luogo"] = place_mappings_specific.Luogo.str.strip()
 place_mappings_specific["Nome_monumento"] = place_mappings_specific.Nome_monumento.str.strip()
 
 place_mappings_specific["category"] = place_mappings_specific.category.str.strip()
-#place_mappings_specific["category"] = place_mappings_specific.category.str.replace("\-", "")
+place_mappings_specific["category"] = place_mappings_specific.category.str.replace("_", " ")
 place_mappings_specific["wikidata"] = place_mappings_specific.wikidata.str.strip()
 #place_mappings_specific["wikidata"] = place_mappings_specific.wikidata.str.replace("\-", "")
 
@@ -109,50 +120,44 @@ place_mappings_specific = place_mappings_specific.set_index("Specific_place")
 
 # Check that all '-' are replaced with empty strings
 
-# In[7]:
+# In[72]:
 
 print(place_mappings_specific["wikidata"].head(10))
 
 
-# In[8]:
+# In[73]:
 
 place_mappings_specific["wikidata"].head(10)
 
 
-# In[9]:
+# In[74]:
 
 place_mappings_specific.loc["Serjilla Andron"]["wikidata"]
 
 
-# In[10]:
+# In[75]:
 
 pd.isnull(place_mappings_specific.loc["Serjilla Andron"]["wikidata"])
 
 
-# In[11]:
+# In[76]:
 
 place_mappings_specific.loc["Serjilla Andron"]["wikidata"] == "-"
 
 
-# In[14]:
+# In[77]:
 
 pd.isnull(place_mappings_specific.wikidata)
 
 
-# In[12]:
+# In[78]:
 
 place_mappings_general.head(3)
 
 
-# In[13]:
+# In[79]:
 
 place_mappings_specific.head(3)
-
-
-# In[131]:
-
-spec = pd.Series(list(place_mappings_specific.index))
-spec[spec.str.contains("Jable")]
 
 
 # # Population of the Photograph template
@@ -182,7 +187,7 @@ print("Subdirs: {}\nlen(original_filenames): {}\nFiles in metadata file: 426".fo
 # ## Create wikitext for image pages
 # Available as .py script on [my github](https://github.com/mattiasostmar/GAR_Syria_2016-06/blob/master/create_metatdata_textfiles.py)
 
-# In[34]:
+# In[103]:
 
 # remove possible diuplicate files with other extension names
 get_ipython().system('rm -rf ./photograph_template_texts/*')
@@ -193,6 +198,11 @@ uncategorized_images = 0
 faulty_images = 0
 
 for row_no, row in merged.iterrows():
+    # Filename: <Nome_foto[:-3]>_GAR_<Nome_foto[-3:]>.<ext>
+    outpath = "./photograph_template_texts/"
+    fname = row["Nome_foto"][:-3] + " - " + "GAR" + " - " + row["Nome_foto"][-3:] # + ".JPG" Hack, extension ought to be dynamic
+    print("{}".format(fname))
+     
     total_images += 1
     
     template_parts = []
@@ -208,20 +218,21 @@ for row_no, row in merged.iterrows():
         faulty_images += 1
     template_parts.append(photographer)
     
-    title_it =  "{{it|'''" + regex.sub("_"," ",row["Nome_foto"][:-3]) + "'''}}"
+    title_it = "{{it|'''" + regex.sub("_"," ",row["Nome_foto"][:-3]) + "'''}}"
+    #title_en = "{{en|" + regex.sub("_"," ",row["Title"][:-3]) + "}}"
     
-    title = "|title = " + title_it
+    title = "|title = " + title_it #+ "\n" + title_en
     template_parts.append(title)
     
     if pd.notnull(row["Description"]):
-        description_en = "{{en| " + row["Description"] + "}}"
+        description_en = "{{en|" + row["Description"] + "}}" # <Description> is empty though, not translated
     else:
-        description_en = "{{en| " + str(row["Subject"]) + ", " + str(row["Place"]) + " in " + str(row["Year"]) + "}}"
+        description_en = "{{en|" + str(row["Subject"]) + ", " + str(row["Place"]) + " in " + str(row["Year"]) + "}}"
     
     if pd.notnull(row["Descrizione"]):
-        description_it = "{{it| " + row["Descrizione"] + "}}"
+        description_it = "{{it|" + row["Descrizione"] + "}}"
     else:
-        description_it = "{{it| " + str(row["Nome_monumento"]) + ", " + str(row["Luogo"]) + ", " + str(row["Anno"]) + "}}"
+        description_it = "{{it|" + str(row["Nome_monumento"]) + ", " + str(row["Luogo"]) + ", " + str(row["Anno"]) + "}}"
     
     description = "|description = " + description_it + "\n" + description_en
     template_parts.append(description)
@@ -238,7 +249,7 @@ for row_no, row in merged.iterrows():
         depicted_place = "|depicted place = {{city|" +         place_mappings_general.loc[row["Luogo"]]["wikidata"] + "}}"
         #print(depicted_place)
     else:
-        depicted_place = "|depicted place = " + row["Luogo"] + " " + row["Nome_monumento"]
+        depicted_place = "|depicted place = " + row["Nome_monumento"] + ", " + row["Luogo"]
         #print(depicted_place)
     template_parts.append(depicted_place)
     
@@ -302,41 +313,62 @@ for row_no, row in merged.iterrows():
     general_place_category = None
     maintanence_category = None
     batchupload_category = "[[Category:Images_from_GAR_2016-06]]"
-    translation_needed_category = "[[Category:Images_from_GAR_Syria_needing_english_translation]]"
+    translation_needed_category = "[[Category:Images_from_GAR_needing_English_description]]"
     
     if place_mappings_specific.loc[spec_place]["category"] != "-" and pd.notnull(place_mappings_specific.loc[spec_place]["category"]): 
         
         specific_place_category = "[[" + place_mappings_specific.loc[spec_place]["category"] + "]]"
-        print("{} {}".format(row["Title"], specific_place_category)) 
+        print("specific_place_category{}".format(specific_place_category)) 
      
     elif place_mappings_general.loc[row["Luogo"]]["category"] != "-" and pd.notnull(place_mappings_general.loc[row["Luogo"]]["category"]):
         general_place_category = "[[" + place_mappings_general.loc[row["Luogo"]]["category"] + "]]"
-        #print(general_place_category)
+        print("general_place_category: {}".format(general_place_category))
     
     # [[Category:Images_from_GAR_Syria_2016-06]]
     else:
         maintanence_category = "[[Category:Images_from_GAR_without_categories]]"
-        uncategorized_images += 1
+        print("maintanence_category: {}".format(maintanence_category))
     
     # manage content categories
     if specific_place_category :
         categories_list.append(specific_place_category)
-        OK_images += 1
+        
     elif general_place_category and not specific_place_category:
-        categories_list.append(general_place_category)
-        OK_images += 1 
+        categories_list.append(general_place_category) 
+    
+    if regex.search(r" \+ ",Commons_category):
+        cats = regex.split(r" \+ ",Commons_category)
+        print("{} is really {}".format(row.Commons_category, cats))
+        
+        for cat_no, cat in enumerate(cats):
+            if cat_no == 0:
+                Commons_category = cat + "]]" 
+            else:
+                Commons_category = "[[Category:" + cat
+            
+            if Commons_category != specific_place_category and Commons_category != general_place_category:
+                categories_list.append(Commons_category)
+                print("Commons_category: {}".format(Commons_category))
+            else:
+                pass
     else:
+        Commons_category = "[[Category:" + row["Commons_category"] + "]]"
+        if Commons_category != specific_place_category and Commons_category != general_place_category:
+                categories_list.append(Commons_category)
+                print("Commons_category: {}".format(Commons_category))
+                
+    if categories_list == None:
+        print("categories_list is None")
         categories_list.append(maintanence_category)
+        faulty_images += 1
 
     categories_list.append(batchupload_category)
     categories_list.append(translation_needed_category)
-        
-    #print(categories_list)
     
-    # Filename: <Nome_foto[:-3]>_GAR_<Nome_foto[-3:]>.<ext>
-    outpath = "./photograph_template_texts/"
-    fname = row["Nome_foto"][:-3] + " - " + "GAR" + " - " + row["Nome_foto"][-3:] # + ".JPG" Hack, extension ought to be dynamic
-    
+    if len(categories_list) >0:
+        OK_images += 1
+    print(categories_list)
+    print()
     
     if not os.path.exists(outpath):
         os.mkdir(outpath)
