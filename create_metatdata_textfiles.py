@@ -60,18 +60,35 @@ merged = pd.concat([metadata_it,metadata_en], axis=1)
 merged.head()
 
 
-# Check that every row in the English metadata sheet contains (at least) one Commons category
+# ### Check that every row in the English metadata sheet contains (at least) one Commons category, no rows should be displayed below
 
 # In[56]:
 
 merged[pd.isnull(merged.Commons_category)]
 
 
-# Note that the description field is not translated, all rows should be True below!
+# ### Check that all descriptions are removed, no rows shoud be displayed below
 
-# In[57]:
+# In[108]:
 
-pd.isnull(merged.Description)
+merged[pd.notnull(merged.Description)]
+
+
+# ### Check that all filenames are unique
+
+# In[124]:
+
+titles = merged.Title.copy() 
+
+
+# In[138]:
+
+sorted(titles[titles.str.contains("Aleppo_Cittadella")])
+
+
+# In[ ]:
+
+sorted_titles = titles.sort_values
 
 
 # # Keyword mappings
