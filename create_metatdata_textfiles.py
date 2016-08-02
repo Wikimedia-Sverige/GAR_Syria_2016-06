@@ -217,7 +217,7 @@ for row_no, row in merged.iterrows():
     outpath = "./photograph_template_texts/"
     nome_foto = row["Nome_foto"].replace(" ", "_")
     nome_foto_0, dummy, nome_foto_1 = nome_foto.rpartition("_")
-    fname = nome_foto_0 + " - " + "GAR" + " - " + row["Folder"] + "-" + nome_foto_1 # + ".JPG" Hack, extension ought to be dynamic
+    fname = nome_foto_0 + "_-_" + "GAR" + "_-_" + row["Folder"] + "-" + nome_foto_1 # + ".JPG" Hack, extension ought to be dynamic
     print("{}".format(fname))
      
     total_images += 1
