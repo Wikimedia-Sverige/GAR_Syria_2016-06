@@ -389,11 +389,8 @@ for row_no, row in merged.iterrows():
     
     if not os.path.exists(outpath):
         os.mkdir(outpath)
-        outfile = open(outpath + fname, "w")
-        outfile.write("\n".join(template_parts) + "\n" + "\n".join(categories_list))
-    else:
-        outfile = open(outpath + fname, "w")
-        outfile.write("\n".join(template_parts) + "\n" + "\n".join(categories_list))
+    outfile = open(outpath + fname + ".info", "w")
+    outfile.write("\n".join(template_parts) + "\n" + "\n".join(categories_list))
     
 print("Stats: \nTotal images {}\nOK images {}\nUncategorized images {}\nImages missing author {}".format(total_images, OK_images - faulty_images, uncategorized_images, faulty_images ))
 
