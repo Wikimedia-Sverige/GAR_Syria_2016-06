@@ -35,9 +35,9 @@ def strip(text):
     except AttributeError:
         return text
     
-it_converters = {"Nome foto":strip, "Anno":strip, "Luogo":strip, "Nome monumento":strip, "Descrizione":strip, "Nome autore":strip}
+it_converters = {"Folder":strip, "Nome foto":strip, "Anno":strip, "Luogo":strip, "Nome monumento":strip, "Descrizione":strip, "Nome autore":strip}
 metadata_it = pd.read_excel("./data/COH_GAR_metadata.xlsx",sheetname="Italian", skiprows=[1], converters=it_converters) # empty first row
-metadata_it.columns = ["Nome_foto","Anno","Luogo","Nome_monumento","Descrizione","Nome_autore"]
+metadata_it.columns = ["Folder","Nome_foto","Anno","Luogo","Nome_monumento","Descrizione","Nome_autore"]
 
 en_converters = {"Title":strip, "Year":strip, "Place": strip, "Subject":strip, "Description":strip, "Author":strip, "Commons_category":strip}
 metadata_en = pd.read_excel("./data/COH_GAR_metadata.xlsx",sheetname="English", converters=en_converters)
@@ -212,12 +212,18 @@ OK_images = 0
 uncategorized_images = 0
 faulty_images = 0
 
+filenames_file = open("./filenames_mapping.csv","w")
+filenames_file.write("Folder|Original|Commons\n")
+
 for row_no, row in merged.iterrows():
     # Filename: <Nome_foto[:-3]>_GAR_<Nome_foto[-3:]>.<ext>
     outpath = "./photograph_template_texts/"
-    fname = row["Nome_foto"][:-3] + " - " + "GAR" + " - " + row["Nome_foto"][-2:] # + ".JPG" Hack, extension ought to be dynamic
+    nome_foto = row["Nome_foto"].replace(" ", "_")
+    nome_foto_0, dummy, nome_foto_1 = nome_foto.rpartition("_")
+    fname = nome_foto_0 + "_-_" + "GAR" + "_-_" + row["Folder"] + "-" + nome_foto_1 # + ".JPG" Hack, extension ought to be dynamic
     print("{}".format(fname))
-     
+
+    filenames_file.write("{}|{}|{}\n".format(row["Folder"],row["Nome_foto"],fname))
     total_images += 1
     
     template_parts = []
@@ -233,7 +239,7 @@ for row_no, row in merged.iterrows():
         faulty_images += 1
     template_parts.append(photographer)
     
-    title_it = "{{it|'''" + regex.sub("_"," ",row["Nome_foto"][:-3]) + "'''}}"
+    title_it = "{{it|'''" + regex.sub("_"," ",nome_foto_0) + "'''}}"
     #title_en = "{{en|" + regex.sub("_"," ",row["Title"][:-3]) + "}}"
     
     title = "|title = " + title_it #+ "\n" + title_en
@@ -307,7 +313,7 @@ for row_no, row in merged.iterrows():
     accession_number = "|accession number ="
     template_parts.append(accession_number)
     
-    source = "|source = " + row["Nome_foto"] + "\n{{Gruppo Archeologico Romano cooperation project|COH}}"
+    source = "|source = " + row["Folder"] + "/" + nome_foto + "\n{{Gruppo Archeologico Romano cooperation project|COH}}"
     template_parts.append(source)
     
     if pd.notnull(row["Author"]):
@@ -387,11 +393,8 @@ for row_no, row in merged.iterrows():
     
     if not os.path.exists(outpath):
         os.mkdir(outpath)
-        outfile = open(outpath + fname, "w")
-        outfile.write("\n".join(template_parts) + "\n" + "\n".join(categories_list))
-    else:
-        outfile = open(outpath + fname, "w")
-        outfile.write("\n".join(template_parts) + "\n" + "\n".join(categories_list))
+    outfile = open(outpath + fname + ".info", "w")
+    outfile.write("\n".join(template_parts) + "\n" + "\n".join(categories_list))
     
 print("Stats: \nTotal images {}\nOK images {}\nUncategorized images {}\nImages missing author {}".format(total_images, OK_images - faulty_images, uncategorized_images, faulty_images ))
 
