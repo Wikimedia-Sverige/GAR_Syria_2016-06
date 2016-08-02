@@ -212,6 +212,9 @@ OK_images = 0
 uncategorized_images = 0
 faulty_images = 0
 
+filenames_file = open("./filenames_mapping.csv","w")
+filenames_file.write("Folder|Original|Commons\n")
+
 for row_no, row in merged.iterrows():
     # Filename: <Nome_foto[:-3]>_GAR_<Nome_foto[-3:]>.<ext>
     outpath = "./photograph_template_texts/"
@@ -219,7 +222,8 @@ for row_no, row in merged.iterrows():
     nome_foto_0, dummy, nome_foto_1 = nome_foto.rpartition("_")
     fname = nome_foto_0 + "_-_" + "GAR" + "_-_" + row["Folder"] + "-" + nome_foto_1 # + ".JPG" Hack, extension ought to be dynamic
     print("{}".format(fname))
-     
+
+    filenames_file.write("{}|{}|{}\n".format(row["Folder"],row["Nome_foto"],fname))
     total_images += 1
     
     template_parts = []
