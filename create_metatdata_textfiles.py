@@ -313,7 +313,7 @@ for row_no, row in merged.iterrows():
     accession_number = "|accession number ="
     template_parts.append(accession_number)
     
-    source = "|source = " + row["Folder"] + "/" + nome_foto + "\n{{Gruppo Archeologico Romano cooperation project|COH}}"
+    source = "|source = ''" + row["Folder"] + "/" + nome_foto + "''\n{{Gruppo Archeologico Romano cooperation project|COH}}"
     template_parts.append(source)
     
     if pd.notnull(row["Author"]):
