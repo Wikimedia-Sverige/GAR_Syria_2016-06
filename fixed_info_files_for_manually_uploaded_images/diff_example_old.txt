@@ -1,0 +1,14 @@
+=={{int:filedesc}}==
+{{Information
+{{Photograph
+|description={{it|1= Stadio di origine ellenistica (250x50 metri) ad Amrit.}}
+|photographer = Gianfranco Gazzetti
+|date = {{According to EXIF|2005-04-22}}
+|title = {{it|'''Amrit Stadio Ellenistico'''}}
+|source={{Institution:Gruppo Archeologico Romano}}
+|description = {{it|Amrit è un piccolo villaggio della Siria posto a sud di Tartus, in passato già fiorente città di origine fenicia con il nome di Marathus. Lo stadio è di origine ellenistica (250 m x 50 m).}}
+|author = Gianfranco Gazzetti (GAR)
+{{en|Hellenistic Stadium, Amrit in 2006}}
+|permission=
+|depicted people =
+|other versions=
